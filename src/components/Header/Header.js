@@ -1,14 +1,13 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import TokenService from "../../services/token-service";
-import Context from '../../Context/Context'
+
 
 export default class Header extends Component {
-  static contextType = Context;
- 
+  
   handleLogoutClick = () => {
     TokenService.clearAuthToken();
-    this.context.refreshLoginState();
+    
   };
 
   renderLogoutLink() {
@@ -40,11 +39,14 @@ export default class Header extends Component {
   }
   render() {
     return (
-      <div>
-          {this.context.isLoggedIn
+      <nav>
+        <h1>
+          <Link to='/'>BreadCrumbs</Link>
+        </h1>
+          {TokenService.hasAuthToken()
           ? this.renderLogoutLink()
           : this.renderLoginLink()}
-      </div>
+      </nav>
     );
   }
 }

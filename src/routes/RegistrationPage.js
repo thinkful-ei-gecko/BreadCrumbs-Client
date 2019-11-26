@@ -10,7 +10,7 @@ export default class SignUpPage extends Component {
 
   handleSignUpSuccess = user => {
     const { history } = this.props
-    history.push('/register')
+    history.push('/login')
   }
   render() {
     return (

@@ -1,19 +1,14 @@
 import React, { Component } from 'react';
 import {Route,Switch} from 'react-router-dom'
-import Landing from '../Landing/Landing'
 import Header from '../Header/Header'
-//import Login from '../Login/Login'
+import LandingPageRoute from '../../routes/LandingPageRoute/LandingPageRoute';
 import LoginPage from '../../routes/LoginPage';
 import RegistrationPage from '../../routes/RegistrationPage'
 import PublicRoute from '../../routes/PublicRoute'
 import NotFoundPage from '../../routes/NotFoundPage'
 
 export default class App extends Component {
-  state = { hasError: false }
-  static getDerivedStateFromError(error) {
-    console.error(error)
-    return { hasError: true }
-  }
+ 
   render() {
     return (
       <div>
@@ -22,14 +17,14 @@ export default class App extends Component {
           </header>
           <main>
           <Switch>
-          <Route exact path={'/'} component={Landing} />
+          <Route exact path={'/'} component={LandingPageRoute} />
           <PublicRoute path={'/login'} component={LoginPage}/>
-          <PublicRoute path={'/signup'} component={RegistrationPage}/>
+          <PublicRoute path={'/register'} component={RegistrationPage}/>
           <Route component={NotFoundPage} />
         </Switch> 
         </main>
       </div>
-     
     )
   }
 }
+     

@@ -32,7 +32,7 @@ export default class Login extends Component {
     render() {
         return (
             <div>
-                <h2> Enter Username and Password to Log in</h2>
+                
                 <form onSubmit={this.handleSubmitJwtAuth}>
                     <label htmlFor='Login-username'> Username</label> 
                     <input aria-label='Login-username' name='user_name' type='text' required ></input>

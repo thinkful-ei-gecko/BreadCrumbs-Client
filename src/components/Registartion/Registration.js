@@ -27,7 +27,7 @@ export default class Login extends Component {
     const { error } = this.state;
       return (
           <div>
-              <h2> </h2>
+              <h2>Register </h2>
               <form onSubmit={this.handleSubmit}>
               <div role="alert">{error && <p>{error}</p>}</div>
                   <label htmlFor='Signup-username'> Username</label> 
