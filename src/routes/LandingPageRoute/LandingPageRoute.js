@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 export default class LandingPageRoute extends Component {
   render() {
@@ -8,7 +9,9 @@ export default class LandingPageRoute extends Component {
           <div>
             <h2>Welcome to Bread Crumbs!</h2>
             <div>
-              <button>Join Today!</button>
+              <Link to='/register'>
+                <button>Join Today!</button>
+              </Link>
             </div>
           </div>
           <div>

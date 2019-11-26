@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import TokenService from "../services/token-service";
 
-const Context = React.createContext({
+const UserContext = React.createContext({
   isLoggedIn:false,
   error: null,
   setError: () => {},
 })
 
-export default Context
+export default UserContext
 
-export class ContextProvider extends Component {
+export class UserProvider extends Component {
   state ={
     error:null,
     isLoggedIn:false,
@@ -34,9 +34,9 @@ export class ContextProvider extends Component {
     }
     return(
       <div>
-        <Context.Provider value={value}>
+        <UserContext.Provider value={value}>
           {this.props.children}
-        </Context.Provider>
+        </UserContext.Provider>
       </div>
     )
   }
