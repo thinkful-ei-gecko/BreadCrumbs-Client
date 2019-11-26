@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
+import './Footer.css'
 
 export default class Footer extends Component {
   render() {
     return (
-      <section>
+      <footer>
         <div>
           <p>Copyright | Bread Crumbs | 2019</p>
         </div>
-      </section>
+      </footer>
     )
   }
 }
