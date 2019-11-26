@@ -24,12 +24,9 @@ export default class App extends Component {
             <Route exact path={'/'} component={LandingPageRoute} />
             <PublicRoute path={'/login'} component={LoginPage}/>
             <PublicRoute path={'/register'} component={RegistrationPage}/>
-<<<<<<< HEAD
             <Route path={'/userpage'} component={UserPage}></Route>
             <Route path={'/savedarticles'} component={SavedArticles}></Route>
-=======
             <Route path={'/home'} component={HomePage}/>
->>>>>>> cfa941110d8c038be7612945ba08396bfc061a69
             <Route component={NotFoundPage} />
           </Switch>
         <footer>
