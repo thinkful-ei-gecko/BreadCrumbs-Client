@@ -7,7 +7,7 @@ import LoginPage from '../../routes/LoginPage/LoginPage';
 import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage';
 import PublicRoute from '../../routes/PublicRoute/PublicRoute';
 import UserPage from '../UserPage/UserPage';
-import Savedarticles from '../SavedArticles/SavedArticles'
+import SavedArticles from '../SavedArticles/SavedArticles'
 import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage';
 
 export default class App extends Component {
@@ -24,7 +24,7 @@ export default class App extends Component {
             <PublicRoute path={'/login'} component={LoginPage}/>
             <PublicRoute path={'/register'} component={RegistrationPage}/>
             <Route path={'/userpage'} component={UserPage}></Route>
-            <Route path={'/savedarticles'} component={Savedarticles}></Route>
+            <Route path={'/savedarticles'} component={SavedArticles}></Route>
             <Route component={NotFoundPage} />
           </Switch>
         <footer>
