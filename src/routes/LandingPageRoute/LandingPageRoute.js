@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import './LandingPageRoute.css';
 
 export default class LandingPageRoute extends Component {
   render() {

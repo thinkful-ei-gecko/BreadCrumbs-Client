@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Login from '../../components/Login/Login'
+import Login from '../../components/Login/Login';
+import './LoginPage.css';
 
 export default class LoginPage extends Component {
   static defaultProps = {
