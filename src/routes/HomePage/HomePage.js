@@ -17,7 +17,7 @@ export default class HomePage extends Component {
           <span>Business</span>
         </div>
         <div>
-          {this.renderArticlesToPage}
+          {this.renderArticlesToPage()}
         </div>
       </section>
     )
