@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import LandingPageRoute from '../../routes/LandingPageRoute';
+import LandingPageRoute from '../../routes/LandingPageRoute/LandingPageRoute';
 
 export default class App extends Component {
   render() {
