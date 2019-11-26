@@ -12,6 +12,6 @@
 
 - Steven Bull: https://github.com/StevenWBull
 
-## Bread Crumbs Client Repo
+## Bread Crumbs Server Repo
 
 https://github.com/thinkful-ei-gecko/BreadCrumbs-Server
