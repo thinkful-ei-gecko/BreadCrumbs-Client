@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Registration from '../components/Registartion/Registration';
+import Registration from '../../components/Registartion/Registration';
 
 export default class SignUpPage extends Component {
   static defaultProps = {
