@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "name": "Bread-Crumbs-App",
-  "alias": "Bread-Crumbs-App",
+  "name": "Bread-Crumbs",
+  "alias": "Bread-Crumbs",
   "routes": [
       {
         "src": "^/static/(.*)",
