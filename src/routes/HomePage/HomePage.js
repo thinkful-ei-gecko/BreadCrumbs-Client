@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import NewsItem from '../../components/NewsItem/NewsItem';
 import './HomePage.css';
 
 export default class HomePage extends Component {
 
   renderArticlesToPage = () => {
-    return <div>Articles will be rendered here</div>
+    return <NewsItem />
   }
 
   render() {
