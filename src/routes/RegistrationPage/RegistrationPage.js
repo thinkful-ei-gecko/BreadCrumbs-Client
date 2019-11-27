@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Registration from '../../components/Registartion/Registration';
 import './RegistrationPage.css';
 
@@ -16,9 +17,11 @@ export default class SignUpPage extends Component {
   render() {
     return (
       <section className='RegistrationPage'>
-      
-      <Registration onSignUpSuccess={this.handleSignUpSuccess}/>
-    </section>
+        <Registration onSignUpSuccess={this.handleSignUpSuccess}/>
+        <div className='rerouteLogin'>
+          <Link to='/login'>Already have an account? Sign-in!</Link>
+        </div>
+      </section>
     )
   }
 }
