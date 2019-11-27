@@ -13,21 +13,21 @@ export default class Header extends Component {
     return (
       <div>
         <Link className='headerLinks'
-          onClick={this.handleLogoutClick}
-          to='/'>
-          Logout
-        </Link>
-        <Link
           to='/home'>
           Home
         </Link>
-        <Link
+        <Link className='headerLinks'
           to='/savedarticles'>
           Saved Articles
         </Link>
-        <Link
+        <Link className='headerLinks'
           to='/userpage'>
           Account Settings
+        </Link>
+        <Link className='headerLinks'
+          onClick={this.handleLogoutClick}
+          to='/'>
+          Logout
         </Link>
       </div>
     );
