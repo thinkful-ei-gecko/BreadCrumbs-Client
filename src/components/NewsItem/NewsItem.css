@@ -1,0 +1,72 @@
+
+li {
+    border-top: 1px solid rgba(131, 97, 97, 0.253);
+    margin-left: 5px;
+    border-radius: 2px;
+  }
+  
+  .img {
+    width: 300px;
+    height: relative;
+  }
+  
+  .fresh {
+    width: 20px;
+    height: relative;
+  }
+  
+  .not-fresh {
+    width: 20px;
+    height: relative;
+    transform: rotateX(180deg);
+    margin-bottom: 10px;
+  }
+  
+  li:hover {
+    background-color: lightgrey; 
+    color: black;
+  }
+  
+  .item {
+    margin-left: 5px;
+    margin-bottom: 2px;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .article-section {
+    display: block;
+    margin-left: 5px;
+    height: 200px;
+    overflow: auto;
+  }
+  .listItem {
+    display: flex;
+  }
+  
+  .score {
+    margin-left: 5px;
+    margin-right: 15px;
+    margin-top: 10px;
+    text-align: center;
+    display: block;
+  }
+
+  .like {
+    border-top: 1px solid lightgrey;
+    padding: 5px;
+    padding-top: 10px;
+    width: 20px;
+    cursor: pointer;
+  }
+  
+  .comments {
+    width: 20px;
+    cursor: pointer;
+  }  
+
+  .NewsItemBtn {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+  }
