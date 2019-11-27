@@ -29,9 +29,7 @@ export default class App extends Component {
             <Route path={'/savedarticles'} component={SavedArticles}/>
             <Route component={NotFoundPage} />
           </Switch>
-        <footer>
           <Footer />
-        </footer>
         </main>
       </>
     )
