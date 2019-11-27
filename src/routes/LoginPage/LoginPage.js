@@ -8,13 +8,15 @@ export default class LoginPage extends Component {
     location: {},
     history: {
       push: () => {},
-    },
-  }
+    }
+  };
+
   handleLoginSuccess = () => {
     const { location, history } = this.props
     const destination = (location.state || {}).from || '/'
     history.push(destination)
-  }
+  };
+
   render() {
     return (
       <section className='LoginPage' >
