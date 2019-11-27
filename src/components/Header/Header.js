@@ -18,6 +18,10 @@ export default class Header extends Component {
           Logout
         </Link>
         <Link
+          to='/home'>
+          Home
+        </Link>
+        <Link
           to='/savedarticles'>
           Saved Articles
         </Link>
