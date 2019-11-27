@@ -17,6 +17,14 @@ export default class Header extends Component {
           to='/'>
           Logout
         </Link>
+        <Link
+          to='/savedarticles'>
+          Saved Articles
+        </Link>
+        <Link
+          to='/userpage'>
+          Account Settings
+        </Link>
       </div>
     );
   }
@@ -42,9 +50,10 @@ export default class Header extends Component {
         <h1>
           <Link to='/'>BreadCrumbs</Link>
         </h1>
-          {TokenService.hasAuthToken()
+          {this.renderLogoutLink()}
+          {/* {TokenService.hasAuthToken()
           ? this.renderLogoutLink()
-          : this.renderLoginLink()}
+          : this.renderLoginLink()} */}
       </nav>
     );
   }
