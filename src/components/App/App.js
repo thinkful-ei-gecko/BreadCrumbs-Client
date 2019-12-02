@@ -27,12 +27,14 @@ export default class App extends Component {
             <PublicRoute path={'/login'} component={LoginPage}/>
             <PublicRoute path={'/register'} component={RegistrationPage}/>
             <PrivateRoute path={'/home'} component={HomePage}/>
-            <PrivateRoute path={'/userpage'} component={UserPage}/>
-            <PrivateRoute path={'/savedarticles'} component={SavedArticles}/>
+            <Route path={'/userpage'} component={UserPage}/>
+            <Route path={'/savedarticles'} component={SavedArticles}/>
             <Route component={NotFoundPage} />
           </Switch>
-          <Footer />
         </main>
+        <footer>
+          <Footer />
+        </footer>
       </>
     )
   }
