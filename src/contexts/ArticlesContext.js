@@ -2,18 +2,24 @@ import React, { Component } from 'react';
 import TokenService from "../services/token-service";
 
 const ArticlesContext = React.createContext({
-  articlesList:[],
-  error:null,
+  articlesList: [],
+  savedArticlesList: [],
+  newsArticleList: [],
+  error: null,
   setError: () => {},
-  setArticlesList:()=>{}
+  setSavedArticlesList: () => {},
+  setNewsArticlesList: () => {},
+  setArticlesList: () => {}
 })
 
 export default ArticlesContext
 
 export class ArticlesContextProvider extends Component {
   state={
-    articlesList:[],
-    error:null,
+    articlesList: [],
+    savedArticlesList: [],
+    newsArticleList: [],
+    error: null
   }
 
   setError = error => {
