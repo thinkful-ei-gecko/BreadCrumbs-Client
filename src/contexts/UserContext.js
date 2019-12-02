@@ -9,6 +9,7 @@ const UserContext = React.createContext({
   setError: () => {},
   clearError: () => {},
   processLogin: () => {},
+  processLogout: () => {},
   refreshLoginState: () => {}
 });
 
@@ -35,6 +36,10 @@ export class UserProvider extends Component {
     this.setState({ isLoggedIn:TokenService.hasAuthToken() });
   };
 
+  setUser = user => {
+    this.setState({ user })
+  };
+
   processLogin = authToken => {
     TokenService.saveAuthToken(authToken)
     const jwtPayload = TokenService.parseAuthToken()
@@ -43,6 +48,11 @@ export class UserProvider extends Component {
       name: jwtPayload.name,
       username: jwtPayload.sub,
     })
+  };
+
+  processLogout = () => {
+    TokenService.clearAuthToken()
+    this.setUser({})
   };
 
   setError = error => {
@@ -63,7 +73,8 @@ export class UserProvider extends Component {
       setError: this.setError,
       clearError: this.clearError,
       processLogin: this.processLogin,
-      refreshLoginState: this.refreshLoginState
+      refreshLoginState: this.refreshLoginState,
+      processLogout: this.processLogout
     }
     return(
       <div>
