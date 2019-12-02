@@ -7,7 +7,7 @@ import LoginPage from '../../routes/LoginPage/LoginPage';
 import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage';
 import HomePage from '../../routes/HomePage/HomePage';
 import PublicRoute from '../../routes/PublicRoute/PublicRoute';
-import PrivateRoute from '../../routes/PublicRoute/PublicRoute';
+import PrivateRoute from '../../routes/PrivateRoute/PrivateRoute';
 import UserPage from '../UserPage/UserPage';
 import SavedArticles from '../SavedArticles/SavedArticles'
 import Comments from '../Comments/Comments'

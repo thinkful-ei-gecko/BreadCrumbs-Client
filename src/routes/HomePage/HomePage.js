@@ -1,11 +1,29 @@
 import React, { Component } from 'react';
 import NewsItem from '../../components/NewsItem/NewsItem';
+import ArticlesApiService from '../../services/articles-api-service'
+import ArticlesContext from '../../contexts/ArticlesContext'
 import './HomePage.css';
 
 export default class HomePage extends Component {
+  static contextType = ArticlesContext;
+  componentDidMount() {
+    
+    ArticlesApiService.getArticlesList()
+      .then(res => {
+        this.context.setArticlesList(res);
+      })
+      .catch(this.context.setError);
+  }
 
-  renderArticlesToPage = () => {
-    return <NewsItem />
+  renderArticlesToPage() {
+    const { articlesList = [] } = this.context;
+    return articlesList.map((article) =>
+    <NewsItem
+    title={article.title}
+    content={article.content}
+    imageUrl={article.url_to_image}
+    />
+  );
   }
 
   render() {
@@ -19,8 +37,7 @@ export default class HomePage extends Component {
         </div>
         <div className='articleContainer'>
           {this.renderArticlesToPage()}
-          {this.renderArticlesToPage()}
-          {this.renderArticlesToPage()}
+          
         </div>
       </section>
     )
