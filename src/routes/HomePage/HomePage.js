@@ -10,6 +10,7 @@ export default class HomePage extends Component {
     
     ArticlesApiService.getArticlesList()
       .then(res => {
+        console.log(res)
         this.context.setArticlesList(res);
       })
       .catch(this.context.setError);
@@ -17,8 +18,9 @@ export default class HomePage extends Component {
 
   renderArticlesToPage() {
     const { articlesList = [] } = this.context;
-    return articlesList.map((article) =>
+    return articlesList.map((article,idx) =>
     <NewsItem
+    key={idx}
     title={article.title}
     content={article.content}
     imageUrl={article.url_to_image}
