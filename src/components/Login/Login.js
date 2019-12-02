@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import TokenService from '../../services/token-service';
 import AuthApiService from '../../services/auth-api-service';
 import UserContext from '../../contexts/UserContext'
+import FB from 'react-facebook-login'
 
 export default class Login extends Component {
+
   static contextType = UserContext;
   static defaultProps = {
     onLoginSuccess: () => {}
@@ -29,6 +31,10 @@ export default class Login extends Component {
       })
   }
     render() {
+      FB.getLoginStatus(function(response) {
+        statusChangeCallback(response);
+    });
+    
         return (
             <div>
               <form onSubmit={this.handleSubmitJwtAuth}>
@@ -38,6 +44,10 @@ export default class Login extends Component {
                 <input aria-label='Login-password' name='password' type='password' required ></input>
                 <button type='submit'>login</button>
               </form>
+              {/* <fb:login-button 
+                cope="public_profile,email"
+                onlogin="checkLoginState();">
+              </fb:login-button> */}
             </div>
         )
     }
