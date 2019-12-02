@@ -11,7 +11,6 @@ export default class Login extends Component {
   handleSubmitJwtAuth = (ev) =>{
     ev.preventDefault()
     const { user_name, password } = ev.target
-
     
     AuthApiService.postLogin({
       user_name: user_name.value,
@@ -32,14 +31,13 @@ export default class Login extends Component {
     render() {
         return (
             <div>
-                
-                <form onSubmit={this.handleSubmitJwtAuth}>
-                    <label htmlFor='Login-username'> Username</label> 
-                    <input aria-label='Login-username' name='user_name' type='text' required ></input>
-                    <label htmlFor='Login-password'> Password</label> 
-                    <input aria-label='Login-password' name='password' type='text' required ></input>
-                    <button type='submit'>login</button>
-                </form>
+              <form onSubmit={this.handleSubmitJwtAuth}>
+                <label htmlFor='Login-username'> Username: </label> 
+                <input aria-label='Login-username' name='user_name' type='text' required ></input>
+                <label htmlFor='Login-password'> Password: </label> 
+                <input aria-label='Login-password' name='password' type='password' required ></input>
+                <button type='submit'>login</button>
+              </form>
             </div>
         )
     }

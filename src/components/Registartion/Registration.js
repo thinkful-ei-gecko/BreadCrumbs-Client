@@ -10,6 +10,7 @@ export default class Login extends Component {
     ev.preventDefault();
     const { user_name, password } = ev.target;
     this.setState({ error: null });
+
     AuthApiService.postUser({
       user_name: user_name.value,
       password: password.value
@@ -33,7 +34,7 @@ export default class Login extends Component {
                   <label htmlFor='Signup-username'> Username</label> 
                   <input aria-label='Signup-username' name='user_name' type='text' required ></input>
                   <label htmlFor='Signup-password' name='password'> Password</label> 
-                  <input aria-label='Signup-password' type='text' required ></input>
+                  <input aria-label='Signup-password' name='password' type='password' required ></input>
                   <button type='submit'>Sign Up</button>
               </form>
           </div>

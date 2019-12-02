@@ -1,7 +1,7 @@
 export default {
   API_ENDPOINT:
-    process.env.NODE_ENV === 'development'
+    process.env.NODE_ENV === 'production'
       ? 'http://localhost:8000/api'
-      : 'ENTER LIVE ZEIT URL HERE',
+      : 'https://breadcrumbs-ei34.herokuapp.com/',
   TOKEN_KEY: process.env.BREAD_CRUMBS_AUTH_TOKEN || 'bread-crumbs-auth-token',
 }
