@@ -19,11 +19,10 @@ export default class LoginPage extends Component {
 
   render() {
     return (
-      <section className='LoginPage' >
-        <h2>Login</h2>
+      <section className='box' >
         <Login onLoginSuccess={this.handleLoginSuccess}/>
         <div className='rerouteRegister'>
-          <Link to='/register'>Don't have an account yet? Sign-up!</Link>
+          <Link to='/register' className='subtext'>Don't have an account yet? Sign-up!</Link>
         </div>
       </section>
    )

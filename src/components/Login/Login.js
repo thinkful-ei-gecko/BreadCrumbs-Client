@@ -31,12 +31,13 @@ export default class Login extends Component {
     render() {
         return (
             <div>
-              <form onSubmit={this.handleSubmitJwtAuth}>
+              <h2> Login </h2>
+              <form className='login-reg' onSubmit={this.handleSubmitJwtAuth}>
                 <label htmlFor='Login-username'> Username: </label> 
-                <input aria-label='Login-username' name='user_name' type='text' required ></input>
+                <input className='input' aria-label='Login-username' name='user_name' type='text' required ></input>
                 <label htmlFor='Login-password'> Password: </label> 
-                <input aria-label='Login-password' name='password' type='password' required ></input>
-                <button type='submit'>login</button>
+                <input className='input' aria-label='Login-password' name='password' type='password' required ></input>
+                <button className='loginRegBtn' type='submit'>login</button>
               </form>
             </div>
         )

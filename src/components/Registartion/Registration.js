@@ -31,15 +31,15 @@ export default class Login extends Component {
       return (
           <div>
               <h2>Register </h2>
-              <form onSubmit={this.handleSubmit}>
+              <form className='login-reg' onSubmit={this.handleSubmit}>
               <div role="alert">{error && <p>{error}</p>}</div>
                   <label htmlFor='Signup-username'> Username: </label> 
-                  <input aria-label='Signup-username' name='user_name' type='text' required ></input>
+                  <input className='input' aria-label='Signup-username' name='user_name' type='text' required ></input>
                   <label htmlFor='Signup-fullname'> Full Name: </label> 
-                  <input aria-label='Signup-fullname' name='fullname' type='text' required ></input>
+                  <input className='input' aria-label='Signup-fullname' name='fullname' type='text' required ></input>
                   <label htmlFor='Signup-password' name='password'> Password: </label> 
-                  <input aria-label='Signup-password' name='password' type='password' required ></input>
-                  <button type='submit'>Sign Up</button>
+                  <input className='input' aria-label='Signup-password' name='password' type='password' required ></input>
+                  <button className='loginRegBtn' type='submit'>Sign Up</button>
               </form>
           </div>
       )

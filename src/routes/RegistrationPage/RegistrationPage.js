@@ -17,10 +17,10 @@ export default class SignUpPage extends Component {
 
   render() {
     return (
-      <section className='RegistrationPage'>
+      <section className='box'>
         <Registration onSignUpSuccess={this.handleSignUpSuccess}/>
         <div className='rerouteLogin'>
-          <Link to='/login'>Already have an account? Sign-in!</Link>
+          <Link to='/login' className='subtext'>Already have an account? Sign-in!</Link>
         </div>
       </section>
     )

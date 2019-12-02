@@ -1,0 +1,45 @@
+.box {
+    display: block;
+    width: 250px;
+    height: auto;
+    margin-top: 50px;
+    text-align: center;
+    margin: auto;
+    border: 1px solid black;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+  }
+  
+  .login-reg {
+    text-align: center;
+    padding: 10px;
+  }
+
+  .input {
+      padding: 2px;
+      margin: 5px;
+  }
+
+  .subtext {
+      font-size: x-small;
+  }
+
+  .loginRegBtn {
+    height: 35px;
+    width: 80%;
+    font-size: larger;
+    margin: 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: white;
+    color: rgba(16, 7, 56, 0.993);
+    border: 1px solid rgba(16, 7, 56, 0.993);
+  }
+
+  .loginRegBtn:hover {
+    background-color: rgba(16, 7, 56, 0.993);
+    color: lightgrey;
+  }
+  
