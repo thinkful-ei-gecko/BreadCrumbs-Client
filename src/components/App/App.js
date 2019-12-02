@@ -10,6 +10,7 @@ import PublicRoute from '../../routes/PublicRoute/PublicRoute';
 import UserPage from '../UserPage/UserPage';
 import SavedArticles from '../SavedArticles/SavedArticles'
 import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage';
+import './App.css'
 
 export default class App extends Component {
  
@@ -19,7 +20,7 @@ export default class App extends Component {
         <header>
           <Header />
         </header>
-        <main>
+        <main id='middle'>
           <Switch>
             <Route exact path={'/'} component={LandingPageRoute} />
             <PublicRoute path={'/login'} component={LoginPage}/>

@@ -5,7 +5,6 @@ footer {
     border-radius: 2px;
     color: lightgrey;
     position: absolute;
-    bottom: 0;
-    z-index: 2;
     width: 100%;
+    /* bottom: 0; */
   }

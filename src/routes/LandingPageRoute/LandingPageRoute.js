@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './LandingPageRoute.css';
-import NewsItem from '../../components/NewsItem/NewsItem';
 
 export default class LandingPageRoute extends Component {
   render() {
@@ -22,9 +21,8 @@ export default class LandingPageRoute extends Component {
         </section>
         <section>
           <div>
-            {/* <h4>Section 1</h4>
-            <p>This can be a flexboxed section</p> */}
-            <NewsItem />
+            <h4>Section 1</h4>
+            <p>This can be a flexboxed section</p>
           </div>
           <div>
             <h4>Section 2</h4>
