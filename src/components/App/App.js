@@ -9,6 +9,7 @@ import HomePage from '../../routes/HomePage/HomePage';
 import PublicRoute from '../../routes/PublicRoute/PublicRoute';
 import UserPage from '../UserPage/UserPage';
 import SavedArticles from '../SavedArticles/SavedArticles'
+import Comments from '../Comments/Comments'
 import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage';
 import './App.css'
 
@@ -28,6 +29,7 @@ export default class App extends Component {
             <Route path={'/home'} component={HomePage}/>
             <Route path={'/userpage'} component={UserPage}/>
             <Route path={'/savedarticles'} component={SavedArticles}/>
+            <Route path={'/comments'} component={Comments}/>
             <Route component={NotFoundPage} />
           </Switch>
           <Footer />
