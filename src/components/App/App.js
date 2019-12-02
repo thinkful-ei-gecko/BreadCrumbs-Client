@@ -7,7 +7,7 @@ import LoginPage from '../../routes/LoginPage/LoginPage';
 import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage';
 import HomePage from '../../routes/HomePage/HomePage';
 import PublicRoute from '../../routes/PublicRoute/PublicRoute';
-import PrivateRoute from '../../routes/PublicRoute/PublicRoute';
+import PrivateRoute from '../../routes/PrivateRoute/PrivateRoute';
 import UserPage from '../UserPage/UserPage';
 import SavedArticles from '../SavedArticles/SavedArticles'
 import Comments from '../Comments/Comments'
@@ -28,9 +28,9 @@ export default class App extends Component {
             <PublicRoute path={'/login'} component={LoginPage}/>
             <PublicRoute path={'/register'} component={RegistrationPage}/>
             <PrivateRoute path={'/home'} component={HomePage}/>
-            <Route path={'/userpage'} component={UserPage}/>
-            <Route path={'/savedarticles'} component={SavedArticles}/>
-            <Route path={'/comments'} component={Comments}/>
+            <PrivateRoute path={'/userpage'} component={UserPage}/>
+            <PrivateRoute path={'/savedarticles'} component={SavedArticles}/>
+            <PrivateRoute path={'/comments'} component={Comments}/>
             <Route component={NotFoundPage} />
           </Switch>
         </main>
