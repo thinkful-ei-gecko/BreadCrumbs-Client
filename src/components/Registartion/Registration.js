@@ -8,15 +8,18 @@ export default class Login extends Component {
   state = { error: null };
   handleSubmit = ev => {
     ev.preventDefault();
-    const { user_name, password } = ev.target;
+    const { user_name, password, fullname } = ev.target;
     this.setState({ error: null });
+
     AuthApiService.postUser({
-      user_name: user_name.value,
-      password: password.value
+      username: user_name.value,
+      password: password.value,
+      name: fullname.value
     })
       .then(user => {
         user_name.value = "";
         password.value = "";
+        fullname.value = "";
         this.props.onSignUpSuccess();
       })
       .catch(res => {
@@ -30,10 +33,12 @@ export default class Login extends Component {
               <h2>Register </h2>
               <form onSubmit={this.handleSubmit}>
               <div role="alert">{error && <p>{error}</p>}</div>
-                  <label htmlFor='Signup-username'> Username</label> 
+                  <label htmlFor='Signup-username'> Username: </label> 
                   <input aria-label='Signup-username' name='user_name' type='text' required ></input>
-                  <label htmlFor='Signup-password' name='password'> Password</label> 
-                  <input aria-label='Signup-password' type='text' required ></input>
+                  <label htmlFor='Signup-fullname'> Full Name: </label> 
+                  <input aria-label='Signup-fullname' name='fullname' type='text' required ></input>
+                  <label htmlFor='Signup-password' name='password'> Password: </label> 
+                  <input aria-label='Signup-password' name='password' type='password' required ></input>
                   <button type='submit'>Sign Up</button>
               </form>
           </div>
