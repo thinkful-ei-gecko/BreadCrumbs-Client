@@ -43,3 +43,7 @@
     color: lightgrey;
   }
   
+  .error{
+    color: red;
+    font-weight: bolder;
+  }

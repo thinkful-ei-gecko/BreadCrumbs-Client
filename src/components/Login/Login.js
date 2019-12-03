@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import TokenService from '../../services/token-service';
 import AuthApiService from '../../services/auth-api-service';
 import UserContext from '../../contexts/UserContext'
+import '../../routes/LoginPage/LoginPage.css'
 
 export default class Login extends Component {
   static contextType = UserContext;
@@ -36,7 +37,7 @@ export default class Login extends Component {
               <h2> Login </h2>
               <form className='login-reg' onSubmit={this.handleSubmitJwtAuth}>
               <div role='alert'>
-               {error && <p className='red'>{error}</p>}
+               {error && <p className='error'>{error}</p>}
                </div>
                 <label htmlFor='Login-username'> Username: </label> 
                 <input className='input' aria-label='Login-username' name='user_name' type='text' required ></input>
