@@ -21,9 +21,16 @@ export default class HomePage extends Component {
     return articlesList.map((article,idx) =>
     <NewsItem
     key={idx}
-    title={article.title}
+    author={article.author}
     content={article.content}
-    imageUrl={article.url_to_image}
+    description={article.description}
+    downvote_count={article.downvote_count}
+    id={article.id}
+    title={article.title}
+    upvote_count={article.upvote_count}
+    url={article.url}
+    url_to_image={article.url_to_image}
+    user_id={article.user_id}
     />
   );
   }

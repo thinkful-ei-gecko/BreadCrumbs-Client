@@ -1,20 +1,43 @@
 import React, { Component } from 'react'
-import { Link } from "react-router-dom";
+import NewsItem from '../../components/NewsItem/NewsItem';
+import ArticlesApiService from '../../services/articles-api-service'
+import ArticlesContext from '../../contexts/ArticlesContext'
 
 export default class SavedArticles extends Component {
+  static contextType = ArticlesContext;
+  componentDidMount() {
+    
+    ArticlesApiService.getSavedArticlesList()
+      .then(res => {
+        console.log('saved articles',res)
+        this.context.setSavedArticlesList(res);
+      })
+      .catch(this.context.setError);
+  }
+
+  renderSavedArticlesToPage() {
+    const { savedArticlesList = [] } = this.context;
+    return savedArticlesList.map((article,idx) =>
+    <NewsItem
+    key={idx}
+    author={article.author}
+    content={article.content}
+    description={article.description}
+    downvote_count={article.downvote_count}
+    upvote_count={article.upvote_count}
+    title={article.title}
+    url={article.url}
+    url_to_image={article.url_to_image}
+    user_id={article.user_id}
+    />
+  );
+  }
+
   render() {
     return (
       <div>
         <h2>Saved Articles</h2>
-        <Link to='/user/articleid'>Aricle1</Link>
-        <br></br>
-        <Link to='/user/articleid'>Aricle2</Link>
-        <br></br>
-        <Link to='/user/articleid'>Aricle3</Link>
-        <br></br>
-        <Link to='/user/articleid'>Aricle4</Link>
-        <br></br>
-        <Link to='/user/articleid'>Aricle5</Link>      
+        {this.renderSavedArticlesToPage()}    
       </div>
     )
   }

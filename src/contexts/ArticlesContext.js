@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TokenService from "../services/token-service";
+
 
 const ArticlesContext = React.createContext({
   articlesList: [],
@@ -31,11 +31,17 @@ export class ArticlesContextProvider extends Component {
     this.setState({ articlesList })
   }
 
+  setSavedArticlesList = savedArticlesList => {
+    this.setState({ savedArticlesList })
+  }
+
   render() {
     const value ={
       articlesList:this.state.articlesList,
+      savedArticlesList:this.state.savedArticlesList,
       error: this.state.error,
       setArticlesList:this.setArticlesList,
+      setSavedArticlesList :this.setSavedArticlesList ,
       setError: this.setError,
     }
     return (
