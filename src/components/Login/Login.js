@@ -8,6 +8,7 @@ export default class Login extends Component {
   static defaultProps = {
     onLoginSuccess: () => {}
   }
+  state = { error: null }
   handleSubmitJwtAuth = (ev) =>{
     ev.preventDefault()
     const { user_name, password } = ev.target
@@ -29,10 +30,14 @@ export default class Login extends Component {
       })
   }
     render() {
+      const { error } = this.state
         return (
             <div>
               <h2> Login </h2>
               <form className='login-reg' onSubmit={this.handleSubmitJwtAuth}>
+              <div role='alert'>
+               {error && <p className='red'>{error}</p>}
+               </div>
                 <label htmlFor='Login-username'> Username: </label> 
                 <input className='input' aria-label='Login-username' name='user_name' type='text' required ></input>
                 <label htmlFor='Login-password'> Password: </label> 
