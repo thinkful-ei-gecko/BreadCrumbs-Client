@@ -3,6 +3,7 @@ li {
     border-top: 1px solid rgba(131, 97, 97, 0.253);
     margin-left: 5px;
     border-radius: 2px;
+    
   }
   
   .img {
@@ -20,6 +21,7 @@ li {
     height: relative;
     transform: rotateX(180deg);
     margin-bottom: 10px;
+
   }
   
   li:hover {
@@ -86,4 +88,21 @@ li {
       background-color: transparent;
       border: none;
       cursor: pointer;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .img {
+    height: 50%;
+    width: 50%;
+    padding: 5px;
+    }
+    .score {
+      display:none;
+    }
+    .item {
+      display: block;
+    }
+    li {
+      height: 500px;
+    }
   }
