@@ -9,10 +9,10 @@ import './index.css';
 
 ReactDOM.render(
   <BrowserRouter>
-  <ArticlesContextProvider>
-    <UserProvider>
-      <App />
-    </UserProvider>
+    <ArticlesContextProvider>
+      <UserProvider>
+        <App />
+      </UserProvider>
     </ArticlesContextProvider>
   </BrowserRouter>, 
   document.getElementById('root')

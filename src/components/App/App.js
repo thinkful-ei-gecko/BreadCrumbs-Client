@@ -19,9 +19,7 @@ export default class App extends Component {
   render() {
     return (
       <>
-        <header>
-          <Header />
-        </header>
+        <Header />
         <main id='middle'>
           <Switch>
             <Route exact path={'/'} component={LandingPageRoute} />
@@ -34,7 +32,7 @@ export default class App extends Component {
             <Route component={NotFoundPage} />
           </Switch>
         </main>
-          <Footer />
+        <Footer />
       </>
     )
   }
