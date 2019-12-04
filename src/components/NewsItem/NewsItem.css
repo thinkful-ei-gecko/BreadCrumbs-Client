@@ -65,6 +65,22 @@ li {
     cursor: pointer;
   }  
 
+  .open-link {
+    width: 15px;
+    cursor: pointer;
+  }
+
+  .openLinkBtn {
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    border-radius: 2px;
+    padding: 5px;
+  }
+
+  .openLinkBtn:hover {
+    background-color: grey;
+  }
   .NewsItemBtn {
       background-color: transparent;
       border: none;
