@@ -14,7 +14,9 @@ export default class Header extends Component {
   renderLogoutLink() {
     return (
       <>
-      <div>Welcome, {this.context.user.name + '!'}</div>
+      <div className='user-name'>
+        Welcome, {this.context.user.name + '!'}
+      </div>
       <div>
         <Link className='headerLinks'
           to='/home'>
