@@ -50,6 +50,7 @@ li {
     margin-top: 10px;
     text-align: center;
     display: block;
+    width: 50px;
   }
 
   .like {
