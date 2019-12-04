@@ -13,6 +13,10 @@ export default class Header extends Component {
 
   renderLogoutLink() {
     return (
+      <>
+      <div className='user-name'>
+        Welcome, {this.context.user.name + '!'}
+      </div>
       <div>
         <Link className='headerLinks'
           to='/home'>
@@ -32,6 +36,7 @@ export default class Header extends Component {
           Logout
         </Link>
       </div>
+      </>
     );
   }
 
