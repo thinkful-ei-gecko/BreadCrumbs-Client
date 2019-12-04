@@ -24,9 +24,9 @@ handleTopNews(){
 handleBuisness(){
   fetch('https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=948441d54c94474081783b97b5cc1da3')
   .then(res=>res.json())     
-  .then(data => {
+  .then(data1 => {
         
-         this.context.setArticlesList(data.articles);
+         this.context.setArticlesList(data1.articles);
       })
 }
 handleEntertainment(){
@@ -110,12 +110,12 @@ handleTechnology(){
       <section>
         <div className='articleQueryContainer'>
           <ul>
-          <li onClick={this.handleTopNews}>Top News</li>
-          <li onClick={this.handleBuisness}>Buisness</li>
-          <li onClick={this.handleHealth}>Health</li>
-          <li onClick={this.handleScience}>Science</li>
-          <li onClick={this.handleSports}>Sports</li>
-          <li onClick={this.handleTechnology}>Technology</li>
+          <li onClick={()=>this.handleTopNews()}>Top News</li>
+          <li onClick={()=>this.handleBuisness()}>Buisness</li>
+          <li onClick={()=>this.handleHealth()}>Health</li>
+          <li onClick={()=>this.handleScience()}>Science</li>
+          <li onClick={()=>this.handleSports()}>Sports</li>
+          <li onClick={()=>this.handleTechnology()}>Technology</li>
           </ul>
         </div>
         <div className='articleContainer'>
