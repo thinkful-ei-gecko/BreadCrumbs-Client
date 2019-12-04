@@ -1,2 +1,14 @@
 ul{list-style-type: none;}
 li{display:inline;}
+
+.category {
+    cursor: pointer;
+    border: none;
+}
+
+.category:hover {
+    color: rgba(16, 7, 56, 0.993);
+    font-weight: bolder;
+    border-bottom: 4px solid rgba(16, 7, 56, 0.993);
+    background-color: white;
+}
