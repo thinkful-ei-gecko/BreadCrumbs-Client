@@ -3,13 +3,15 @@ import React, { Component } from 'react';
 
 const ArticlesContext = React.createContext({
   articlesList: [],
+  buisnessArticlesList:[],
   savedArticlesList: [],
   newsArticleList: [],
   error: null,
   setError: () => {},
   setSavedArticlesList: () => {},
   setNewsArticlesList: () => {},
-  setArticlesList: () => {}
+  setArticlesList: () => {},
+  setBuisnessArticlesList:()=>{}
 })
 
 export default ArticlesContext
@@ -19,6 +21,7 @@ export class ArticlesContextProvider extends Component {
     articlesList: [],
     savedArticlesList: [],
     newsArticleList: [],
+    buisnessArticlesList:[],
     error: null
   }
 
@@ -31,6 +34,9 @@ export class ArticlesContextProvider extends Component {
     this.setState({ articlesList })
   }
 
+  setBuisnessArticlesList = articlesList => {
+    this.setState({ articlesList })
+  }
   setSavedArticlesList = savedArticlesList => {
     this.setState({ savedArticlesList })
   }
@@ -38,9 +44,11 @@ export class ArticlesContextProvider extends Component {
   render() {
     const value ={
       articlesList:this.state.articlesList,
+      buisnessArticlesList:this.state.buisnessArticlesList,
       savedArticlesList:this.state.savedArticlesList,
       error: this.state.error,
       setArticlesList:this.setArticlesList,
+      setBuisnessArticlesList:this.setBuisnessArticlesList,
       setSavedArticlesList :this.setSavedArticlesList ,
       setError: this.setError,
     }
