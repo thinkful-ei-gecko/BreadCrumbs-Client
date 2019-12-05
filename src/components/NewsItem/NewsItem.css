@@ -14,6 +14,7 @@ li {
   .fresh {
     width: 20px;
     height: relative;
+    padding: 3px;
   }
   
   .not-fresh {
@@ -47,12 +48,28 @@ li {
   }
   
   .score {
-    margin-left: 5px;
+    display: none;
+    /* margin-left: 5px;
     margin-right: 15px;
     margin-top: 10px;
     text-align: center;
     display: block;
-    width: 50px;
+    width: 50px; */
+  }
+
+  .ovenBtn {
+    text-align: center;
+    display: flex;
+    cursor: pointer;
+  }
+
+  .ovenBtn:hover {
+    background-color: orange;
+  }
+
+  .ovenTxt {
+    padding: 5px;
+    font-weight: bolder;
   }
 
   .like {
@@ -89,6 +106,7 @@ li {
       border: none;
       cursor: pointer;
   }
+
 
   @media only screen and (max-width: 600px) {
     .img {
