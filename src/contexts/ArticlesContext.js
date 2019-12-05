@@ -42,6 +42,7 @@ export class ArticlesContextProvider extends Component {
   render() {
     const value ={
       articlesList: this.state.articlesList,
+      popularArticleList: this.state.popularArticleList,
       savedArticlesList: this.state.savedArticlesList,
       error: this.state.error,
       setArticlesList: this.setArticlesList,

@@ -36,6 +36,24 @@ export default class HomePage extends Component {
         })
   }
 
+  renderOvenArticlesToPage() {
+    const ovenArticles = this.context.popularArticleList
+    return (
+      ovenArticles.map((article) =>
+        <NewsItem
+          key={article.id}
+          author={article.author}
+          content={article.content}
+          description={article.description}
+          id={article.id}
+          title={article.title}
+          url={article.url}
+          url_to_image={article.urlToImage}
+        />
+      )
+    )
+  }
+
   renderArticlesToPage() {
      //const { articlesList = [] } = this.context;
     const articlesList = this.context.articlesList || []
