@@ -1,18 +1,18 @@
 import React, { Component } from 'react'
 import UserContext from '../../contexts/UserContext'
-
+import ArticleApiService from '../../services/articles-api-service'
 export default class Comments extends Component {
   static contextType = UserContext
   handleSubmit = ev => {
-    // ev.preventDefault()
-    // const { article } = this.context
-    // const { comment } = ev.target
-    // ApiService.postComment(article.id, text.value)
-    //   .then(this.context.addComment)
-    //   .then(() => {
-    //     comment.value = ''
-    //   })
-    //   .catch(this.context.setError)
+    ev.preventDefault()
+    const { article } = this.context
+    const { comment } = ev.target
+    ArticleApiService.postComment(article.id, comment.value)
+      .then(this.context.addComment)
+      .then(() => {
+        comment.value = ''
+      })
+      .catch(this.context.setError)
   }
   render() {
     return (

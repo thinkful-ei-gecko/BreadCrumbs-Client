@@ -1,5 +1,6 @@
 import config from "../config";
 
+
 const AuthApiService = {
 
   postLogin({ username, password }) {
@@ -28,6 +29,31 @@ const AuthApiService = {
                 : res.json()
             )
            
+        },
+
+        postChangeUsername({id,username,name,password}) {
+          return fetch(`${config.API_ENDPOINT}/user/update`, {
+            method: "PATCH",
+            headers: {
+              "content-type": "application/json"
+            },
+            body: JSON.stringify({id,username,name,password})
+          }).then(res =>
+            !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
+          )
+       
+        },
+        postChangePassword({id,old_password,new_password,confirm_password}) {
+          return fetch(`${config.API_ENDPOINT}/user/update`, {
+            method: "PATCH",
+            headers: {
+              "content-type": "application/json"
+            },
+            body: JSON.stringify({id,old_password,new_password,confirm_password})
+          }).then(res =>
+            !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
+          )
+       
         },
 };
 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import NewsItem from '../../components/NewsItem/NewsItem';
+import OvenItem from '../../components/NewsItem/OvenItem'
 //import ArticlesApiService from '../../services/articles-api-service'
 import TokenService from '../../services/token-service';
 import ArticlesContext from '../../contexts/ArticlesContext'
@@ -37,6 +38,7 @@ export default class HomePage extends Component {
     fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${config.REACT_APP_API_KEY}`)
     .then(res=>res.json())     
     .then(data => { 
+      console.log(data.articles)
           this.context.setArticlesList(data.articles);
         })
     .then(this.setState({ ovenPage: false }))
@@ -46,6 +48,7 @@ export default class HomePage extends Component {
     fetch(`https://newsapi.org/v2/top-headlines?country=us&category=${subject}&apiKey=${config.REACT_APP_API_KEY}`)
     .then(res=>res.json())     
     .then(data => { 
+      console.log(data.articles)
           this.context.setArticlesList(data.articles);
         })
     .then(this.setState({ ovenPage: false }))
@@ -55,7 +58,7 @@ export default class HomePage extends Component {
     const ovenArticles = this.context.popularArticleList
     return (
       ovenArticles.map((article) =>
-        <NewsItem
+        <OvenItem
           key={article.id}
           author={article.author}
           content={article.content}
