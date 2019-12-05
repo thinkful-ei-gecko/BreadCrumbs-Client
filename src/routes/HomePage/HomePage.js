@@ -1,23 +1,37 @@
 import React, { Component } from 'react';
 import NewsItem from '../../components/NewsItem/NewsItem';
 //import ArticlesApiService from '../../services/articles-api-service'
+import TokenService from '../../services/token-service';
 import ArticlesContext from '../../contexts/ArticlesContext'
 import config from '../../config'
 import './HomePage.css';
 
 export default class HomePage extends Component {
+  state = {
+    ovenPage: false
+  }
+
   static contextType = ArticlesContext;
 
   componentDidMount() {
     this.handleTopNews()
+    this.handleOvenNews()
   }
 
   handleOvenNews() {
-    fetch(`${config.API_ENDPOINT}/popular`)
+    fetch(`${config.API_ENDPOINT}/article/popular`, {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+        'authorization': `Bearer ${TokenService.getAuthToken()}`
+      }
+      })
       .then( res => res.json())
       .then( data => {
+        console.log(data)
         this.context.setPopularArticlesList(data);
       })
+      .then(this.setState({ ovenPage: true }))
   }
   
   handleTopNews(){
@@ -26,6 +40,7 @@ export default class HomePage extends Component {
     .then(data => { 
           this.context.setArticlesList(data.articles);
         })
+    .then(this.setState({ ovenPage: false }))
   }
 
   handleNewNews(subject){
@@ -34,6 +49,7 @@ export default class HomePage extends Component {
     .then(data => { 
           this.context.setArticlesList(data.articles);
         })
+    .then(this.setState({ ovenPage: false }))
   }
 
   renderOvenArticlesToPage() {
@@ -89,7 +105,7 @@ export default class HomePage extends Component {
           </ul>
         </div>
         <div className='articleContainer'>
-          {this.renderArticlesToPage()}
+          {this.state.ovenPage ? this.renderOvenArticlesToPage() : this.renderArticlesToPage()}
         </div>
       </section>
     )
