@@ -11,6 +11,14 @@ export default class HomePage extends Component {
   componentDidMount() {
     this.handleTopNews()
   }
+
+  handleOvenNews() {
+    fetch(`${config.API_ENDPOINT}/popular`)
+      .then( res => res.json())
+      .then( data => {
+        this.context.setPopularA
+      })
+  }
   
   handleTopNews(){
     fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${config.REACT_APP_API_KEY}`)
@@ -30,7 +38,7 @@ export default class HomePage extends Component {
 
   renderArticlesToPage() {
      //const { articlesList = [] } = this.context;
-    const articlesList = this.context.articlesList ||[]
+    const articlesList = this.context.articlesList || []
     return articlesList.map((article,idx) =>
     <NewsItem
     key={idx}
@@ -53,6 +61,7 @@ export default class HomePage extends Component {
       <section>
         <div className='articleQueryContainer'>
           <ul>
+          <li className='category' onClick={() => this.handleOvenNews()}>In The Oven</li>
           <li className='category' onClick={() => this.handleTopNews()}>Top News</li>
           <li className='category' onClick={() => this.handleNewNews('business')}>Business</li>
           <li className='category' onClick={() => this.handleNewNews('health')}>Health</li>

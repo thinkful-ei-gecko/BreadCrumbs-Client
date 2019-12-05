@@ -4,11 +4,11 @@ import React, { Component } from 'react';
 const ArticlesContext = React.createContext({
   articlesList: [],
   savedArticlesList: [],
-  newsArticleList: [],
+  popularArticleList: [],
   error: null,
   setError: () => {},
   setSavedArticlesList: () => {},
-  setNewsArticlesList: () => {},
+  setPopularArticlesList: () => {},
   setArticlesList: () => {}
 })
 
@@ -18,7 +18,7 @@ export class ArticlesContextProvider extends Component {
   state={
     articlesList: [],
     savedArticlesList: [],
-    newsArticleList: [],
+    popularArticleList: [],
     error: null
   }
 
@@ -35,13 +35,18 @@ export class ArticlesContextProvider extends Component {
     this.setState({ savedArticlesList })
   }
 
+  setPopularArticlesList = popularArticleList => {
+    this.setState({ popularArticleList })
+  }
+
   render() {
     const value ={
-      articlesList:this.state.articlesList,
-      savedArticlesList:this.state.savedArticlesList,
+      articlesList: this.state.articlesList,
+      savedArticlesList: this.state.savedArticlesList,
       error: this.state.error,
-      setArticlesList:this.setArticlesList,
-      setSavedArticlesList :this.setSavedArticlesList ,
+      setArticlesList: this.setArticlesList,
+      setSavedArticlesList: this.setSavedArticlesList,
+      setPopularArticlesList: this.setPopularArticlesList,
       setError: this.setError,
     }
     return (
