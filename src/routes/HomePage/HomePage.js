@@ -16,7 +16,7 @@ export default class HomePage extends Component {
     fetch(`${config.API_ENDPOINT}/popular`)
       .then( res => res.json())
       .then( data => {
-        this.context.setPopularA
+        this.context.setPopularArticlesList(data);
       })
   }
   
