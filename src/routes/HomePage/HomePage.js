@@ -28,7 +28,6 @@ export default class HomePage extends Component {
       })
       .then( res => res.json())
       .then( data => {
-        console.log(data)
         this.context.setPopularArticlesList(data);
       })
       .then(this.setState({ ovenPage: true }))
