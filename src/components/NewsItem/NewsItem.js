@@ -29,6 +29,7 @@ export default class NewsItem extends React.Component {
           <h3> {title}</h3>
           <p> {description}
             </p>
+            <button className='ovenBtn'><img src='https://image.flaticon.com/icons/svg/1999/1999848.svg' alt='send to oven' className='fresh' /> <div className='ovenTxt'>Send to The Oven</div></button>  
             <a href={url} target='_blank'rel='noopener noreferrer' className='openLinkBtn'>View Article<img className = 'open-link' src='https://image.flaticon.com/icons/svg/1/1424.svg' alt='open link' /> </a>
           </div>
           </div>

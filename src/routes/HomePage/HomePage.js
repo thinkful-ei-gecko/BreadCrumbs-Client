@@ -97,13 +97,13 @@ export default class HomePage extends Component {
       <section>
         <div className='articleQueryContainer'>
           <ul>
-          <li className='category' onClick={() => this.handleOvenNews()}>In The Oven</li>
-          <li className='category' onClick={() => this.handleTopNews()}>Top News</li>
-          <li className='category' onClick={() => this.handleNewNews('business')}>Business</li>
-          <li className='category' onClick={() => this.handleNewNews('health')}>Health</li>
-          <li className='category' onClick={() => this.handleNewNews('science')}>Science</li>
-          <li className='category' onClick={() => this.handleNewNews('sports')}>Sports</li>
-          <li className='category' onClick={() => this.handleNewNews('technology')}>Technology</li>
+          <li className='category' onClick={() => this.handleOvenNews()}>The Oven</li> || 
+          <li className='category' onClick={() => this.handleTopNews()}>Top News</li> ||
+          <li className='category' onClick={() => this.handleNewNews('business')}>Business</li> ||
+          <li className='category' onClick={() => this.handleNewNews('health')}>Health</li> ||
+          <li className='category' onClick={() => this.handleNewNews('science')}>Science</li> ||
+          <li className='category' onClick={() => this.handleNewNews('sports')}>Sports</li> ||
+          <li className='category' onClick={() => this.handleNewNews('technology')}>Technology</li> 
           </ul>
         </div>
         <div className='articleContainer'>
