@@ -79,6 +79,7 @@ export default class HomePage extends Component {
     <NewsItem
     key={idx}
     author={article.author}
+    source={article.source.name}
     content={article.content}
     description={article.description}
     // downvote_count={article.downvote_count}

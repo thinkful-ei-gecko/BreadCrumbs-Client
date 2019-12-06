@@ -77,6 +77,24 @@ const ArticlesApiService = {
       })
   },
 
+  deleteSavedArticle(articleId){
+    return fetch(config.API_ENDPOINT + `/article/${articleId}`, {
+      method: 'DELETE',
+      headers: {
+        'content-type': 'application/json',
+        'authorization': `bearer ${TokenService.getAuthToken()}`
+      }
+    })
+    .then(res =>
+      (!res.ok)
+      ? res.json().then(e => Promise.reject(e))
+      : res.json()
+  )
+  .catch(error=>{
+    console.error({error})
+  })
+},
+
   postComment(articleId, comment) {
     return fetch(`${config.API_ENDPOINT}/comments`, {
       method: 'POST',
