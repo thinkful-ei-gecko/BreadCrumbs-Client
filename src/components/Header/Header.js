@@ -52,6 +52,7 @@ export default class Header extends Component {
         to='/login'>
         Log in
       </Link>
+      
     </div>
     );
   }
