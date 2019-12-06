@@ -18,18 +18,14 @@ export default class NewsItem extends React.Component {
         <li className ='listItem'>
           <div className='score'>
              <button className='NewsItemBtn'>Send To Oven</button>  
-          
-            </div> 
-            
-          <div className='item'>
+          </div> 
+         <div className='item'>
            { url_to_image === null ?
            <img src={news} alt='img' className='img' />: 
            <img src={url_to_image} alt='img' className='img' /> }
-            
             <div className='article-section'>
           <h3> {title}</h3>
           {author != null ? <p>By {author}</p> : null }
-          
           <p>Source:{source}</p>
           <p> {content}</p>
             <button className='ovenBtn'><img src='https://image.flaticon.com/icons/svg/1999/1999848.svg' alt='send to oven' className='fresh' /> <div className='ovenTxt'>Send to The Oven</div></button>  
