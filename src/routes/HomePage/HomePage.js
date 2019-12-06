@@ -59,6 +59,7 @@ export default class HomePage extends Component {
         <OvenItem
           key={article.id}
           author={article.author}
+          source={article.source}
           content={article.content}
           description={article.description}
           id={article.id}

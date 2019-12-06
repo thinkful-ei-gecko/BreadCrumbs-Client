@@ -7,7 +7,7 @@ import ArticlesContext from '../../contexts/ArticlesContext'
 export default class NewsItem extends React.Component {
 
     render () {
-      const { author, content, description, title, url, url_to_image, vote_count} = this.props
+      const { author, content, source, description, title, url, url_to_image, vote_count} = this.props
       console.log(url)
       
         return (
@@ -25,6 +25,8 @@ export default class NewsItem extends React.Component {
             <img src={url_to_image} alt='donald trump' className='img' />
             <div className='article-section'>
           <h3> {title}</h3>
+          <p>By: {author}</p>
+          <p>Source: {source}</p>
           <p> {description}
             </p>
             <a href={url} target='_blank'rel='noopener noreferrer' className='openLinkBtn'>View Article<img className = 'open-link' src='https://image.flaticon.com/icons/svg/1/1424.svg' alt='open link' /> </a>
