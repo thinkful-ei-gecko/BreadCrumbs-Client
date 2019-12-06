@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import NewsItem from '../../components/NewsItem/NewsItem';
-import OvenItem from '../../components/NewsItem/OvenItem'
 //import ArticlesApiService from '../../services/articles-api-service'
 import TokenService from '../../services/token-service';
 import ArticlesContext from '../../contexts/ArticlesContext'
@@ -38,7 +37,6 @@ export default class HomePage extends Component {
     fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${config.REACT_APP_API_KEY}`)
     .then(res=>res.json())     
     .then(data => { 
-      console.log(data.articles)
           this.context.setArticlesList(data.articles);
         })
     .then(this.setState({ ovenPage: false }))
@@ -48,17 +46,16 @@ export default class HomePage extends Component {
     fetch(`https://newsapi.org/v2/top-headlines?country=us&category=${subject}&apiKey=${config.REACT_APP_API_KEY}`)
     .then(res=>res.json())     
     .then(data => { 
-      console.log(data.articles)
           this.context.setArticlesList(data.articles);
         })
     .then(this.setState({ ovenPage: false }))
-  }
+  } 
 
   renderOvenArticlesToPage() {
     const ovenArticles = this.context.popularArticleList
     return (
       ovenArticles.map((article) =>
-        <OvenItem
+        <NewsItem
           key={article.id}
           author={article.author}
           content={article.content}
@@ -97,13 +94,13 @@ export default class HomePage extends Component {
       <section>
         <div className='articleQueryContainer'>
           <ul>
-          <li className='category' onClick={() => this.handleOvenNews()}>The Oven</li> || 
-          <li className='category' onClick={() => this.handleTopNews()}>Top News</li> ||
-          <li className='category' onClick={() => this.handleNewNews('business')}>Business</li> ||
-          <li className='category' onClick={() => this.handleNewNews('health')}>Health</li> ||
-          <li className='category' onClick={() => this.handleNewNews('science')}>Science</li> ||
-          <li className='category' onClick={() => this.handleNewNews('sports')}>Sports</li> ||
-          <li className='category' onClick={() => this.handleNewNews('technology')}>Technology</li> 
+          <li className='category' onClick={() => this.handleOvenNews()}>In The Oven</li>
+          <li className='category' onClick={() => this.handleTopNews()}>Top News</li>
+          <li className='category' onClick={() => this.handleNewNews('business')}>Business</li>
+          <li className='category' onClick={() => this.handleNewNews('health')}>Health</li>
+          <li className='category' onClick={() => this.handleNewNews('science')}>Science</li>
+          <li className='category' onClick={() => this.handleNewNews('sports')}>Sports</li>
+          <li className='category' onClick={() => this.handleNewNews('technology')}>Technology</li>
           </ul>
         </div>
         <div className='articleContainer'>

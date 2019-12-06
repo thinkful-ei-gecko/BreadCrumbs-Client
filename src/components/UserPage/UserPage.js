@@ -6,9 +6,10 @@ import './UserPage.css'
 
 export default class UserPage extends Component {
   static contextType = UserContext;
-  state = { showChangeUsername: false,
-            showChangePassword:false 
-          }
+  state = { 
+    showChangeUsername: false,
+    showChangePassword:false 
+  }
   
   handleClickUsername= () => {
     this.setState({
@@ -16,6 +17,7 @@ export default class UserPage extends Component {
       showChangeUsername: true
     });
   }
+  
   handleClickPassword= () => {
     this.setState({
       showChangePassword: true,
@@ -34,12 +36,12 @@ export default class UserPage extends Component {
         </h3>
         <div className='settings'>
           <p>Current Username: {this.context.user.username}</p>
-          <button className='settingBtn' onClick={this.handleClickUsername}>edit</button>
+          <button className='settingBtn' onClick={this.handleClickUsername}>Change Username</button>
           {this.state.showChangeUsername ? <ChangeUsername /> :null}
         </div>
         <div className='settings'>
           <p>Current Password: ****</p>
-          <button className='settingBtn' onClick={this.handleClickPassword}> edit</button>
+          <button className='settingBtn' onClick={this.handleClickPassword}>Change Password</button>
           {this.state.showChangePassword ? <ChangePassword /> :null}
         </div>
       </section>
