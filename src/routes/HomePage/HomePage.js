@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import NewsItem from '../../components/NewsItem/NewsItem';
+import OvenItem from '../../components/OvenItem/OvenItem';
 //import ArticlesApiService from '../../services/articles-api-service'
 import TokenService from '../../services/token-service';
 import ArticlesContext from '../../contexts/ArticlesContext'
@@ -55,7 +56,7 @@ export default class HomePage extends Component {
     const ovenArticles = this.context.popularArticleList
     return (
       ovenArticles.map((article) =>
-        <NewsItem
+        <OvenItem
           key={article.id}
           author={article.author}
           content={article.content}
@@ -64,6 +65,7 @@ export default class HomePage extends Component {
           title={article.title}
           url={article.url}
           url_to_image={article.urlToImage}
+          vote_count={article.vote_count}
         />
       )
     )
@@ -95,7 +97,7 @@ export default class HomePage extends Component {
       <section>
         <div className='articleQueryContainer'>
           <ul>
-          <li className='category' onClick={() => this.handleOvenNews()}>In The Oven</li>
+          <li className='category' onClick={() => this.handleOvenNews()}>The Oven</li>
           <li className='category' onClick={() => this.handleTopNews()}>Top News</li>
           <li className='category' onClick={() => this.handleNewNews('business')}>Business</li>
           <li className='category' onClick={() => this.handleNewNews('health')}>Health</li>
