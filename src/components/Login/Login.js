@@ -5,18 +5,6 @@ import UserContext from '../../contexts/UserContext'
 import '../../routes/LoginPage/LoginPage.css'
 import FacebookLogin from 'react-facebook-login'
 
-// function checkLoginState() {
-//   FB.getLoginStatus(function(response) {
-//     statusChangeCallback(response);
-//   });
-// }
-
-
-// FB.getLoginStatus(function(response) {
-//   statusChangeCallback(response);
-// });
-
-
 export default class Login extends Component {
   static contextType = UserContext;
   static defaultProps = {
@@ -98,12 +86,6 @@ export default class Login extends Component {
                 <button className='loginRegBtn' type='submit'>login</button>
               </form>
               {fbContent}
-              {/* <div className="fb-login-button" data-width="" data-size="large" data-button-type="login_with" data-auto-logout-link="false" data-use-continue-as="false"></div> */}
-{/* 
-              <fb:login-button 
-                scope="public_profile,email"
-                onlogin="checkLoginState();">
-              </fb:login-button> */}
             </div>
         )
     }
