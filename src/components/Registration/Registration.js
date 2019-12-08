@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import AuthApiService from '../../services/auth-api-service';
+import Facebook from '../Facebook/Facebook'
 
 export default class Login extends Component {
   static defaultProps = {
@@ -41,6 +42,7 @@ export default class Login extends Component {
                   <input className='input' aria-label='Signup-password' name='password' type='password' required ></input>
                   <button className='loginRegBtn' type='submit'>Sign Up</button>
               </form>
+              <Facebook />
           </div>
       )
   }

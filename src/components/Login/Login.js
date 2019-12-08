@@ -3,7 +3,7 @@ import TokenService from '../../services/token-service';
 import AuthApiService from '../../services/auth-api-service';
 import UserContext from '../../contexts/UserContext'
 import '../../routes/LoginPage/LoginPage.css'
-import FacebookLogin from 'react-facebook-login'
+import Facebook from '../Facebook/Facebook'
 
 export default class Login extends Component {
   static contextType = UserContext;
@@ -41,37 +41,9 @@ export default class Login extends Component {
       })
   }
 
-    componentClicked = () => console.log("clicked")
-    
-    responseFacebook = response =>  {
-      this.setState({
-        isLoggedIn: true,
-        userID: response.userID,
-        name: response.name,
-        email: response.email,
-        picture: response.picture.data.url
-      })
-      console.log(response)
-      TokenService.saveAuthToken(response.accessToken)
-        this.context.refreshLoginState();
-        this.props.onLoginSuccess()
-    }
-
     render() {
       const { error } = this.state
-      let fbContent
-
-      if(this.state.isLoggedIn) {
-        fbContent = null
-      }else {
-        fbContent = (<FacebookLogin
-          appId="589520928496131"
-          autoLoad={true}
-          fields="name,email,picture"
-          onClick={this.componentClicked}
-          callback={this.responseFacebook} />)
-
-      }
+ 
         return (
             <div>
               <h2> Login </h2>
@@ -85,7 +57,7 @@ export default class Login extends Component {
                 <input className='input' aria-label='Login-password' name='password' type='password' required ></input>
                 <button className='loginRegBtn' type='submit'>login</button>
               </form>
-              {fbContent}
+              <Facebook />
             </div>
         )
     }

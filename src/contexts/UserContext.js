@@ -3,7 +3,7 @@ import TokenService from "../services/token-service";
 
 const UserContext = React.createContext({
   isLoggedIn: false,
-  user: {},
+  user: '',
   error: null,
   setUser: () => {},
   setError: () => {},
@@ -37,7 +37,7 @@ export class UserProvider extends Component {
   };
 
   setUser = user => {
-    this.setState({ user })
+    this.setState({ user: user })
   };
 
   processLogin = authToken => {
