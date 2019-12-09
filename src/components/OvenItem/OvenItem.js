@@ -39,7 +39,6 @@ export default class NewsItem extends React.Component {
     this.setState({ comments: !this.state.comments, articleId: article_id })
   }
 
-
     render () {
       const { comments, articleId } = this.state;
       const { article_id, author, content, source, description, title, url, url_to_image, vote_count} = this.props
