@@ -4,7 +4,7 @@ import config from '../config'
 const ArticlesApiService = {
 
   getArticlesList() {
-    return fetch(`${config.API_ENDPOINT}/article/popular`, {
+    return fetch(`${config.API_ENDPOINT}/article/oven`, {
       headers: {
         'authorization': `bearer ${TokenService.getAuthToken()}`, 
       },
@@ -34,7 +34,8 @@ const ArticlesApiService = {
       })
   },
 
-  postArticle(author,content,description,downvote_count,id,title,upvote_count,url,url_to_image,user_id) {
+  postArticle(author,content,source,description,title,url,url_to_image,publishedAt) {
+    console.log('*******',author)
     return fetch(`${config.API_ENDPOINT}/article`, {
       method: 'POST',
       headers: {
@@ -42,7 +43,14 @@ const ArticlesApiService = {
         'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
       body: JSON.stringify({
-        author,content,description,downvote_count,id,title,upvote_count,url,url_to_image,user_id
+        author:author,
+        title:title,
+        description:description,
+        source_name:source,
+        url:url,
+        url_to_image:url_to_image,
+        publish_at:publishedAt,
+        content:content
       }),
     })
       .then(res =>
@@ -56,7 +64,8 @@ const ArticlesApiService = {
   },
 
 
-  postSavedArticle(author,content,description,downvote_count,id,title,upvote_count,url,url_to_image,user_id) {
+  postSavedArticle(author,content,source,description,title,url,url_to_image,publishedAt) {
+    
     return fetch(`${config.API_ENDPOINT}/article`, {
       method: 'POST',
       headers: {
@@ -64,7 +73,15 @@ const ArticlesApiService = {
         'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
       body: JSON.stringify({
-        author,content,description,downvote_count,id,title,upvote_count,url,url_to_image,user_id
+        
+        author:author,
+        title:title,
+        description:description,
+        source_name:source,
+        url:url,
+        url_to_image:url_to_image,
+        publish_at:publishedAt,
+        content:content
       }),
     })
       .then(res =>
@@ -89,6 +106,31 @@ const ArticlesApiService = {
       (!res.ok)
       ? res.json().then(e => Promise.reject(e))
       : res.json()
+  )
+  .catch(error=>{
+    console.error({error})
+  })
+},
+
+updateVote(article_id,user_id,vote_type){
+  console.log(article_id,user_id,vote_type)
+  return fetch(`${config.API_ENDPOINT}/vote`, {
+    method: 'PATCH',
+    headers: {
+      'content-type': 'application/json',
+      'authorization': `bearer ${TokenService.getAuthToken()}`,
+    },
+    body: JSON.stringify({
+      article_id,
+      user_id,
+      vote_type
+    })
+  })
+  .then(res => 
+    (!res.ok)
+      ? res.json().then(e => Promise.reject(e))
+      : res.json()
+  
   )
   .catch(error=>{
     console.error({error})

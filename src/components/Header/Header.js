@@ -12,6 +12,7 @@ export default class Header extends Component {
   };
 
   renderLogoutLink() {
+    console.log(this.context.user.name)
     return (
       <>
       <div className='user-name'>

@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import NewsItem from '../../components/NewsItem/NewsItem';
 import OvenItem from '../../components/OvenItem/OvenItem';
-//import ArticlesApiService from '../../services/articles-api-service'
+import ArticlesApiService from '../../services/articles-api-service'
 import TokenService from '../../services/token-service';
 import ArticlesContext from '../../contexts/ArticlesContext'
 import config from '../../config'
 import './HomePage.css';
+import store from '../../components/Store/Store'
 
 export default class HomePage extends Component {
   state = {
@@ -20,6 +21,7 @@ export default class HomePage extends Component {
   }
 
   handleOvenNews() {
+<<<<<<< HEAD
     fetch(`${config.API_ENDPOINT}/article/oven`, {
       method: 'GET',
       headers: {
@@ -29,6 +31,10 @@ export default class HomePage extends Component {
       })
       .then( res => res.json())
       .then( data => {
+=======
+     ArticlesApiService.getArticlesList()
+       .then( data => {
+>>>>>>> 72e5cdfb5511738c43b848f4ecdacb220b7dcdaf
         this.context.setPopularArticlesList(data);
       })
       .then(this.setState({ ovenPage: true }))
@@ -38,6 +44,7 @@ export default class HomePage extends Component {
     fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${config.REACT_APP_API_KEY}`)
     .then(res=>res.json())     
     .then(data => { 
+      console.log(data.articles)
           this.context.setArticlesList(data.articles);
         })
     .then(this.setState({ ovenPage: false }))
@@ -53,19 +60,21 @@ export default class HomePage extends Component {
   } 
 
   renderOvenArticlesToPage() {
-    const ovenArticles = this.context.popularArticleList
+    const ovenArticles = this.context.popularArticleList || []
+    console.log(ovenArticles)
     return (
-      ovenArticles.map((article) =>
+      ovenArticles.map((article,idx) =>
         <OvenItem
-          key={article.id}
+          key={idx}
+          article_id={article.id}
           author={article.author}
-          source={article.source}
+          source={article.source_name}
           content={article.content}
           description={article.description}
           id={article.id}
           title={article.title}
           url={article.url}
-          url_to_image={article.urlToImage}
+          url_to_image={article.url_to_image}
           vote_count={article.vote_count}
         />
       )
@@ -82,13 +91,11 @@ export default class HomePage extends Component {
     source={article.source.name}
     content={article.content}
     description={article.description}
-    // downvote_count={article.downvote_count}
     id={article.id}
     title={article.title}
-    // upvote_count={article.upvote_count}
     url={article.url}
     url_to_image={article.urlToImage}
-    // user_id={article.user_id}
+    publishedAt={article.publishedAt}
     />
   );
  }
