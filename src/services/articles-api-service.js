@@ -138,7 +138,7 @@ updateVote(article_id,user_id,vote_type){
 },
 
   postComment(articleId, comment,user_id) {
-    return fetch(`${config.API_ENDPOINT}/comments`, {
+    return fetch(`${config.API_ENDPOINT}/comment`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
