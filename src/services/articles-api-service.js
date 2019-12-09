@@ -137,7 +137,7 @@ const ArticlesApiService = {
     })
   },
 
-  getComment(articleId) {
+  getComments(articleId) {
     return fetch(`${config.API_ENDPOINT}/comment`, {
       method: 'GET',
       headers: {

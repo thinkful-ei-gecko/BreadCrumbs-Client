@@ -1,12 +1,16 @@
-import React from 'react'
-import './OvenItem.css'
-import { Link } from 'react-router-dom';
-import news from '../NewsItem/images/news.jpg'
-import ArticlesApiService from '../../services/articles-api-service'
-import ArticlesContext from '../../contexts/ArticlesContext'
-import UserContext from '../../contexts/UserContext'
+import React from 'react';
+import './OvenItem.css';
+import news from '../NewsItem/images/news.jpg';
+import Comments from '../../components/Comments/Comments';
+import ArticlesApiService from '../../services/articles-api-service';
+import ArticlesContext from '../../contexts/ArticlesContext';
+import UserContext from '../../contexts/UserContext';
 
 export default class NewsItem extends React.Component {
+  state = {
+    comments: false,
+    articleId: null
+  }
   static contextType = ArticlesContext;
   static contextType = UserContext;
   
@@ -23,19 +27,24 @@ export default class NewsItem extends React.Component {
     const vote_type = false
     ArticlesApiService.updateVote(article_id,user_id,vote_type)
   }
+
+  handleRenderComments = (article_id) => {
+    ArticlesApiService.getComments(article_id)
+      .then(res => res.json())
+      .then(data => this.context.setArticleComments(data))
+      .then(this.setState({ comments: !this.state.comments, articleId: article_id }))
+  }
+
+
     render () {
-      const {article_id,author, content, source, description, title, url, url_to_image, vote_count} = this.props
-      
-      
+      const { article_id, author, content, source, description, title, url, url_to_image, vote_count} = this.props
         return (
         <li className ='listItem'>
           <div className='score'>
              <button className='OvenItemBtn'><img src='https://image.flaticon.com/icons/svg/2224/2224092.svg' alt='fresh bread' className='fresh' onClick={()=>this.handleUpVote(article_id)} /></button>  
               <p>{vote_count}</p>
              <button className='OvenItemBtn'> <img src='https://image.flaticon.com/icons/svg/2224/2224092.svg' alt='not-fresh' className='not-fresh' onClick={()=>this.handleDownVote(article_id)} /> </button> 
-            <Link to={{pathname:'/comments', params:{article_id:article_id}}}>
-             <button className='OvenItemBtn'> <img src='https://image.flaticon.com/icons/svg/134/134914.svg' alt='comments' className='comments' /> </button>
-             </Link>
+             <button className='OvenItemBtn'><img src='https://image.flaticon.com/icons/svg/134/134914.svg' alt='comments' className='comments' onClick={() => this.handleRenderComments(article_id)}/></button>
             </div> 
             
           <div className='item'>
