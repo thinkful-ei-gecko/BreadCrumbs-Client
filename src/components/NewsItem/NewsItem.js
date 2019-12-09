@@ -3,21 +3,38 @@ import './NewsItem.css'
 import news from './images/news.jpg'
 import ArticlesApiService from '../../services/articles-api-service'
 import ArticlesContext from '../../contexts/ArticlesContext'
+import UserContext from '../../contexts/UserContext'
+import store from '../../components/Store/Store'
 
 
 export default class NewsItem extends React.Component {
+  
   static contextType = ArticlesContext;
-  handleOvenArticle = (author,content,description,downvote_count,id,title,upvote_count,url,url_to_image,user_id)=>{
-   ArticlesApiService.postArticle(author,content,description,downvote_count,id,title,upvote_count,url,url_to_image,user_id)
+  static contextType = UserContext;
+  handleOvenArticle = (author,content,source,description,title,url,url_to_image,publishedAt)=>{
+    console.log('inside handleoven',author)
+   const popularArticleList =this.context.popularArticleList ||[]
+   if(popularArticleList.some(article => article.title === title)) {
+     console.log('true')
+     return null;
+   }
+  else{
+    console.log('false')
+
+  ArticlesApiService.postArticle(author,content,source,description,title,url,url_to_image,publishedAt)
+
+}
+  
   }
+  
     render () {
-      const {author,content,source,description,title,url,url_to_image} = this.props
+      const {author,content,source,description,title,url,url_to_image,publishedAt} = this.props
       
       // const {author,content,description,downvote_count,id,title,upvote_count,url,url_to_image,user_id} = this.props
         return (
         <li className ='listItem'>
           <div className='score'>
-             <button className='NewsItemBtn'>Send To Oven</button>  
+             <button className='NewsItemBtn' onClick={()=>this.handleOvenArticle(author,content,source,description,title,url,url_to_image,publishedAt)}>Send To Oven</button>  
           </div> 
          <div className='item'>
            { url_to_image === null ?
