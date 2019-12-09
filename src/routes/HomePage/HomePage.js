@@ -20,7 +20,7 @@ export default class HomePage extends Component {
   }
 
   handleOvenNews() {
-    fetch(`${config.API_ENDPOINT}/article/popular`, {
+    fetch(`${config.API_ENDPOINT}/article/oven`, {
       method: 'GET',
       headers: {
         'content-type': 'application/json',
