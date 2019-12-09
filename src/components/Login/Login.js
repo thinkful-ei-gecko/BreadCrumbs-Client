@@ -23,10 +23,11 @@ export default class Login extends Component {
       .then(res => {
         user_name.value = ''
         password.value = ''
-        TokenService.saveAuthToken(res.authToken)
+        this.context.processLogin(res.authToken);
+      })
+      .then( () => {
         this.context.refreshLoginState();
-        this.props.onLoginSuccess()
-        
+        this.props.onLoginSuccess();
       })
       .catch(res => {
         this.setState({ error: res.error })
