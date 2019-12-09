@@ -5,11 +5,13 @@ const ArticlesContext = React.createContext({
   articlesList: [],
   savedArticlesList: [],
   popularArticleList: [],
+  articleComments: [],
   error: null,
   setError: () => {},
   setSavedArticlesList: () => {},
   setPopularArticlesList: () => {},
-  setArticlesList: () => {}
+  setArticlesList: () => {},
+  setArticleComments: () => {}
 })
 
 export default ArticlesContext
@@ -19,6 +21,7 @@ export class ArticlesContextProvider extends Component {
     articlesList: [],
     savedArticlesList: [],
     popularArticleList: [],
+    articleComments: [],
     error: null
   }
 
@@ -39,15 +42,21 @@ export class ArticlesContextProvider extends Component {
     this.setState({ popularArticleList })
   }
 
+  setArticleComments = comments => {
+    this.setState({ comments })
+  }
+
   render() {
     const value ={
       articlesList: this.state.articlesList,
       popularArticleList: this.state.popularArticleList,
       savedArticlesList: this.state.savedArticlesList,
+      articleComments: this.state.articleComments,
       error: this.state.error,
       setArticlesList: this.setArticlesList,
       setSavedArticlesList: this.setSavedArticlesList,
       setPopularArticlesList: this.setPopularArticlesList,
+      setArticleComments: this.setArticleComments,
       setError: this.setError,
     }
     return (

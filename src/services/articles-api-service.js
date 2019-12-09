@@ -106,36 +106,53 @@ const ArticlesApiService = {
       (!res.ok)
       ? res.json().then(e => Promise.reject(e))
       : res.json()
-  )
-  .catch(error=>{
-    console.error({error})
-  })
-},
-
-updateVote(article_id,user_id,vote_type){
-  console.log(article_id,user_id,vote_type)
-  return fetch(`${config.API_ENDPOINT}/vote`, {
-    method: 'PATCH',
-    headers: {
-      'content-type': 'application/json',
-      'authorization': `bearer ${TokenService.getAuthToken()}`,
-    },
-    body: JSON.stringify({
-      article_id,
-      user_id,
-      vote_type
+    )
+    .catch(error=>{
+      console.error({error})
     })
-  })
-  .then(res => 
-    (!res.ok)
-      ? res.json().then(e => Promise.reject(e))
-      : res.json()
-  
-  )
-  .catch(error=>{
-    console.error({error})
-  })
-},
+  },
+
+  updateVote(article_id,user_id,vote_type){
+    console.log(article_id,user_id,vote_type)
+    return fetch(`${config.API_ENDPOINT}/vote`, {
+      method: 'PATCH',
+      headers: {
+        'content-type': 'application/json',
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
+      },
+      body: JSON.stringify({
+        article_id,
+        user_id,
+        vote_type
+      })
+    })
+    .then(res => 
+      (!res.ok)
+        ? res.json().then(e => Promise.reject(e))
+        : res.json()
+    
+    )
+    .catch(error=>{
+      console.error({error})
+    })
+  },
+
+  getComment(articleId) {
+    return fetch(`${config.API_ENDPOINT}/comment`, {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+        'authorization': `bearer ${TokenService.getAuthToken()}`
+      }
+    })
+    .then(res => 
+      (!res.ok)
+        ? res.json().then(e => Promise.reject(e))
+        : res.json()
+      )
+    .catch(error => console.error(error))
+
+  },
 
   postComment(articleId, comment,user_id) {
     return fetch(`${config.API_ENDPOINT}/comment`, {

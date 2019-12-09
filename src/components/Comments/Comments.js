@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import UserContext from '../../contexts/UserContext'
 import ArticleApiService from '../../services/articles-api-service'
-import { tsConstructSignatureDeclaration } from '@babel/types'
+
 export default class Comments extends Component {
   static contextType = UserContext
 
@@ -19,7 +19,7 @@ export default class Comments extends Component {
       })
       .catch(this.context.setError)
   }
-  
+
   render() {
     return (
       <form
