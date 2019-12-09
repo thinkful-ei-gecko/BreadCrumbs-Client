@@ -137,7 +137,7 @@ updateVote(article_id,user_id,vote_type){
   })
 },
 
-  postComment(articleId, comment) {
+  postComment(articleId, comment,user_id) {
     return fetch(`${config.API_ENDPOINT}/comments`, {
       method: 'POST',
       headers: {
@@ -146,7 +146,8 @@ updateVote(article_id,user_id,vote_type){
       },
       body: JSON.stringify({
         article_id: articleId,
-        comment,
+        comment:comment,
+        user_id:user_id,
       }),
     })
       .then(res =>

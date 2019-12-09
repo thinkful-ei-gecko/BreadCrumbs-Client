@@ -21,7 +21,6 @@ export default class NewsItem extends React.Component {
     const user_id = this.context.user.id
     const vote_type = false
     ArticlesApiService.updateVote(article_id,user_id,vote_type)
-
   }
     render () {
       const {article_id,author, content, source, description, title, url, url_to_image, vote_count} = this.props
@@ -33,7 +32,7 @@ export default class NewsItem extends React.Component {
              <button className='OvenItemBtn'><img src='https://image.flaticon.com/icons/svg/2224/2224092.svg' alt='fresh bread' className='fresh' onClick={()=>this.handleUpVote(article_id)} /></button>  
               <p>{vote_count}</p>
              <button className='OvenItemBtn'> <img src='https://image.flaticon.com/icons/svg/2224/2224092.svg' alt='not-fresh' className='not-fresh' onClick={()=>this.handleDownVote(article_id)} /> </button> 
-            <Link to='/comments'>
+            <Link to={{pathname:'/comments', params:{article_id:article_id}}}>
              <button className='OvenItemBtn'> <img src='https://image.flaticon.com/icons/svg/134/134914.svg' alt='comments' className='comments' /> </button>
              </Link>
             </div> 
