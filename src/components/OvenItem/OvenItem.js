@@ -29,21 +29,26 @@ export default class NewsItem extends React.Component {
   }
 
   handleRenderComments = (article_id) => {
-    ArticlesApiService.getComments(article_id)
-      .then(res => res.json())
-      .then(data => this.context.setArticleComments(data))
-      .then(this.setState({ comments: !this.state.comments, articleId: article_id }))
+    // commented out until getComments is working
+    // ArticlesApiService.getComments(article_id)
+    //   .then(res => res.json())
+    //   .then(data => this.context.setArticleComments(data))
+    //   .then(this.setState({ comments: !this.state.comments, articleId: article_id }))
+
+    // delete when getComments is working
+    this.setState({ comments: !this.state.comments, articleId: article_id })
   }
 
 
     render () {
+      const { comments, articleId } = this.state;
       const { article_id, author, content, source, description, title, url, url_to_image, vote_count} = this.props
         return (
         <li className ='listItem'>
           <div className='score'>
              <button className='OvenItemBtn'><img src='https://image.flaticon.com/icons/svg/2224/2224092.svg' alt='fresh bread' className='fresh' onClick={()=>this.handleUpVote(article_id)} /></button>  
               <p>{vote_count}</p>
-             <button className='OvenItemBtn'> <img src='https://image.flaticon.com/icons/svg/2224/2224092.svg' alt='not-fresh' className='not-fresh' onClick={()=>this.handleDownVote(article_id)} /> </button> 
+             <button className='OvenItemBtn'> <img src='https://image.flaticon.com/icons/svg/2224/2224092.svg' alt='not-fresh' className='not-fresh' onClick={() => this.handleDownVote(article_id)} /></button> 
              <button className='OvenItemBtn'><img src='https://image.flaticon.com/icons/svg/134/134914.svg' alt='comments' className='comments' onClick={() => this.handleRenderComments(article_id)}/></button>
             </div> 
             
@@ -58,6 +63,10 @@ export default class NewsItem extends React.Component {
           <p> {content}</p>
             <a href={url} target='_blank'rel='noopener noreferrer' className='openLinkBtn'>View Article<img className = 'open-link' src='https://image.flaticon.com/icons/svg/1/1424.svg' alt='open link' /> </a>
           </div>
+          </div>
+
+          <div className='comments-container'>
+            {comments && (articleId === article_id) ? <Comments /> : null}
           </div>
         </li>
         )
