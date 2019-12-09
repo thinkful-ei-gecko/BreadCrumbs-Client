@@ -52,7 +52,7 @@ export default class Facebook extends Component {
     let fbContent
     const { error } = this.state
 
-    if(this.state.isLoggedIn) {
+    if(TokenService.hasAuthToken()) {
       fbContent = null
     }else {
       fbContent = (<FacebookLogin
