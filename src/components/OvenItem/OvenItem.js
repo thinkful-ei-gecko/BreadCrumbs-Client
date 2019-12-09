@@ -35,6 +35,7 @@ export default class NewsItem extends React.Component {
             <Link to={{pathname:'/comments', params:{article_id:article_id}}}>
              <button className='OvenItemBtn'> <img src='https://image.flaticon.com/icons/svg/134/134914.svg' alt='comments' className='comments' /> </button>
              </Link>
+             <button className='OvenItemBtn'> <img src='https://image.flaticon.com/icons/svg/148/148836.svg' alt='heart' className='comments' /> </button>
             </div> 
             
           <div className='item'>
