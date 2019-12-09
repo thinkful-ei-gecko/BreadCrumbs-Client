@@ -21,20 +21,8 @@ export default class HomePage extends Component {
   }
 
   handleOvenNews() {
-<<<<<<< HEAD
-    fetch(`${config.API_ENDPOINT}/article/oven`, {
-      method: 'GET',
-      headers: {
-        'content-type': 'application/json',
-        'authorization': `Bearer ${TokenService.getAuthToken()}`
-      }
-      })
-      .then( res => res.json())
-      .then( data => {
-=======
      ArticlesApiService.getArticlesList()
        .then( data => {
->>>>>>> 72e5cdfb5511738c43b848f4ecdacb220b7dcdaf
         this.context.setPopularArticlesList(data);
       })
       .then(this.setState({ ovenPage: true }))
