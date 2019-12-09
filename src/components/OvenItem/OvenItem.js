@@ -9,6 +9,7 @@ import UserContext from '../../contexts/UserContext'
 export default class NewsItem extends React.Component {
   static contextType = ArticlesContext;
   static contextType = UserContext;
+  
   handleUpVote=(article_id)=>{
     console.log(this.context.user)
     const user_id = this.context.user.id

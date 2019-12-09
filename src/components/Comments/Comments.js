@@ -4,6 +4,7 @@ import ArticleApiService from '../../services/articles-api-service'
 import { tsConstructSignatureDeclaration } from '@babel/types'
 export default class Comments extends Component {
   static contextType = UserContext
+
   handleSubmit = ev => {
     ev.preventDefault()
     const user_id=this.context.user.id
@@ -18,6 +19,7 @@ export default class Comments extends Component {
       })
       .catch(this.context.setError)
   }
+  
   render() {
     return (
       <form
