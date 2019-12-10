@@ -71,7 +71,7 @@ export default class NewsItem extends Component {
           </div>
 
           <div className='comments-container'>
-            {comments && (articleId === article_id) ? <Comments /> : null}
+            {comments && (articleId === article_id) ? <Comments articleID={article_id}/> : null}
           </div>
         </li>
         )

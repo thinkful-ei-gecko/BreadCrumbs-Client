@@ -148,17 +148,19 @@ const ArticlesApiService = {
   },
 
   postComment(articleId, comment,user_id) {
+    const payload = JSON.stringify(
+      {
+      article_id: articleId,
+      comment : comment,
+      user_id : user_id,
+      })
     return fetch(`${config.API_ENDPOINT}/comment`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
         'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
-      body: JSON.stringify({
-        article_id: articleId,
-        comment:comment,
-        user_id:user_id,
-      }),
+      body: payload
     })
       .then(res =>
         (!res.ok)

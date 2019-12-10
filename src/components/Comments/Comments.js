@@ -1,23 +1,27 @@
 import React, { Component } from 'react';
 import UserAndArticlesContext from '../../contexts/UserAndArticlesContext';
 import ArticleApiService from '../../services/articles-api-service';
+import moment from 'moment';
 
 export default class Comments extends Component {
+  state = {
+    update: false
+  }
   static contextType = UserAndArticlesContext;
 
-  handleSubmit = ev => {
+  handleSubmit = async(ev) => {
     ev.preventDefault()
-    const user_id=this.context.user.id
-    console.log(this.props.location.params.article_id)
-    const article_id = this.props.location.params.article_id
+    const user_id = this.context.user.id
+    const article_id = this.props.articleID
     const { comment } = ev.target
-    console.log(comment.value)
-    ArticleApiService.postComment(article_id, comment.value,user_id)
-      .then(this.context.addComment)
+  
+    ArticleApiService.postComment(article_id, comment.value, user_id)
       .then(() => {
         comment.value = ''
       })
       .catch(this.context.setError)
+    this.context.addComment({ username: this.context.user.username, comment: comment.value, date_commented: Date.now() })
+    this.setState({ update: !this.state.update });
   }
 
   renderComments = () => {
@@ -28,7 +32,7 @@ export default class Comments extends Component {
         <div className='individual-comment-container' key={idx}>
           <div className='user-posted-info'>
             <h5>Posted by: {comment.username}</h5>
-            <div>Posted on: {comment.date_commented}</div>
+            <div>Posted on: {moment(comment.date_commented).format('MMMM Do YYYY, h:mm:ss a')}</div>
           </div>
           <div>
             <p>{comment.comment}</p>

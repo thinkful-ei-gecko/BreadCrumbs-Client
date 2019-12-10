@@ -96,6 +96,10 @@ export class UserAndArticlesProvider extends Component {
     this.setState({ articleComments })
   }
 
+  addComment = newComment => {
+    this.setState({ articleComments: [...this.state.articleComments, newComment ] })
+  }
+
   render(){
     const value = {
       user: this.state.user,
@@ -116,6 +120,7 @@ export class UserAndArticlesProvider extends Component {
       setSavedArticlesList: this.setSavedArticlesList,
       setPopularArticlesList: this.setPopularArticlesList,
       setArticleComments: this.setArticleComments,
+      addComment: this.addComment,
     }
     return(
       <div>
