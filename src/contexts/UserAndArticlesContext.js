@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import TokenService from "../services/token-service";
 
-const UserContext = React.createContext({
+const UserAndUserAndArticlesContext = React.createContext({
   isLoggedIn: false,
   user: {},
   error: null,
@@ -10,15 +10,31 @@ const UserContext = React.createContext({
   clearError: () => {},
   processLogin: () => {},
   processLogout: () => {},
-  refreshLoginState: () => {}
+  refreshLoginState: () => {},
+
+  articlesList: [],
+  savedArticlesList: [],
+  popularArticleList: [],
+  articleComments: [],
+  setSavedArticlesList: () => {},
+  setPopularArticlesList: () => {},
+  setArticlesList: () => {},
+  setArticleComments: () => {}
 });
 
-export default UserContext
+export default UserAndUserAndArticlesContext
 
-export class UserProvider extends Component {
+export class UserAndArticlesProvider extends Component {
   constructor(props) {
     super(props)
-    const state = { user: {}, error: null }
+    const state = { 
+      user: {},
+      articlesList: [],
+      savedArticlesList: [],
+      popularArticleList: [],
+      articleComments: [],
+      error: null
+     }
 
     const jwtPayload = TokenService.parseAuthToken()
 
@@ -63,6 +79,22 @@ export class UserProvider extends Component {
   clearError = () => {
     this.setState({ error: null })
   };
+  
+  setArticlesList = articlesList => {
+    this.setState({ articlesList })
+  }
+
+  setSavedArticlesList = savedArticlesList => {
+    this.setState({ savedArticlesList })
+  }
+
+  setPopularArticlesList = popularArticleList => {
+    this.setState({ popularArticleList })
+  }
+
+  setArticleComments = articleComments => {
+    this.setState({ articleComments })
+  }
 
   render(){
     const value = {
@@ -74,13 +106,22 @@ export class UserProvider extends Component {
       clearError: this.clearError,
       processLogin: this.processLogin,
       refreshLoginState: this.refreshLoginState,
-      processLogout: this.processLogout
+      processLogout: this.processLogout,
+
+      articlesList: this.state.articlesList,
+      popularArticleList: this.state.popularArticleList,
+      savedArticlesList: this.state.savedArticlesList,
+      articleComments: this.state.articleComments,
+      setArticlesList: this.setArticlesList,
+      setSavedArticlesList: this.setSavedArticlesList,
+      setPopularArticlesList: this.setPopularArticlesList,
+      setArticleComments: this.setArticleComments,
     }
     return(
       <div>
-        <UserContext.Provider value={value}>
+        <UserAndUserAndArticlesContext.Provider value={value}>
           {this.props.children}
-        </UserContext.Provider>
+        </UserAndUserAndArticlesContext.Provider>
       </div>
     )
   }

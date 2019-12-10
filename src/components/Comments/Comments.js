@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import UserContext from '../../contexts/UserContext';
-import ArticlesContext from '../../contexts/ArticlesContext';
+import UserAndArticlesContext from '../../contexts/UserAndArticlesContext';
 import ArticleApiService from '../../services/articles-api-service';
 
 export default class Comments extends Component {
-  static contextType = UserContext;
-  static contextType = ArticlesContext;
+  static contextType = UserAndArticlesContext;
 
   handleSubmit = ev => {
     ev.preventDefault()
@@ -24,6 +22,7 @@ export default class Comments extends Component {
 
   renderComments = () => {
     const comments = this.context.articleComments || [];
+    console.log(comments)
     return(
       comments.map((comment, idx) =>
         <div className='individual-comment-container' key={idx}>

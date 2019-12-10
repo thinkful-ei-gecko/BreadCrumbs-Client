@@ -3,16 +3,14 @@ import './OvenItem.css';
 import news from '../NewsItem/images/news.jpg';
 import Comments from '../../components/Comments/Comments';
 import ArticlesApiService from '../../services/articles-api-service';
-import ArticlesContext from '../../contexts/ArticlesContext';
-import UserContext from '../../contexts/UserContext';
+import UserAndArticlesContext from '../../contexts/UserAndArticlesContext';
 
 export default class NewsItem extends React.Component {
   state = {
     comments: false,
     articleId: null
   }
-  static contextType = ArticlesContext;
-  static contextType = UserContext;
+  static contextType = UserAndArticlesContext;
   
   handleUpVote=(article_id)=>{
     console.log(this.context.user)
@@ -33,15 +31,14 @@ export default class NewsItem extends React.Component {
     ArticlesApiService.postSavedArticle(article_id,user_id)
   }
 
-  handleRenderComments = (article_id) => {
+  handleRenderComments = async(article_id) => {
     // commented out until getComments is working
-    // ArticlesApiService.getComments(article_id)
-    //   .then(res => res.json())
-    //   .then(data => this.context.setArticleComments(data))
-    //   .then(this.setState({ comments: !this.state.comments, articleId: article_id }))
+    const data = await ArticlesApiService.getComments(article_id)
+    this.context.setArticleComments(data)
+    this.setState({ comments: !this.state.comments, articleId: article_id })
     // console.log(this.context.articleComments)
     // delete when getComments is working
-    this.setState({ comments: !this.state.comments, articleId: article_id })
+    // this.setState({ comments: !this.state.comments, articleId: article_id })
   }
 
     render () {

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import TokenService from '../../services/token-service';
 import AuthApiService from '../../services/auth-api-service';
-import UserContext from '../../contexts/UserContext'
+import UserAndArticlesContext from '../../contexts/UserAndArticlesContext'
 import '../../routes/LoginPage/LoginPage.css'
 
 export default class Login extends Component {
-  static contextType = UserContext;
+  static contextType = UserAndArticlesContext;
   static defaultProps = {
     onLoginSuccess: () => {}
   }

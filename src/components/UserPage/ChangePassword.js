@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import AuthApiService from '../../services/auth-api-service'
-import UserContext from '../../contexts/UserContext'
+import UserAndArticlesContext from '../../contexts/UserAndArticlesContext'
 
 export default class ChangePassword extends Component {
-  static contextType = UserContext;
+  static contextType = UserAndArticlesContext;
   handleChangePassword = (ev) =>{
     ev.preventDefault()
     const {old_password,new_password,confirm_password } = ev.target

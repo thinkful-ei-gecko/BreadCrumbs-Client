@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
-import UserContext from '../../contexts/UserContext';
+import UserAndArticlesContext from '../../contexts/UserAndArticlesContext';
 import ChangeUsername from './ChangeUsername';
 import ChangePassword from './ChangePassword'
 import './UserPage.css'
 
 export default class UserPage extends Component {
-  static contextType = UserContext;
   state = { 
     showChangeUsername: false,
     showChangePassword:false 
   }
+  static contextType = UserAndArticlesContext;
   
   handleClickUsername= () => {
     this.setState({

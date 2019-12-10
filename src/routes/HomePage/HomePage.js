@@ -3,7 +3,7 @@ import NewsItem from '../../components/NewsItem/NewsItem';
 import OvenItem from '../../components/OvenItem/OvenItem';
 import ArticlesApiService from '../../services/articles-api-service'
 import TokenService from '../../services/token-service';
-import ArticlesContext from '../../contexts/ArticlesContext'
+import UserAndArticlesContext from '../../contexts/UserAndArticlesContext'
 import config from '../../config'
 import './HomePage.css';
 import store from '../../components/Store/Store'
@@ -13,7 +13,7 @@ export default class HomePage extends Component {
     ovenPage: false
   }
 
-  static contextType = ArticlesContext;
+  static contextType = UserAndArticlesContext;
 
   componentDidMount() {
     this.handleTopNews()

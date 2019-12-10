@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import AuthApiService from '../../services/auth-api-service'
-import UserContext from '../../contexts/UserContext'
+import UserAndArticlesContext from '../../contexts/UserAndArticlesContext'
 
 export default class ChangeUsername extends Component {
-  static contextType = UserContext;
+  static contextType = UserAndArticlesContext;
   handleChangeUsername = (ev) =>{
     ev.preventDefault()
     const {new_name,new_user_name,password } = ev.target

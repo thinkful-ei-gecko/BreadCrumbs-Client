@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import news from '../NewsItem/images/news.jpg'
 import ArticlesApiService from '../../services/articles-api-service'
-import ArticlesContext from '../../contexts/ArticlesContext'
+import UserAndArticlesContext from '../../contexts/UserAndArticlesContext'
 import '../OvenItem/OvenItem.css'
 
 export default class SavedArticles extends Component {
-  static contextType = ArticlesContext;
+  static contextType = UserAndArticlesContext;
   componentDidMount() {
     
     ArticlesApiService.getSavedArticlesList()

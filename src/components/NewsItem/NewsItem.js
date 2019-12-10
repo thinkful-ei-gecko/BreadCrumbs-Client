@@ -2,15 +2,13 @@ import React from 'react'
 import './NewsItem.css'
 import news from './images/news.jpg'
 import ArticlesApiService from '../../services/articles-api-service'
-import ArticlesContext from '../../contexts/ArticlesContext'
-import UserContext from '../../contexts/UserContext'
+import UserAndArticlesContext from '../../contexts/UserAndArticlesContext'
 import store from '../../components/Store/Store'
 
 
 export default class NewsItem extends React.Component {
   
-  static contextType = ArticlesContext;
-  static contextType = UserContext;
+  static contextType = UserAndArticlesContext;
 
   handleOvenArticle = (author,content,source,description,title,url,url_to_image,publishedAt)=>{
     console.log('inside handleoven',author)
