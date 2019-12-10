@@ -138,7 +138,7 @@ const ArticlesApiService = {
   },
 
   getComments(articleId) {
-    return fetch(`${config.API_ENDPOINT}/comment`, {
+    return fetch(`${config.API_ENDPOINT}/comment/${articleId}/comments`, {
       method: 'GET',
       headers: {
         'content-type': 'application/json',

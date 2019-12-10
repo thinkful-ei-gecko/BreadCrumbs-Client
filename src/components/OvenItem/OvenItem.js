@@ -34,7 +34,7 @@ export default class NewsItem extends React.Component {
     //   .then(res => res.json())
     //   .then(data => this.context.setArticleComments(data))
     //   .then(this.setState({ comments: !this.state.comments, articleId: article_id }))
-
+    // console.log(this.context.articleComments)
     // delete when getComments is working
     this.setState({ comments: !this.state.comments, articleId: article_id })
   }
