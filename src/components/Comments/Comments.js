@@ -26,7 +26,6 @@ export default class Comments extends Component {
 
   renderComments = () => {
     const comments = this.context.articleComments || [];
-    console.log(comments)
     return(
       comments.map((comment, idx) =>
         <div className='individual-comment-container' key={idx}>

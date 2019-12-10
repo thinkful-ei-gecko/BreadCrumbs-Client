@@ -7,7 +7,6 @@ import UserAndArticlesContext from '../../contexts/UserAndArticlesContext';
 
 export default class NewsItem extends Component {
   state = {
-    comments: false,
     articleId: null
   }
   static contextType = UserAndArticlesContext;
@@ -32,17 +31,15 @@ export default class NewsItem extends Component {
   }
 
   handleRenderComments = async(article_id) => {
-    // commented out until getComments is working
     const data = await ArticlesApiService.getComments(article_id)
     this.context.setArticleComments(data)
-    this.setState({ comments: !this.state.comments, articleId: article_id })
-    // console.log(this.context.articleComments)
-    // delete when getComments is working
-    // this.setState({ comments: !this.state.comments, articleId: article_id })
+    this.state.articleId === article_id 
+      ? this.setState({ articleId: null })
+      : this.setState({ articleId: article_id })
   }
 
     render () {
-      const { comments, articleId } = this.state;
+      const { articleId } = this.state;
       const { article_id, author, content, source, description, title, url, url_to_image, vote_count} = this.props
         return (
         <li className ='listItem'>
@@ -71,7 +68,7 @@ export default class NewsItem extends Component {
           </div>
 
           <div className='comments-container'>
-            {comments && (articleId === article_id) ? <Comments articleID={article_id}/> : null}
+            {(articleId === article_id) ? <Comments articleID={article_id}/> : null}
           </div>
         </li>
         )
