@@ -10,7 +10,7 @@ export default class Comments extends Component {
   handleSubmit = ev => {
     ev.preventDefault()
     const user_id=this.context.user.id
-    console.log(this.props.location.params.article_id)
+    console.log(user_id)
     const article_id = this.props.location.params.article_id
     const { comment } = ev.target
     console.log(comment.value)

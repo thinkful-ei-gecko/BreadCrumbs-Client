@@ -19,7 +19,7 @@ const ArticlesApiService = {
       })
   },
   getSavedArticlesList() {
-    return fetch(`${config.API_ENDPOINT}/article`, {
+    return fetch(`${config.API_ENDPOINT}/article/savedarticles`, {
       headers: {
         'authorization': `bearer ${TokenService.getAuthToken()}`, 
       },
@@ -64,24 +64,18 @@ const ArticlesApiService = {
   },
 
 
-  postSavedArticle(author,content,source,description,title,url,url_to_image,publishedAt) {
+  postSavedArticle(article_id,user_id) {
     
-    return fetch(`${config.API_ENDPOINT}/article`, {
+    return fetch(`${config.API_ENDPOINT}/article/savedarticles`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
         'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
       body: JSON.stringify({
+        article_id: article_id,
+        user_id:user_id,
         
-        author:author,
-        title:title,
-        description:description,
-        source_name:source,
-        url:url,
-        url_to_image:url_to_image,
-        publish_at:publishedAt,
-        content:content
       }),
     })
       .then(res =>
@@ -94,8 +88,8 @@ const ArticlesApiService = {
       })
   },
 
-  deleteSavedArticle(articleId){
-    return fetch(config.API_ENDPOINT + `/article/${articleId}`, {
+  deleteSavedArticle(id){
+    return fetch(config.API_ENDPOINT + `/article/savedarticles/${id}`, {
       method: 'DELETE',
       headers: {
         'content-type': 'application/json',
