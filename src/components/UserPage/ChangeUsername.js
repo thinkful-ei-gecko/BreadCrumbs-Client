@@ -19,12 +19,12 @@ export default class ChangeUsername extends Component {
     return (
       <div className='box'>
         <form onSubmit={this.handleChangeUsername}>
-            <label htmlFor='Login-name'>  Name: </label> 
-            <input className='input' aria-label='Login-name' name='new_name' type='text' required ></input>
-            <label htmlFor='Login-newusername'>  New Username: </label> 
-            <input className='input' aria-label='Login-newusername' name='new_user_name' type='text' required ></input>
-            <label htmlFor='Login-password'> Password: </label> 
-            <input className='input' aria-label='Login-password' name='password' type='password' required ></input>
+            <label htmlFor='Login-name'>  Name: </label> <br />
+            <input className='input' aria-label='Login-name' name='new_name' type='text' required ></input> <br />
+            <label htmlFor='Login-newusername'>  New Username: </label> <br />
+            <input className='input' aria-label='Login-newusername' name='new_user_name' type='text' required ></input> <br />
+            <label htmlFor='Login-password'> Password: </label>  <br />
+            <input className='input' aria-label='Login-password' name='password' type='password' required ></input> <br />
             <button className='loginRegBtn' type='submit'>Change Username</button>
       </form>
       </div>
