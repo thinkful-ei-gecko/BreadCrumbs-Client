@@ -21,11 +21,11 @@ export default class ChangePassword extends Component {
       <div className='box'>
         <form onSubmit={this.handleChangePassword}>
             <label htmlFor='Login-name'>  Old Password: </label> 
-            <input className='input' aria-label='Login-name' name='old_password' type='text' required ></input>
+            <input className='input' aria-label='Login-name' name='old_password' type='text' required ></input> <br />
             <label htmlFor='Login-newusername'>  New Password: </label> 
-            <input className='input' aria-label='Login-newusername' name='new_password' type='text' required ></input>
+            <input className='input' aria-label='Login-newusername' name='new_password' type='text' required ></input> <br />
             <label htmlFor='Login-password'> Confirm Password: </label> 
-            <input className='input' aria-label='Login-password' name='confirm_password' type='password' required ></input>
+            <input className='input' aria-label='Login-password' name='confirm_password' type='password' required ></input> <br />
             <button className='loginRegBtn' type='submit'>Change Password</button>
       </form>
       </div>
