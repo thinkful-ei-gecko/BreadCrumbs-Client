@@ -4,6 +4,10 @@ li {
   border-radius: 2px;
 }
 
+.score {
+  width: 50px;
+}
+
 .img {
   width: 300px;
   height: relative;
