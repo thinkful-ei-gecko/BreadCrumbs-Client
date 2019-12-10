@@ -22,6 +22,11 @@ export default class NewsItem extends React.Component {
     const vote_type = false
     ArticlesApiService.updateVote(article_id,user_id,vote_type)
   }
+  handleSavedArticle=(article_id)=>{
+    console.log('savedarticle')
+    const user_id = this.context.user.id
+    ArticlesApiService.postSavedArticle(article_id,user_id)
+  }
     render () {
       const {article_id,author, content, source, description, title, url, url_to_image, vote_count} = this.props
       
@@ -35,7 +40,7 @@ export default class NewsItem extends React.Component {
             <Link to={{pathname:'/comments', params:{article_id:article_id}}}>
              <button className='OvenItemBtn'> <img src='https://image.flaticon.com/icons/svg/134/134914.svg' alt='comments' className='comments' /> </button>
              </Link>
-             <button className='OvenItemBtn'> <img src='https://image.flaticon.com/icons/svg/148/148836.svg' alt='heart' className='comments' /> </button>
+             <button className='OvenItemBtn'><img src='https://image.flaticon.com/icons/svg/148/148836.svg' alt='heart' className='comments' onClick={() => this.handleSavedArticle(article_id)} /></button>
             </div> 
             
           <div className='item'>
