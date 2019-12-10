@@ -27,7 +27,7 @@ export default class Comments extends Component {
       comments.map((comment, idx) =>
         <div className='individual-comment-container' key={idx}>
           <div className='user-posted-info'>
-            <h5>Posted by: {comment.user_name}</h5>
+            <h5>Posted by: {comment.username}</h5>
             <div>Posted on: {comment.date_commented}</div>
           </div>
           <div>
@@ -41,7 +41,7 @@ export default class Comments extends Component {
   render() {
     return (
       <>
-        {this.renderComments}
+        {this.renderComments()}
         <form
           className='CommentForm'
           onSubmit={this.handleSubmit}

@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './OvenItem.css';
 import news from '../NewsItem/images/news.jpg';
 import Comments from '../../components/Comments/Comments';
 import ArticlesApiService from '../../services/articles-api-service';
 import UserAndArticlesContext from '../../contexts/UserAndArticlesContext';
 
-export default class NewsItem extends React.Component {
+export default class NewsItem extends Component {
   state = {
     comments: false,
     articleId: null
