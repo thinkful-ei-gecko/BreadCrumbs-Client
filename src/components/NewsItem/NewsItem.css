@@ -8,7 +8,7 @@ li {
   
   .img {
     width: 300px;
-    height: relative;
+    /* height: relative; */
   }
   
   .fresh {
@@ -43,9 +43,9 @@ li {
     height: 200px;
     overflow: auto;
   }
-  .listItem {
+  /* .listItem {
     display: flex;
-  }
+  } */
   
   .score {
     display: none;
@@ -58,9 +58,11 @@ li {
   }
 
   .ovenBtn {
+    height: 35px;
     text-align: center;
     display: flex;
     cursor: pointer;
+    margin: 9px;
   }
 
   .ovenBtn:hover {
@@ -109,18 +111,15 @@ li {
 
 
   @media only screen and (max-width: 600px) {
-    .img {
-    height: 30%;
-
-    padding: 5px;
-    }
-    .score {
-      display:none;
-    }
-    li {
-      height: 700px;
-    }
     .item {
       display: block;
+      text-align: center;
+      overflow: auto;
+
     }
+    img {
+      display: block;
+  
+    }
+
   }
