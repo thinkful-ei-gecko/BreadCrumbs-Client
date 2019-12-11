@@ -6,7 +6,7 @@ import TokenService from '../../services/token-service';
 import UserAndArticlesContext from '../../contexts/UserAndArticlesContext'
 import config from '../../config'
 import './HomePage.css';
-import store from '../../components/Store/Store'
+
 
 export default class HomePage extends Component {
   state = {
