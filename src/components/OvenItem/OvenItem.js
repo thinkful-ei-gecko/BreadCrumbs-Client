@@ -19,9 +19,7 @@ export default class NewsItem extends Component {
     console.log(this.context.user)
     const user_id = this.context.user.id
     const vote_type = true
-    console.log("Inside handleUpVote, calling update vote count")
     await ArticlesApiService.updateVote(article_id,user_id,vote_type)
-    console.log("Competed updating vote count")
     const data = await ArticlesApiService.getArticlesList()
      await this.context.setPopularArticlesList(data);
      this.setState({handleVote:true})
@@ -35,9 +33,7 @@ export default class NewsItem extends Component {
     try{
       const user_id = this.context.user.id
       const vote_type = false
-      console.log("Inside handleDownVote, calling update vote count")
       const vote = await ArticlesApiService.updateVote(article_id,user_id,vote_type)
-      console.log("Competed updating vote count")
       const data = await ArticlesApiService.getArticlesList()
       await this.context.setPopularArticlesList(data);
       this.setState({handleVote:true})

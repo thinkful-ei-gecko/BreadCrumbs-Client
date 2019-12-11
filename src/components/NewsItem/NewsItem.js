@@ -3,7 +3,7 @@ import './NewsItem.css'
 import news from './images/news.jpg'
 import ArticlesApiService from '../../services/articles-api-service'
 import UserAndArticlesContext from '../../contexts/UserAndArticlesContext'
-import store from '../../components/Store/Store'
+
 
 
 export default class NewsItem extends React.Component {
