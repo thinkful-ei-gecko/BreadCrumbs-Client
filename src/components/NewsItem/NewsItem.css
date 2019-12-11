@@ -92,6 +92,10 @@ li {
     cursor: pointer;
   }
 
+  .newItemBtns {
+    display: flex;
+    flex-direction: row;
+  }
   .openLinkBtn {
     text-decoration: none;
     color: black;
@@ -112,14 +116,18 @@ li {
 
   @media only screen and (max-width: 600px) {
     .item {
-      display: block;
-      text-align: center;
-      overflow: auto;
+      display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: flex-start;
 
     }
     img {
-      display: block;
-  
+      text-align: center;
+    } 
+    .openLinkBtn {
+      float: left;
     }
-
   }
