@@ -5,6 +5,10 @@ import UserContext from '../../contexts/UserContext';
 import './Header.css'
 
 export default class Header extends Component {
+  state = ({
+    isOpen: false
+  })
+
   static contextType = UserContext;
   
   handleLogoutClick = () => {
@@ -14,41 +18,41 @@ export default class Header extends Component {
   renderLogoutLink() {
     console.log(this.context.user.name)
     return (
-      <>
-      <div className='user-name'>
-        Welcome, {this.context.user.name + '!'}
-      </div>
       <div>
-        <Link className='headerLinks'
-          to='/home'>
-          Home
-        </Link>
-        <Link className='headerLinks'
-          to='/savedarticles'>
-          Saved
-        </Link>
-        <Link className='headerLinks'
-          to='/userpage'>
-          Account
-        </Link>
-        <Link className='headerLinks'
-          onClick={this.handleLogoutClick}
-          to='/'>
-          Logout
-        </Link>
+        <div className='user-name'>
+          Welcome, {this.context.user.name + '!'}
+        </div>
+        <div className='menu'>
+          <Link className='headerLinks'
+            to='/home'>
+            Home
+          </Link>
+          <Link className='headerLinks'
+            to='/savedarticles'>
+            Saved
+          </Link>
+          <Link className='headerLinks'
+            to='/userpage'>
+            Account
+          </Link>
+          <Link className='headerLinks'
+            onClick={this.handleLogoutClick}
+            to='/'>
+            Logout
+          </Link>
+        </div>
       </div>
-      </>
     );
   }
 
   renderLoginLink() {
     return (
-      <div>
+    <div className='menu'>
       <Link className='headerLinks'
         to='/register'>
         Register
       </Link>
-      <span>--</span>
+      <span> </span>
       <Link className='headerLinks'
         to='/login'>
         Log in
@@ -57,6 +61,11 @@ export default class Header extends Component {
     </div>
     );
   }
+
+  hideElements() {
+    this.setState({ isOpen: !this.state.isOpen });
+  }
+
   render() {
     return (
       <header>
@@ -64,9 +73,28 @@ export default class Header extends Component {
         <Link className='mainHeader' to='/'>BreadCrumbs</Link>
         </h1>
         <div className='nav'>
+
+          <div className='container' onClick={() => this.hideElements()}>
+            <div className='bar1'></div>
+            <div className='bar2'></div>
+            <div className='bar3'></div>
+          </div>
+
+          <div className='wide-menu'>
           {TokenService.hasAuthToken()
           ? this.renderLogoutLink()
           : this.renderLoginLink()}
+          </div>
+
+          <div className='mobile-menu'>
+          {this.state.isOpen && TokenService.hasAuthToken() ?
+          this.renderLogoutLink()
+          : ''}
+          {this.state.isOpen && !TokenService.hasAuthToken() ? 
+          this.renderLoginLink()
+          : ''}
+          </div>
+
         </div>
       </header>
     );
