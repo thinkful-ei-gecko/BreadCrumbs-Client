@@ -6,26 +6,29 @@ import './UserPage.css'
 
 export default class UserPage extends Component {
   state = { 
-    showChangeUsername: false,
-    showChangePassword:false 
+    showChangePassword: false,
+    showForm: false, 
+    deleteUser: null
   }
+  
   static contextType = UserAndArticlesContext;
   
   handleClickUsername= () => {
     this.setState({
       showChangePassword: false,
-      showChangeUsername: true
+      showForm: !this.state.showForm
     });
   }
   
   handleClickPassword= () => {
     this.setState({
       showChangePassword: true,
-      showChangeUsername: false
+      showForm: !this.state.showForm
     });
   }
 
   render() {
+    console.log(this.state.showForm, this.state.showChangePassword)
     return (
       <section className='Settings'>
         <h2>{this.context.user.name}</h2>
@@ -37,12 +40,11 @@ export default class UserPage extends Component {
         <div className='settings'>
           <p>Current Username: {this.context.user.username}</p>
           <button className='settingBtn' onClick={this.handleClickUsername}>Change Username</button>
-          {this.state.showChangeUsername ? <ChangeUsername /> :null}
         </div>
         <div className='settings'>
           <p>Current Password: ****</p>
           <button className='settingBtn' onClick={this.handleClickPassword}>Change Password</button>
-          {this.state.showChangePassword ? <ChangePassword /> :null}
+          {this.state.showForm && (this.state.showChangePassword ? <ChangePassword /> : <ChangeUsername />)}
         </div>
       </section>
     )

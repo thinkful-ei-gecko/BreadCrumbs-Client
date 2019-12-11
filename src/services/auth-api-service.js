@@ -27,30 +27,33 @@ const AuthApiService = {
           ? res.json().then(e => Promise.reject(e))
           : res.json()
       )
-      
+       
   },
-  postChangeUsername({ id, username, name, password}) {
+  postChangeUsername({ user_id, username, name, password}) {
+    const payload = JSON.stringify({user_id, username, name, password})
+
     return fetch(`${config.API_ENDPOINT}/user/update`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json"
       },
-      body: JSON.stringify({id,username,name,password})
+      body: payload
     }).then(res =>
       !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
     )
   },
-  postChangePassword({ id, old_password, new_password, confirm_password}) {
+  postChangePassword({ user_id, password, new_password }) {
+    const payload = JSON.stringify({ user_id, password, new_password })
+
     return fetch(`${config.API_ENDPOINT}/user/update/password`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json"
       },
-      body: JSON.stringify({id,old_password,new_password,confirm_password})
+      body: payload
     }).then(res =>
       !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
     )
-  
   },
 };
 
