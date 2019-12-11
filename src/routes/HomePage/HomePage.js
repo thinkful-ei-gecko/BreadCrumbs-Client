@@ -92,7 +92,7 @@ export default class HomePage extends Component {
     return (
       <section>
         <div className='articleQueryContainer'>
-          <ul>
+          <ul className='categories'>
             <li className='category' onClick={() => this.handleOvenNews()}>The Oven</li>
             <div className='mobile-dropdown'>
               <li className='category' onClick={() => this.handleTopNews()}>Top News</li>
