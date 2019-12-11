@@ -55,6 +55,19 @@ const AuthApiService = {
       !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
     )
   },
+  deleteUser({ user_id }) {
+    const payload = { user_id };
+
+    return fetch(`${config.API_ENDPOINT}/user/update`, {
+      method: "DELETE",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: payload
+    }).then(res =>
+      !res.ok ? res.json().then(e => Promise.reject(e)) : null
+    )
+  }
 };
 
 export default AuthApiService;
