@@ -13,6 +13,10 @@ li{display:inline;}
     background-color: white;
 }
 
+.mobile-view-select-menu {
+    display: none;
+}
+
 @media only screen and (max-width: 600px) {
     .mobile-dropdown {
         position: relative;
@@ -33,5 +37,11 @@ li{display:inline;}
       }
     .category {
         padding: 5px;
+    }
+    .mobile-view-select-menu {
+        display: inline-block;
+    }
+    .tablet-and-desktop-view {
+        display: none;
     }
 }

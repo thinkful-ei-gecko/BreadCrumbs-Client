@@ -1,4 +1,5 @@
 import config from "../config";
+import TokenService from '../services/token-service';
 
 
 const AuthApiService = {
@@ -35,7 +36,8 @@ const AuthApiService = {
     return fetch(`${config.API_ENDPOINT}/user/update`, {
       method: "PATCH",
       headers: {
-        "content-type": "application/json"
+        "content-type": "application/json",
+        'authorization': `bearer ${TokenService.getAuthToken()}`
       },
       body: payload
     }).then(res =>
@@ -48,7 +50,8 @@ const AuthApiService = {
     return fetch(`${config.API_ENDPOINT}/user/update/password`, {
       method: "PATCH",
       headers: {
-        "content-type": "application/json"
+        "content-type": "application/json",
+        'authorization': `bearer ${TokenService.getAuthToken()}`
       },
       body: payload
     }).then(res =>
@@ -61,7 +64,8 @@ const AuthApiService = {
     return fetch(`${config.API_ENDPOINT}/user/update`, {
       method: "DELETE",
       headers: {
-        "content-type": "application/json"
+        "content-type": "application/json",
+        'authorization': `bearer ${TokenService.getAuthToken()}`
       },
       body: payload
     }).then(res =>

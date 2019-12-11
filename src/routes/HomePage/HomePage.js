@@ -10,7 +10,7 @@ import './HomePage.css';
 
 export default class HomePage extends Component {
   state = {
-    ovenPage: false
+    ovenPage: true
   }
 
   static contextType = UserAndArticlesContext;
@@ -88,22 +88,48 @@ export default class HomePage extends Component {
   );
  }
 
+  handleMobileDropdownClick = (ev) => {
+    ev.preventDefault();
+    const keyword = ev.target.value;
+    
+    if (keyword === 'The Oven') {
+      return this.handleOvenNews()
+    }
+    else if (keyword === 'Top News') {
+      return this.handleTopNews()
+    }
+    else {
+      return this.handleNewNews(keyword);
+    }
+  }
+
+ renderMobileDropdown = () => {
+   return (
+     <select className='mobile-view-select-menu' onClick={this.handleMobileDropdownClick}>
+       <option value='The Oven'>The Oven</option>
+       <option value='Top News'>Top News</option>
+       <option value='business'>Business</option>
+       <option value='health'>Health</option>
+       <option value='science'>Science</option>
+       <option value='sports'>Sports</option>
+       <option value='technology'>Technology</option>
+     </select>
+   )
+ }
+
   render() {
     return (
       <section>
-        <div className='articleQueryContainer'>
-          <ul className='categories'>
+        {this.renderMobileDropdown()}
+        <div className='articleQueryContainer tablet-and-desktop-view'>
+          <ul>
             <li className='category' onClick={() => this.handleOvenNews()}>The Oven</li>
-            <div className='mobile-dropdown'>
-              <li className='category' onClick={() => this.handleTopNews()}>Top News</li>
-              <ul className='dropdown-content'>
-                <li className='category' onClick={() => this.handleNewNews('business')}>Business</li>
-                <li className='category' onClick={() => this.handleNewNews('health')}>Health</li>
-                <li className='category' onClick={() => this.handleNewNews('science')}>Science</li>
-                <li className='category' onClick={() => this.handleNewNews('sports')}>Sports</li>
-                <li className='category' onClick={() => this.handleNewNews('technology')}>Technology</li>
-              </ul>
-            </div>
+            <li className='category' onClick={() => this.handleTopNews()}>Top News</li>
+            <li className='category' onClick={() => this.handleNewNews('business')}>Business</li>
+            <li className='category' onClick={() => this.handleNewNews('health')}>Health</li>
+            <li className='category' onClick={() => this.handleNewNews('science')}>Science</li>
+            <li className='category' onClick={() => this.handleNewNews('sports')}>Sports</li>
+            <li className='category' onClick={() => this.handleNewNews('technology')}>Technology</li>
           </ul>
         </div>
         <div className='articleContainer'>
