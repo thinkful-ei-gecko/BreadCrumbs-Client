@@ -5,15 +5,19 @@ import UserAndArticlesContext from '../../contexts/UserAndArticlesContext';
 import './Header.css'
 
 export default class Header extends Component {
-  state = ({
+  state = {
     isOpen: false
-  })
+  }
 
   static contextType = UserAndArticlesContext;
   
   handleLogoutClick = () => {
     this.context.processLogout();
   };
+
+  hideElements = () => {
+    this.setState({ isOpen: !this.state.isOpen });
+  }
 
   renderLogoutLink() {
     console.log(this.context.user.name)
@@ -24,15 +28,18 @@ export default class Header extends Component {
         </div>
         <div className='menu'>
           <Link className='headerLinks'
-            to='/home'>
+            to='/home'
+            onClick={this.hideElements}>
             Home
           </Link>
           <Link className='headerLinks'
-            to='/savedarticles'>
+            to='/savedarticles'
+            onClick={this.hideElements}>
             Saved
           </Link>
           <Link className='headerLinks'
-            to='/userpage'>
+            to='/userpage'
+            onClick={this.hideElements}>
             Account
           </Link>
           <Link className='headerLinks'
@@ -62,10 +69,6 @@ export default class Header extends Component {
     );
   }
 
-  hideElements() {
-    this.setState({ isOpen: !this.state.isOpen });
-  }
-
   render() {
     return (
       <header>
@@ -74,7 +77,7 @@ export default class Header extends Component {
         </h1>
         <div className='nav'>
 
-          <div className='nav-container' onClick={() => this.hideElements()}>
+          <div className='nav-container' onClick={this.hideElements}>
             <div className='bar1'></div>
             <div className='bar2'></div>
             <div className='bar3'></div>
