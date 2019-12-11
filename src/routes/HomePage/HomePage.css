@@ -12,3 +12,26 @@ li{display:inline;}
     border-bottom: 4px solid rgba(16, 7, 56, 0.993);
     background-color: white;
 }
+
+@media only screen and (max-width: 600px) {
+    .mobile-dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        padding: 12px 16px;
+        z-index: 1;
+    }
+    .mobile-dropdown:hover .dropdown-content {
+        display: flex;
+        flex-direction: column;
+      }
+    .category {
+        padding: 5px;
+    }
+}

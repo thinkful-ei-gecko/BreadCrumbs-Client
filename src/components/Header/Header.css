@@ -6,6 +6,36 @@ header {
     height: auto;
     
 }
+.bar1, .bar2, .bar3 {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 6px 0;
+    margin-left: 130px;
+    /* display: none; */
+    z-index: 999;
+}
+/* Rotate first bar */
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+    transform: rotate(-45deg) translate(-9px, 6px) ;
+  }
+  
+  /* Fade out the second bar */
+  .change .bar2 {
+    opacity: 0;
+  }
+  
+  /* Rotate last bar */
+  .change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+    transform: rotate(45deg) translate(-8px, -8px) ;
+  }
+.container {
+    display: inline-block;
+    cursor: pointer;
+    display: none;
+}
 
 .user-name {
     color: beige;
@@ -47,5 +77,38 @@ header {
     background-color: lightgrey;
     border-radius: 3px; 
     color: black;
+  }
+
+.mobile-menu {
+    display: none;
+}
+
+  @media only screen and (max-width: 600px) {
+      .container {
+          display: block;
+      }
+      .menu {
+          display: flex;
+          flex-direction: column;
+      }
+      .nav {
+          /* display: none; */
+      }
+      .user-name {
+          display: none;
+      }
+      .wide-menu {
+          display: none;
+      }
+      .mobile-menu {
+          display: flex;
+          background-color:  rgba(16, 7, 56, 0.728);
+          text-align: right;
+          margin-left: 70px;
+      }
+      .headerLinks:hover {
+          background-color: transparent;
+          color: beige;
+      }
   }
 
