@@ -6,7 +6,7 @@ export default class Login extends Component {
     onSignUpSuccess: () => {}
   };
   state = { error: null };
-  handleSubmit = ev => {
+  handleSubmit = ev => { 
     ev.preventDefault();
     const { user_name, password, fullname } = ev.target;
     this.setState({ error: null });
