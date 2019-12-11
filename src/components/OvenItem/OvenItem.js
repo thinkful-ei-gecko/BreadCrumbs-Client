@@ -4,7 +4,6 @@ import news from '../NewsItem/images/news.jpg';
 import Comments from '../../components/Comments/Comments';
 import ArticlesApiService from '../../services/articles-api-service';
 import UserAndArticlesContext from '../../contexts/UserAndArticlesContext';
-import { thisExpression } from '@babel/types';
 
 export default class NewsItem extends Component {
   state = {
@@ -85,33 +84,6 @@ export default class NewsItem extends Component {
             <a href={url} target='_blank'rel='noopener noreferrer' className='openLinkBtn'>View Article<img className = 'open-link' src='https://image.flaticon.com/icons/svg/1/1424.svg' alt='open link' /> </a>
           </div>
           </div>
-
-        <div className="item">
-          {url_to_image === null ? (
-            <img src={news} alt="img" className="img" />
-          ) : (
-            <img src={url_to_image} alt="img" className="img" />
-          )}
-          <div className="article-section">
-            <h3> {title}</h3>
-            {author != null ? <p>By: {author}</p> : null}
-            <p>Source: {source}</p>
-            <p> {description}</p>
-            <a
-              href={url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="openLinkBtn"
-            >
-              View Article
-              <img
-                className="open-link"
-                src="https://image.flaticon.com/icons/svg/1/1424.svg"
-                alt="open link"
-              />{" "}
-            </a>
-          </div>
-        </div>
 
         <div className="comments-container">
           {articleId === article_id ? (
