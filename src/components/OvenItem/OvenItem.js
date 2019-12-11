@@ -85,7 +85,7 @@ export default class NewsItem extends Component {
           <h3> {title}</h3>
           {author != null ? <p>By: {author}</p> : null }
           <p>Source: {source}</p>
-          <p> {content}</p>
+          <p> {description}</p>
             <a href={url} target='_blank'rel='noopener noreferrer' className='openLinkBtn'>View Article<img className = 'open-link' src='https://image.flaticon.com/icons/svg/1/1424.svg' alt='open link' /> </a>
           </div>
           </div>
