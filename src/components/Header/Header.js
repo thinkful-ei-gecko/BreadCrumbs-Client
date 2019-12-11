@@ -5,11 +5,7 @@ import UserAndArticlesContext from '../../contexts/UserAndArticlesContext';
 import './Header.css'
 
 export default class Header extends Component {
-<<<<<<< HEAD
   static contextType = UserAndArticlesContext;
-=======
-  static contextType = UserContext;
->>>>>>> parent of a1b0ac7... burger menu
   
   handleLogoutClick = () => {
     this.context.processLogout();
