@@ -77,7 +77,7 @@ export default class Header extends Component {
         </h1>
         <div className='nav'>
 
-          <div className='nav-container' onClick={this.hideElements}>
+          <div className={this.state.isOpen ? 'nav-container change' : 'nav-container'} onClick={this.hideElements}>
             <div className='bar1'></div>
             <div className='bar2'></div>
             <div className='bar3'></div>
