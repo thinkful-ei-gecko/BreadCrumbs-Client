@@ -12,15 +12,15 @@ export default class ChangePassword extends Component {
   handleChangePassword = async (ev) =>{
     ev.preventDefault()
     const {old_password, new_password, confirm_password } = ev.target
-
-    if (new_password !== confirm_password) {
+    console.log(new_password.value, confirm_password.value);
+    if (new_password.value !== confirm_password.value) {
       return this.setState({error: 'Passwords do not match'})
     }
 
     try {
       await AuthApiService.postChangePassword({
-        id: this.context.user.id,
-        old_password: old_password.value,
+        user_id: this.context.user.id,
+        password: old_password.value,
         new_password: new_password.value,
       })
       await AuthApiService.postLogin({
@@ -34,18 +34,19 @@ export default class ChangePassword extends Component {
 
       this.setState({ error: 'Password updated successfully!' })
     } catch(error) {
-      this.setState({ error })
+      this.setState({ error: error.error })
     }
   }
 
   render() {
     return (
       <div className='box'>
+        {this.state.error && <p>{this.state.error}</p>}
         <form onSubmit={this.handleChangePassword}>
             <label htmlFor='Login-name'>Old Password: </label> 
-            <input className='input' aria-label='old_password' name='old_password' type='text' required ></input> <br />
+            <input className='input' aria-label='old_password' name='old_password' type='password' required ></input> <br />
             <label htmlFor='Login-newusername'>New Password: </label> 
-            <input className='input' aria-label='new_password' name='new_password' type='text' required ></input> <br />
+            <input className='input' aria-label='new_password' name='new_password' type='password' required ></input> <br />
             <label htmlFor='Login-password'>Confirm Password: </label> 
             <input className='input' aria-label='confirm_new_password' name='confirm_password' type='password' required ></input> <br />
             <button className='loginRegBtn' type='submit'>Change Password</button>

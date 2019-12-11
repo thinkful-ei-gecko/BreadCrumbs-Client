@@ -16,21 +16,22 @@ export default class ChangeUsername extends Component {
 
     try {
       await AuthApiService.postChangeUsername({
-        id: this.context.user.id,
+        user_id: this.context.user.id,
         name: new_name.value,
         username: new_user_name.value,
         password: password.value,
       })
       this.setState({ error: 'Account updated successfully!'})
     } catch(error) {
-      this.setState({ error });
+      console.log(error)
+      this.setState({ error: error.error });
     }
   }
 
   render() {
     return (
       <div className='box'>
-        {this.state.error && <p>this.state.error</p>}
+        {this.state.error && <p>{this.state.error}</p>}
         <form onSubmit={this.handleChangeUsername}>
             <label htmlFor='Login-name'>New Name: </label> <br />
             <input className='input' aria-label='Login-name' name='new_name' type='text' defaultValue={this.context.user.name} required></input> <br />

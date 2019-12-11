@@ -33,8 +33,8 @@ export default class UserPage extends Component {
   }
 
   handleDeleteUser = async() => {
-    const userId = this.context.user.id;
-    await AuthApiService.deleteUser(userId);
+    const user_id = this.context.user.id;
+    await AuthApiService.deleteUser({ user_id });
     this.context.processLogout();
   }
 

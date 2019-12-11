@@ -30,7 +30,7 @@ const AuthApiService = {
        
   },
   postChangeUsername({ user_id, username, name, password}) {
-    const payload = JSON.stringify({user_id, username, name, password})
+    const payload = JSON.stringify({ user_id, username, name, password })
 
     return fetch(`${config.API_ENDPOINT}/user/update`, {
       method: "PATCH",
@@ -56,7 +56,7 @@ const AuthApiService = {
     )
   },
   deleteUser({ user_id }) {
-    const payload = { user_id };
+    const payload = JSON.stringify({ user_id });
 
     return fetch(`${config.API_ENDPOINT}/user/update`, {
       method: "DELETE",
