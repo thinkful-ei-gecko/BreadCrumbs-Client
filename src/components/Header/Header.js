@@ -74,7 +74,7 @@ export default class Header extends Component {
         </h1>
         <div className='nav'>
 
-          <div className='container' onClick={() => this.hideElements()}>
+          <div className='nav-container' onClick={() => this.hideElements()}>
             <div className='bar1'></div>
             <div className='bar2'></div>
             <div className='bar3'></div>
