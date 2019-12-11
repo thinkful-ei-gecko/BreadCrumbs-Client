@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './LandingPageRoute.css';
-import {FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faNewspaper, faBreadSlice, faHeart } from '@fortawesome/free-solid-svg-icons';
 
 export default class LandingPageRoute extends Component {
