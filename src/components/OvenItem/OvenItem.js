@@ -4,25 +4,47 @@ import news from '../NewsItem/images/news.jpg';
 import Comments from '../../components/Comments/Comments';
 import ArticlesApiService from '../../services/articles-api-service';
 import UserAndArticlesContext from '../../contexts/UserAndArticlesContext';
+import { thisExpression } from '@babel/types';
 
 export default class NewsItem extends Component {
   state = {
-    articleId: null
+    articleId: null,
+    error:null,
+    handleVote:false,
   }
   static contextType = UserAndArticlesContext;
   
-  handleUpVote=(article_id)=>{
+  handleUpVote=async(article_id)=>{
+    try {
     console.log(this.context.user)
     const user_id = this.context.user.id
     const vote_type = true
-    ArticlesApiService.updateVote(article_id,user_id,vote_type)
-
+    console.log("Inside handleUpVote, calling update vote count")
+    await ArticlesApiService.updateVote(article_id,user_id,vote_type)
+    console.log("Competed updating vote count")
+    const data = await ArticlesApiService.getArticlesList()
+     await this.context.setPopularArticlesList(data);
+     this.setState({handleVote:true})
+    }
+    catch(error) {
+      console.log("Exception.... handleUpVote")
+    }
   }
 
-  handleDownVote=(article_id)=>{
-    const user_id = this.context.user.id
-    const vote_type = false
-    ArticlesApiService.updateVote(article_id,user_id,vote_type)
+  handleDownVote=async(article_id)=>{
+    try{
+      const user_id = this.context.user.id
+      const vote_type = false
+      console.log("Inside handleDownVote, calling update vote count")
+      const vote = await ArticlesApiService.updateVote(article_id,user_id,vote_type)
+      console.log("Competed updating vote count")
+      const data = await ArticlesApiService.getArticlesList()
+      await this.context.setPopularArticlesList(data);
+      this.setState({handleVote:true})
+    }
+    catch(error) {
+      console.log("Exception.... handleDownVote")
+    }
   }
   handleSavedArticle=(article_id)=>{
     console.log('savedarticle')
@@ -39,17 +61,18 @@ export default class NewsItem extends Component {
   }
 
     render () {
+      const { error } = this.state
       const { articleId } = this.state;
       const { article_id, author, content, source, description, title, url, url_to_image, vote_count} = this.props
         return (
         <li className ='listItem'>
-          <div className='score'>
+           <div role='alert'>
+               {error && <p className='error'>{error}</p>}
+            </div>
+            <div className='score'>
              <button className='OvenItemBtn'><img src='https://image.flaticon.com/icons/svg/2224/2224092.svg' alt='fresh bread' className='fresh' onClick={()=>this.handleUpVote(article_id)} /></button>  
               <p>{vote_count}</p>
              <button className='OvenItemBtn'> <img src='https://image.flaticon.com/icons/svg/2224/2224092.svg' alt='not-fresh' className='not-fresh' onClick={()=>this.handleDownVote(article_id)} /> </button> 
-            {/* <Link to={{pathname:'/comments', params:{article_id:article_id}}}>
-             <button className='OvenItemBtn'> <img src='https://image.flaticon.com/icons/svg/134/134914.svg' alt='comments' className='comments' /> </button>
-             </Link> */}
              <button className='OvenItemBtn'><img src='https://image.flaticon.com/icons/svg/148/148836.svg' alt='heart' className='comments' onClick={() => this.handleSavedArticle(article_id)} /></button>
              <button className='OvenItemBtn'><img src='https://image.flaticon.com/icons/svg/134/134914.svg' alt='comments' className='comments' onClick={() => this.handleRenderComments(article_id)}/></button>
             </div> 
