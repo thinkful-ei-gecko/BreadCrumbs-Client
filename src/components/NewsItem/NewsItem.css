@@ -119,9 +119,9 @@ li {
       display:flex;
     flex-direction: column;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
     align-content: center;
-    align-items: flex-start;
+    align-items: center;
 
     }
     img {
