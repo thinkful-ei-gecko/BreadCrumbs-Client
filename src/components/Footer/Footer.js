@@ -6,7 +6,7 @@ export default class Footer extends Component {
     return (
       <footer>
         <div>
-          <p>Copyright | Bread Crumbs | 2019</p>
+          <p>Copyright | BreadCrumbs | 2019</p>
         </div>
       </footer>
     )
