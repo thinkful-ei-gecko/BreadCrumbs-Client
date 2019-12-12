@@ -31,9 +31,9 @@ const AuthApiService = {
        
   },
   postChangeUsername({ user_id, username, name, password}) {
-    const payload = JSON.stringify({ user_id, username, name, password })
+    const payload = JSON.stringify({ user_id, username, name, password });
 
-    return fetch(`${config.API_ENDPOINT}/user/update`, {
+    return fetch(`${config.API_ENDPOINT}/update`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
@@ -41,13 +41,13 @@ const AuthApiService = {
       },
       body: payload
     }).then(res =>
-      !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
+      !res.ok ? res.json().then(e => Promise.reject(e)) : null
     )
   },
   postChangePassword({ user_id, password, new_password }) {
     const payload = JSON.stringify({ user_id, password, new_password })
 
-    return fetch(`${config.API_ENDPOINT}/user/update/password`, {
+    return fetch(`${config.API_ENDPOINT}/update/password`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
@@ -55,13 +55,13 @@ const AuthApiService = {
       },
       body: payload
     }).then(res =>
-      !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
+      !res.ok ? res.json().then(e => Promise.reject(e)) : null
     )
   },
   deleteUser({ user_id }) {
     const payload = JSON.stringify({ user_id });
 
-    return fetch(`${config.API_ENDPOINT}/user/update`, {
+    return fetch(`${config.API_ENDPOINT}/update`, {
       method: "DELETE",
       headers: {
         "content-type": "application/json",

@@ -23,12 +23,12 @@ export default class App extends Component {
         <main id='middle'>
           <Switch>
             <Route exact path={'/'} component={LandingPageRoute} />
-            <PublicRoute path={'/login'} component={LoginPage}/>
-            <PublicRoute path={'/register'} component={RegistrationPage}/>
-            <PrivateRoute path={'/home'} component={HomePage}/>
-            <PrivateRoute path={'/userpage'} component={UserPage}/>
-            <PrivateRoute path={'/savedarticles'} component={SavedArticles}/>
-            <PrivateRoute path={'/comments'} component={Comments}/>
+            <PublicRoute exact path={'/login'} component={LoginPage}/>
+            <PublicRoute exact path={'/register'} component={RegistrationPage}/>
+            <PrivateRoute exact path={'/home'} component={HomePage}/>
+            <PrivateRoute exact path={'/userpage'} component={UserPage}/>
+            <PrivateRoute exact path={'/savedarticles'} component={SavedArticles}/>
+            <PrivateRoute exact path={'/comments'} component={Comments}/>
             <Route component={NotFoundPage} />
           </Switch>
         </main>
