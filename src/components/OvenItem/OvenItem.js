@@ -75,7 +75,7 @@ handleSavedArticle=(article_id)=>{
              <button className='OvenItemBtn'> <img src='https://image.flaticon.com/icons/svg/2224/2224092.svg' alt='not-fresh' className='not-fresh' onClick={()=>this.handleDownVote(article_id)} /> </button> 
              <button className='OvenItemBtn'><img src='https://image.flaticon.com/icons/svg/148/148836.svg' alt='heart' className='comments' onClick={() => this.handleSavedArticle(article_id)} /></button>
              <button className='OvenItemBtn'><img src='https://image.flaticon.com/icons/svg/134/134914.svg' alt='comments' className='comments' onClick={() => this.handleRenderComments(article_id)}/></button>
-             <button className='OvenItemBtn'><img src='https://image.flaticon.com/icons/svg/148/148836.svg' alt='comments' className='comments' onClick={() => this.handleSavedArticle(article_id)} /></button>
+             
             </div> 
             
           <div className='item'>
