@@ -23,10 +23,11 @@ export default class ChangePassword extends Component {
         password: old_password.value,
         new_password: new_password.value
       });
-      await AuthApiService.postLogin({
+      const newAuth = await AuthApiService.postLogin({
         username: this.context.user.username,
-        password: new_password
+        password: new_password.value
       });
+      await this.context.processLogin(newAuth.authToken)
 
       old_password.value = "";
       new_password.value = "";
