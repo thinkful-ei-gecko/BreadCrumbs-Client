@@ -39,7 +39,6 @@ export default class UserPage extends Component {
   };
 
   render() {
-    console.log(this.state.showForm, this.state.showChangePassword);
     return (
       <section className="Settings">
         <h2>{this.context.user.name}</h2>

@@ -10,17 +10,14 @@ export default class SavedArticles extends Component {
   componentDidMount() {
     ArticlesApiService.getSavedArticlesList()
       .then(res => {
-        console.log("saved articles", res);
         this.context.setSavedArticlesList(res);
       })
       .catch(this.context.setError);
   };
 
   handleDeleteArticle = id => {
-    console.log(id);
     ArticlesApiService.deleteSavedArticle(id)
       .then(res => {
-        console.log("saved articles after delete", res);
         this.context.setSavedArticlesList(res);
       })
       .catch(this.context.setError);
