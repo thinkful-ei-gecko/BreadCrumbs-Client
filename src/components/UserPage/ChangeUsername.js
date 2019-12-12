@@ -27,10 +27,9 @@ export default class ChangeUsername extends Component {
       await this.context.processLogin(newAuth.authToken)
 
       password.value = "";
-      
+
       this.setState({ error: "Account updated successfully!" });
     } catch (error) {
-      console.log(error.error);
       this.setState({ error: error.error });
     }
   };

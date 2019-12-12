@@ -16,7 +16,6 @@ export default class NewsItem extends Component {
 
   handleUpVote = async article_id => {
     try {
-      console.log(this.context.user);
       const user_id = this.context.user.id;
       const vote_type = true;
       await ArticlesApiService.updateVote(article_id, user_id, vote_type);
@@ -66,7 +65,7 @@ export default class NewsItem extends Component {
   render() {
     const { error } = this.state;
     const { articleId } = this.state;
-    const {article_id, author, content, source, description, title, url, url_to_image, vote_count} = this.props;
+    const {article_id, author, source, description, title, url, url_to_image, vote_count} = this.props;
     return (
       <li className="listItem">
         <div role="alert">{error && <p className="error">{error}</p>}</div>
