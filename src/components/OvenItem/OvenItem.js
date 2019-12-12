@@ -59,7 +59,24 @@ export default class NewsItem extends Component {
     const user_id = this.context.user.id;
     ArticlesApiService.postSavedArticle(article_id, user_id);
   };
+  handleSubmit = async ev => {
+    ev.preventDefault();
+    const user_id = this.context.user.id;
+    const article_id = this.props.articleID;
+    const { comment } = ev.target;
 
+    ArticlesApiService.postComment(article_id, comment.value, user_id)
+      .then(() => {
+        comment.value = "";
+      })
+      .catch(this.context.setError);
+    this.context.addComment({
+      username: this.context.user.username,
+      comment: comment.value,
+      date_commented: Date.now()
+    });
+    this.setState({ update: !this.state.update });
+  };
   render() {
     const { error } = this.state;
     const {
@@ -72,6 +89,7 @@ export default class NewsItem extends Component {
       url_to_image,
       vote_count
     } = this.props;
+    
     return (
       <li className="listItem">
         <div role="alert">{error && <p className="error">{error}</p>}</div>
@@ -150,8 +168,23 @@ export default class NewsItem extends Component {
               &times;
             </a>
             <div className="content-comment">
-              <Comments articleID={article_id} />
+              <Comments articleID={article_id} className='comments-section'/>
             </div>
+            <form className="CommentForm" onSubmit={this.handleSubmit}>
+          <div className="text">
+            <textarea
+              className="comment-textarea"
+              required
+              aria-label="Type a comment..."
+              name="comment"
+              id="comment"
+              placeholder="Type a comment.."
+            ></textarea>
+          </div>
+          <button className="category" type="submit">
+            Post comment
+          </button>
+        </form>
           </div>
         </div>
       </li>

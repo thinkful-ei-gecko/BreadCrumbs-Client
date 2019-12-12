@@ -64,13 +64,17 @@ export default class UserPage extends Component {
           {this.state.showForm &&
             (this.state.showChangePassword 
               ? (<ChangePassword />) : (<ChangeUsername />))}
+          
+          <div className='deleteAcc'>
           {this.state.deleteUser 
-            ? (<>
+            ? (<div className='confirmation'>
+            
                 <p>Are you sure?</p>
-                <button onClick={this.handleDeleteUser}>Yes</button>
-                <button onClick={this.handleDeleteWarning}>No</button>
-              </>) 
-              : (<button onClick={this.handleDeleteWarning}>Delete Account</button>)}
+                <button className='confirmBtn' onClick={this.handleDeleteUser}>Yes</button>
+                <button className='confirmBtn' onClick={this.handleDeleteWarning}>No</button>
+              </div>) 
+              : (<button className='deleteBtn' onClick={this.handleDeleteWarning}>Delete Account</button>)}
+          </div>
         </div>
       </section>
     );

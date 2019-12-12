@@ -244,7 +244,7 @@ li:hover {
   transition: all 5s ease-in-out;
   overflow: auto;
   z-index: -1;
-  height: 50%;
+  height: 55%;
 }
 
 .popup h2 {
@@ -269,9 +269,14 @@ li:hover {
   /* max-height: 30%; */
   z-index: -1;
   overflow: auto;
-  .img {
+  /* .img {
     margin-top: 50px;
     height: 250px;
     width: 600px;
-  }
+  } */
+}
+
+.content-comment {
+  height: 225px;
+  /* border: 1px solid purple; */
 }

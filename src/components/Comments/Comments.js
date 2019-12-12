@@ -9,24 +9,24 @@ export default class Comments extends Component {
   };
   static contextType = UserAndArticlesContext;
 
-  handleSubmit = async ev => {
-    ev.preventDefault();
-    const user_id = this.context.user.id;
-    const article_id = this.props.articleID;
-    const { comment } = ev.target;
+  // handleSubmit = async ev => {
+  //   ev.preventDefault();
+  //   const user_id = this.context.user.id;
+  //   const article_id = this.props.articleID;
+  //   const { comment } = ev.target;
 
-    ArticleApiService.postComment(article_id, comment.value, user_id)
-      .then(() => {
-        comment.value = "";
-      })
-      .catch(this.context.setError);
-    this.context.addComment({
-      username: this.context.user.username,
-      comment: comment.value,
-      date_commented: Date.now()
-    });
-    this.setState({ update: !this.state.update });
-  };
+  //   ArticleApiService.postComment(article_id, comment.value, user_id)
+  //     .then(() => {
+  //       comment.value = "";
+  //     })
+  //     .catch(this.context.setError);
+  //   this.context.addComment({
+  //     username: this.context.user.username,
+  //     comment: comment.value,
+  //     date_commented: Date.now()
+  //   });
+  //   this.setState({ update: !this.state.update });
+  // };
 
   renderComments = () => {
     const comments = this.context.articleComments || [];
@@ -51,7 +51,7 @@ export default class Comments extends Component {
     return (
       <>
         {this.renderComments()}
-        <form className="CommentForm" onSubmit={this.handleSubmit}>
+        {/* <form className="CommentForm" onSubmit={this.handleSubmit}>
           <div className="text">
             <textarea
               className="comment-textarea"
@@ -65,7 +65,7 @@ export default class Comments extends Component {
           <button className="category" type="submit">
             Post comment
           </button>
-        </form>
+        </form> */}
       </>
     );
   }
