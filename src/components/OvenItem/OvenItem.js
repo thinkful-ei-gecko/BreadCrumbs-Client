@@ -98,7 +98,7 @@ handleSavedArticle=(article_id)=>{
 
           <div id='popup1' className="overlay">
             <div className='popup'>
-            <a className="close" href="#">&times;</a>
+            <a className="close" href="#" onClick={() => this.handleRenderComments(article_id)}>&times;</a>
               <div className='content-comment'>
               {articleId === article_id ? (
                 <Comments articleID={article_id} />

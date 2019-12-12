@@ -30,12 +30,14 @@ export default class Comments extends Component {
       comments.map((comment, idx) =>
         <div className='individual-comment-container' key={idx}>
           <div className='user-posted-info'>
-            <h5>Posted by: {comment.username}</h5>
-            <div>Posted on: {moment(comment.date_commented).format('MMMM Do YYYY, h:mm:ss a')}</div>
-          </div>
-          <div>
+            <h5>{comment.username}: </h5>
+            <div className='comment-body'>
             <p>{comment.comment}</p>
           </div>
+          </div>
+      
+          <div className='comment-date'>Posted on: {moment(comment.date_commented).format('MMMM Do YYYY, h:mm:ss a')}</div>
+
         </div>
       )
     )
@@ -50,16 +52,16 @@ export default class Comments extends Component {
           onSubmit={this.handleSubmit}
         >
           <div className='text'>
-            <input type='text'
+            <textarea className='comment-textarea'
               required
               aria-label='Type a comment...'
               name='comment'
               id='comment'
               
               placeholder='Type a comment..'>
-            </input>
+            </textarea>
           </div>
-          <button type='submit'>
+          <button className='category' type='submit'>
             Post comment
           </button>
         </form>

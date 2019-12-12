@@ -192,7 +192,36 @@ li:hover {
   transition: opacity 500ms;
   visibility: hidden;
   opacity: 0;
+  z-index: 1;
 }
+
+.comment-textarea {
+  border-radius: 2px;
+  height: 75px;
+  width: 200px;
+  margin-top: 10px;
+}
+
+.individual-comment-container {
+  border-bottom: 1px lightgrey solid;
+}
+.comment-date {
+  font-size: x-small;
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+.user-posted-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.comment-body {
+  padding: 5px;
+  margin-left: 5px;
+}
+
+
 .overlay:target {
   visibility: visible;
   opacity: 1;
@@ -207,7 +236,7 @@ li:hover {
   position: relative;
   transition: all 5s ease-in-out;
   overflow: auto;
-  z-index: 1000;
+  z-index: -1;
   height: 50%;
 }
 
@@ -231,5 +260,6 @@ li:hover {
 }
 .popup .content-comment {
   /* max-height: 30%; */
+  z-index: -1;
   overflow: auto;
 }
