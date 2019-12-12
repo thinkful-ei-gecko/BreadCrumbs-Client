@@ -269,14 +269,15 @@ li:hover {
   /* max-height: 30%; */
   z-index: -1;
   overflow: auto;
-  /* .img {
-    margin-top: 50px;
-    height: 250px;
-    width: 600px;
-  } */
 }
 
 .content-comment {
   height: 225px;
   /* border: 1px solid purple; */
+}
+
+.img {
+  margin-top: 50px;
+  height: 250px;
+  width: 600px;
 }
