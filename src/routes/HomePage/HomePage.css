@@ -40,6 +40,12 @@ li{display:inline;}
     }
     .mobile-view-select-menu {
         display: inline-block;
+        margin: 12px;
+        font-size: 1.5rem;
+        color: rgba(16, 7, 56, 0.993);
+        background: #cfcfcf;
+        border: 2px solid rgba(16, 7, 56, 0.993);
+        width: 200px;
     }
     .tablet-and-desktop-view {
         display: none;
