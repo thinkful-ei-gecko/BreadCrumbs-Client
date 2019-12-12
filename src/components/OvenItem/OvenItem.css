@@ -177,4 +177,9 @@ li:hover {
   .heart {
     margin-top: 80px;
   }
+  .img {
+    margin-top: 50px;
+    height: 250px;
+    width: 600px;
+  }
 }

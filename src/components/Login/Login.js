@@ -53,7 +53,7 @@ export default class Login extends Component {
           <input
             className="input"
             aria-label="Login-password"
-            placeholder="Password"
+            placeholder="PASSWORD"
             name="password"
             type="password"
             required
