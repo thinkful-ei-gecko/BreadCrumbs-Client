@@ -32,7 +32,56 @@ export default class NewsItem extends React.Component {
     return (
       <li className="listItem">
         <div className="score bake">
-          <button
+          {/* <button
+            className="ovenBtn"
+            onClick={() =>
+              this.handleOvenArticle(
+                author,
+                content,
+                source,
+                description,
+                title,
+                url,
+                url_to_image,
+                publishedAt
+              )
+            }
+          >
+            <img
+              src="https://image.flaticon.com/icons/svg/1999/1999848.svg"
+              alt="send to oven"
+              className="fresh"
+            />
+            <div className="ovenTxt">Bake</div>
+          </button> */}
+          {/* <button className='NewsItemBtn' onClick={()=>this.handleOvenArticle(author,content,source,description,title,url,url_to_image,publishedAt)}>Send To Oven</button>   */}
+        </div>
+        <div className="item">
+          {url_to_image === null ? (
+            <img src={news} alt="img" className="img" />
+          ) : (
+            <img src={url_to_image} alt="img" className="img" />
+          )}
+          <div className="article-section bake-section">
+            <h3> {title}</h3>
+            {author != null ? <p>By: {author}</p> : null}
+            <p>Source: {source}</p>
+            <p> {content}</p>
+            <div className="newsItemBtns">
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="openLinkBtn"
+              >
+                View Article{" "}
+                <img
+                  className="open-link"
+                  src="https://image.flaticon.com/icons/svg/1/1424.svg"
+                  alt="open link"
+                />
+              </a>
+              <button
             className="ovenBtn"
             onClick={() =>
               this.handleOvenArticle(
@@ -54,33 +103,6 @@ export default class NewsItem extends React.Component {
             />
             <div className="ovenTxt">Bake</div>
           </button>
-          {/* <button className='NewsItemBtn' onClick={()=>this.handleOvenArticle(author,content,source,description,title,url,url_to_image,publishedAt)}>Send To Oven</button>   */}
-        </div>
-        <div className="item">
-          {url_to_image === null ? (
-            <img src={news} alt="img" className="img" />
-          ) : (
-            <img src={url_to_image} alt="img" className="img" />
-          )}
-          <div className="article-section">
-            <h3> {title}</h3>
-            {author != null ? <p>By: {author}</p> : null}
-            <p>Source: {source}</p>
-            <p> {content}</p>
-            <div className="newsItemBtns">
-              <a
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="openLinkBtn"
-              >
-                View Article{" "}
-                <img
-                  className="open-link"
-                  src="https://image.flaticon.com/icons/svg/1/1424.svg"
-                  alt="open link"
-                />
-              </a>
             </div>
           </div>
         </div>

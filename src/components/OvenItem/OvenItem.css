@@ -52,7 +52,7 @@ li:hover {
   margin-left: 5px;
   padding: 15px;
   text-align: center;
-  height: 300px;
+  height: 250px;
 }
 
 .article-section p {
@@ -63,6 +63,7 @@ li:hover {
   position: relative;
   float: left;
   display: block;
+  height: 500px;
 }
 
 .score {
@@ -171,8 +172,11 @@ li:hover {
     text-align: left;
   }
   .listItem {
-    height: 400px;
+    height: 500px;
     /* overflow: hidden; */
+  }
+  .ovenBtn {
+    margin-left: 0;
   }
   .heart {
     margin-top: 80px;
