@@ -22,11 +22,9 @@
 .content {
   position: absolute;
   z-index: 1;
-  margin-left: auto;
-  margin-right: auto;
+  margin-top: 90px;
   left: 0;
   right: 0;
-  margin-top: 100px;
   text-align: center;
   transition: all 1000ms;
   color: rgba(16, 7, 56, 0.993);
@@ -44,8 +42,6 @@
 .join {
   position: absolute;
   z-index: 1;
-  margin-left: auto;
-  margin-right: auto;
   left: 0;
   right: 0;
   text-align: center;
@@ -122,7 +118,7 @@
   }
 
   .join-btn {
-    margin-top: 12rem;
+    margin-top: 10rem;
   }
   
   .grid-3 {
@@ -195,3 +191,17 @@
   }
 }
 
+@media(orientation: landscape) {
+
+  .join {
+    margin-top: 8rem;
+  }
+
+  .content {
+    margin-top: 4rem;
+  }
+
+  .showcase::after {
+    height: 100vh;
+  }
+}
