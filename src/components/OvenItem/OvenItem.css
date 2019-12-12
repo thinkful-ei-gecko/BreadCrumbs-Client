@@ -269,9 +269,10 @@ li:hover {
   /* max-height: 30%; */
   z-index: -1;
   overflow: auto;
-  .img {
-    margin-top: 50px;
-    height: 250px;
-    width: 600px;
-  }
+}
+
+.img {
+  margin-top: 50px;
+  height: 250px;
+  width: 600px;
 }
