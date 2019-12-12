@@ -11,7 +11,6 @@ export default class NewsItem extends Component {
     error: null,
     handleVote: false
   };
-
   static contextType = UserAndArticlesContext;
 
   handleUpVote = async article_id => {
@@ -23,7 +22,7 @@ export default class NewsItem extends Component {
       await this.context.setPopularArticlesList(data);
       this.setState({ handleVote: true });
     } catch (error) {
-      this.setState({ error: error.error.message })
+      this.setState({ error: error.error.message });
     }
   };
 
@@ -40,11 +39,11 @@ export default class NewsItem extends Component {
       await this.context.setPopularArticlesList(data);
       this.setState({ handleVote: true });
     } catch (error) {
-      this.setState({ error: error.error.message })
+      console.log("Exception.... handleDownVote");
     }
   };
-
   handleSavedArticle = article_id => {
+    console.log("savedarticle");
     const user_id = this.context.user.id;
     ArticlesApiService.postSavedArticle(article_id, user_id);
   };
@@ -56,6 +55,11 @@ export default class NewsItem extends Component {
       ? this.setState({ articleId: null })
       : this.setState({ articleId: article_id });
   };
+  handleSavedArticle = article_id => {
+    console.log("savedarticle");
+    const user_id = this.context.user.id;
+    ArticlesApiService.postSavedArticle(article_id, user_id);
+  };
 
   handleSavedArticle = article_id => {
     const user_id = this.context.user.id;
@@ -65,7 +69,16 @@ export default class NewsItem extends Component {
   render() {
     const { error } = this.state;
     const { articleId } = this.state;
-    const {article_id, author, source, description, title, url, url_to_image, vote_count} = this.props;
+    const {
+      article_id,
+      author,
+      source,
+      description,
+      title,
+      url,
+      url_to_image,
+      vote_count
+    } = this.props;
     return (
       <li className="listItem">
         <div role="alert">{error && <p className="error">{error}</p>}</div>
@@ -92,7 +105,7 @@ export default class NewsItem extends Component {
             <img
               src="https://image.flaticon.com/icons/svg/148/148836.svg"
               alt="heart"
-              className="heart"
+              className="comments"
               onClick={() => this.handleSavedArticle(article_id)}
             />
           </button>
@@ -113,17 +126,17 @@ export default class NewsItem extends Component {
             <img src={url_to_image} alt="img" className="img" />
           )}
           <div className="article-section">
-            <h3>{title}</h3>
+            <h3> {title}</h3>
             {author != null ? <p>By: {author}</p> : null}
             <p>Source: {source}</p>
-            <p>{description}</p>
+            <p> {description}</p>
             <a
               href={url}
               target="_blank"
               rel="noopener noreferrer"
               className="openLinkBtn"
             >
-              View Article
+              View Article{" "}
               <img
                 className="open-link"
                 src="https://image.flaticon.com/icons/svg/1/1424.svg"
