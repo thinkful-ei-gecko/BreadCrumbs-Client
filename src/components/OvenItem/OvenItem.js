@@ -32,7 +32,7 @@ export default class NewsItem extends Component {
     try{
       const user_id = this.context.user.id
       const vote_type = false
-      const vote = await ArticlesApiService.updateVote(article_id,user_id,vote_type)
+      await ArticlesApiService.updateVote(article_id,user_id,vote_type)
       const data = await ArticlesApiService.getArticlesList()
       await this.context.setPopularArticlesList(data);
       this.setState({handleVote:true})
@@ -48,12 +48,14 @@ export default class NewsItem extends Component {
   }
 
   handleRenderComments = async article_id => {
-    console.log('button clicked')
-    const data = await ArticlesApiService.getComments(article_id);
-    this.context.setArticleComments(data);
-    this.state.articleId === article_id
+    await this.state.articleId === article_id
       ? this.setState({ articleId: null })
       : this.setState({ articleId: article_id });
+    const data = await ArticlesApiService.getComments(article_id);
+    console.log(data)
+    await this.context.setArticleComments(data);
+    console.log(article_id, this.state.articleId)
+    console.log(this.context.comments)
   };
 handleSavedArticle=(article_id)=>{
   console.log('savedarticle')
@@ -98,11 +100,9 @@ handleSavedArticle=(article_id)=>{
 
           <div id='popup1' className="overlay">
             <div className='popup'>
-            <a className="close" href="#" onClick={() => this.handleRenderComments(this.state.articleId)}>&times;</a>
+            <a className="close" href="#" onClick={() => this.handleRenderComments(article_id)}>&times;</a>
               <div className='content-comment'>
-              {articleId === article_id ? (
                 <Comments articleID={article_id} />
-              ) : null}
               </div>
             </div>
           </div>
