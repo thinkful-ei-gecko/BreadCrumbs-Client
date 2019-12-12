@@ -7,7 +7,6 @@ export default class Comments extends Component {
   state = {
     update: false
   };
-
   static contextType = UserAndArticlesContext;
 
   handleSubmit = async ev => {
