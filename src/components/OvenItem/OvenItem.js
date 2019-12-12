@@ -69,7 +69,7 @@ handleSavedArticle=(article_id)=>{
            <div role='alert'>
                {error && <p className='error'>{error}</p>}
             </div>
-            <div className='score'>
+            <div className='score oven'>
              <button className='OvenItemBtn up-bread'><img src='https://image.flaticon.com/icons/svg/2224/2224092.svg' alt='fresh bread' className='fresh' onClick={()=>this.handleUpVote(article_id)} /></button>  
               <p>{vote_count}</p>
              <button className='OvenItemBtn down-bread'> <img src='https://image.flaticon.com/icons/svg/2224/2224092.svg' alt='not-fresh' className='not-fresh' onClick={()=>this.handleDownVote(article_id)} /> </button> 

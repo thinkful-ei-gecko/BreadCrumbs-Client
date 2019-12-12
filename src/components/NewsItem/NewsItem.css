@@ -62,7 +62,8 @@ li {
     text-align: center;
     display: flex;
     cursor: pointer;
-    margin: 9px;
+    margin-top: 100px;
+    font-size: 1rem;
   }
 
   .ovenBtn:hover {

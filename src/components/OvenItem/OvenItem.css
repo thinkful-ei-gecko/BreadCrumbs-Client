@@ -9,6 +9,9 @@ li {
   position: relative;
   float: left;
   padding: 10px;
+}
+
+.oven {
   border-right: 2px solid #cfcfcf;
 }
 
@@ -130,7 +133,7 @@ li:hover {
 @media only screen and (min-width: 550px) {
   .listItem {
     height: 450px;
-    overflow: hidden;
+    /* overflow: hidden; */
   }
   .heart {
     margin-top: 70px;
@@ -151,7 +154,7 @@ li:hover {
   }
   .listItem {
     width: 100%;
-    overflow: hidden;
+    /* overflow: hidden; */
   }
   .article-section {
     height: 500px;
@@ -169,7 +172,7 @@ li:hover {
   }
   .listItem {
     height: 400px;
-    overflow: hidden;
+    /* overflow: hidden; */
   }
   .heart {
     margin-top: 80px;
