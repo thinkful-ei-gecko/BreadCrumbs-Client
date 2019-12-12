@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./OvenItem.css";
-import news from "../NewsItem/images/news.jpg";
+import newsImg from "../NewsItem/images/news.jpg";
 import Comments from "../../components/Comments/Comments";
 import ArticlesApiService from "../../services/articles-api-service";
 import UserAndArticlesContext from "../../contexts/UserAndArticlesContext";
@@ -35,11 +35,10 @@ export default class NewsItem extends Component {
       await this.context.setPopularArticlesList(data);
       this.setState({ handleVote: true });
     } catch (error) {
-      console.log("Exception.... handleDownVote");
+      this.setState({ error: error.error.message });
     }
   };
   handleSavedArticle = article_id => {
-    console.log("savedarticle");
     const user_id = this.context.user.id;
     ArticlesApiService.postSavedArticle(article_id, user_id);
   };
@@ -49,13 +48,10 @@ export default class NewsItem extends Component {
       ? this.setState({ articleId: null })
       : this.setState({ articleId: article_id });
     const data = await ArticlesApiService.getComments(article_id);
-    console.log(data);
     await this.context.setArticleComments(data);
-    console.log(article_id, this.state.articleId);
-    console.log(this.context.comments);
   };
+
   handleSavedArticle = article_id => {
-    console.log("savedarticle");
     const user_id = this.context.user.id;
     ArticlesApiService.postSavedArticle(article_id, user_id);
   };
@@ -72,6 +68,7 @@ export default class NewsItem extends Component {
       url_to_image,
       vote_count
     } = this.props;
+    console.log(this.context.popularArticleList)
     return (
       <li className="listItem">
         <div role="alert">{error && <p className="error">{error}</p>}</div>
@@ -114,11 +111,9 @@ export default class NewsItem extends Component {
         </div>
 
         <div className="item">
-          {url_to_image === null ? (
-            <img src={news} alt="img" className="img" />
-          ) : (
-            <img src={url_to_image} alt="img" className="img" />
-          )}
+          {!!url_to_image === false 
+            ? (<img src={newsImg} alt="img" className="img" />)
+            : (<img src={url_to_image} alt="img" className="img" />)}
           <div className="article-section">
             <h3> {title}</h3>
             {author != null ? <p>By: {author}</p> : null}

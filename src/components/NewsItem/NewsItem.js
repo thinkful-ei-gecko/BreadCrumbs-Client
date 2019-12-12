@@ -57,7 +57,7 @@ export default class NewsItem extends React.Component {
           {/* <button className='NewsItemBtn' onClick={()=>this.handleOvenArticle(author,content,source,description,title,url,url_to_image,publishedAt)}>Send To Oven</button>   */}
         </div>
         <div className="item">
-          {url_to_image === null ? (
+          {!!url_to_image === false ? (
             <img src={news} alt="img" className="img" />
           ) : (
             <img src={url_to_image} alt="img" className="img" />
