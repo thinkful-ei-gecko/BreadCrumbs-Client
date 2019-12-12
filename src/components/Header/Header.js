@@ -59,7 +59,7 @@ export default class Header extends Component {
         to='/register'>
         Register
       </Link>
-      <span> </span>
+      <span></span>
       <Link className='headerLinks'
         to='/login'>
         Log in
