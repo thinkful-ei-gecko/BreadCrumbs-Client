@@ -32,7 +32,7 @@ export default class Login extends Component {
         this.setState({ error: res.error });
       });
   };
-  
+
   render() {
     const { error } = this.state;
     return (
@@ -42,8 +42,9 @@ export default class Login extends Component {
           <div role="alert">{error && <p className="error">{error}</p>}</div>
           <label htmlFor="Login-username"> Username: </label>
           <input
-            className="input"
+            className="input user_in"
             aria-label="Login-username"
+            placeholder="Username"
             name="user_name"
             type="text"
             required
@@ -52,6 +53,7 @@ export default class Login extends Component {
           <input
             className="input"
             aria-label="Login-password"
+            placeholder="PASSWORD"
             name="password"
             type="password"
             required

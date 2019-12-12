@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import AuthApiService from "../../services/auth-api-service";
+import AuthApiService from '../../services/auth-api-service';
+import './Registration.css';
 
 export default class Login extends Component {
   state = { 
@@ -44,6 +45,7 @@ export default class Login extends Component {
             className="input"
             aria-label="Signup-username"
             name="user_name"
+            placeholder='USERNAME'
             type="text"
             required
           ></input>
@@ -54,6 +56,7 @@ export default class Login extends Component {
             className="input"
             aria-label="Signup-fullname"
             name="fullname"
+            placeholder='FULL NAME'
             type="text"
             required
           ></input>
@@ -64,6 +67,7 @@ export default class Login extends Component {
             className="input"
             aria-label="Signup-password"
             name="password"
+            placeholder='PASSWORD'
             type="password"
             required
           ></input>

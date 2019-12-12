@@ -41,8 +41,14 @@ header {
 
 .user-name {
     color: beige;
-    /* padding: 5px; */
-    /* margin-bottom: 5px; */
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px 30px;
+}
+
+.menu {
+    padding-top: 10px;
 }
 
 .mainHeader:hover {
@@ -85,6 +91,7 @@ header {
 .mobile-menu {
     display: none;
 }
+
 
   @media only screen and (max-width: 600px) {
       .nav-container {

@@ -71,7 +71,7 @@ export default class NewsItem extends Component {
       <li className="listItem">
         <div role="alert">{error && <p className="error">{error}</p>}</div>
         <div className="score">
-          <button className="OvenItemBtn">
+          <button className="OvenItemBtn up-bread">
             <img
               src="https://image.flaticon.com/icons/svg/2224/2224092.svg"
               alt="fresh bread"
@@ -80,7 +80,7 @@ export default class NewsItem extends Component {
             />
           </button>
           <p>{vote_count}</p>
-          <button className="OvenItemBtn">
+          <button className="OvenItemBtn down-bread">
             {" "}
             <img
               src="https://image.flaticon.com/icons/svg/2224/2224092.svg"
@@ -89,15 +89,15 @@ export default class NewsItem extends Component {
               onClick={() => this.handleDownVote(article_id)}
             />{" "}
           </button>
-          <button className="OvenItemBtn">
+          <button className="OvenItemBtn heart">
             <img
               src="https://image.flaticon.com/icons/svg/148/148836.svg"
               alt="heart"
-              className="comments"
+              className="heart"
               onClick={() => this.handleSavedArticle(article_id)}
             />
           </button>
-          <button className="OvenItemBtn">
+          <button className="OvenItemBtn bubble">
             <img
               src="https://image.flaticon.com/icons/svg/134/134914.svg"
               alt="comments"
@@ -114,10 +114,10 @@ export default class NewsItem extends Component {
             <img src={url_to_image} alt="img" className="img" />
           )}
           <div className="article-section">
-            <h3> {title}</h3>
+            <h3>{title}</h3>
             {author != null ? <p>By: {author}</p> : null}
             <p>Source: {source}</p>
-            <p> {description}</p>
+            <p>{description}</p>
             <a
               href={url}
               target="_blank"

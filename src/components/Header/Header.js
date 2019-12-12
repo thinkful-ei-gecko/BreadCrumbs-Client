@@ -53,11 +53,11 @@ export default class Header extends Component {
   renderLoginLink() {
     return (
       <div className="menu">
-        <Link className="headerLinks" to="/register" onClick={this.hideElements}>
+        <Link className="headerLinks reg" to="/register" onClick={this.hideElements}>
           Register
         </Link>
         <span></span>
-        <Link className="headerLinks" to="/login" onClick={this.hideElements}>
+        <Link className="headerLinks log" to="/login" onClick={this.hideElements}>
           Log in
         </Link>
       </div>
