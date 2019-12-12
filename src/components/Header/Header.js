@@ -55,12 +55,12 @@ export default class Header extends Component {
   renderLoginLink() {
     return (
     <div className='menu'>
-      <Link className='headerLinks'
+      <Link className='headerLinks reg'
         to='/register'>
         Register
       </Link>
       <span></span>
-      <Link className='headerLinks'
+      <Link className='headerLinks log'
         to='/login'>
         Log in
       </Link>

@@ -70,9 +70,9 @@ handleSavedArticle=(article_id)=>{
                {error && <p className='error'>{error}</p>}
             </div>
             <div className='score'>
-             <button className='OvenItemBtn'><img src='https://image.flaticon.com/icons/svg/2224/2224092.svg' alt='fresh bread' className='fresh' onClick={()=>this.handleUpVote(article_id)} /></button>  
+             <button className='OvenItemBtn up-bread'><img src='https://image.flaticon.com/icons/svg/2224/2224092.svg' alt='fresh bread' className='fresh' onClick={()=>this.handleUpVote(article_id)} /></button>  
               <p>{vote_count}</p>
-             <button className='OvenItemBtn'> <img src='https://image.flaticon.com/icons/svg/2224/2224092.svg' alt='not-fresh' className='not-fresh' onClick={()=>this.handleDownVote(article_id)} /> </button> 
+             <button className='OvenItemBtn down-bread'> <img src='https://image.flaticon.com/icons/svg/2224/2224092.svg' alt='not-fresh' className='not-fresh' onClick={()=>this.handleDownVote(article_id)} /> </button> 
              <button className='OvenItemBtn heart'><img src='https://image.flaticon.com/icons/svg/148/148836.svg' alt='heart' className='comments' onClick={() => this.handleSavedArticle(article_id)} /></button>
              <button className='OvenItemBtn bubble'><img src='https://image.flaticon.com/icons/svg/134/134914.svg' alt='comments' className='comments' onClick={() => this.handleRenderComments(article_id)}/></button>
              
@@ -80,8 +80,8 @@ handleSavedArticle=(article_id)=>{
             
           <div className='item'>
           { url_to_image === null ?
-           <img src={news} alt='img' className='img' />: 
-           <img src={url_to_image} alt='img' className='img' /> }
+            <img src={news} alt='img' className='img' />: 
+            <img src={url_to_image} alt='img' className='img' /> }
             <div className='article-section'>
           <h3> {title}</h3>
           {author != null ? <p>By: {author}</p> : null }

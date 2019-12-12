@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Registration from '../../components/Registration/Registration';
-import './RegistrationPage.css';
 
 export default class SignUpPage extends Component {
   static defaultProps = {

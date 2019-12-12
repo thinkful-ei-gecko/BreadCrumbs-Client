@@ -43,9 +43,9 @@ export default class Login extends Component {
                {error && <p className='error'>{error}</p>}
                </div>
                 <label htmlFor='Login-username'> Username: </label> 
-                <input className='input' aria-label='Login-username' name='user_name' type='text' required ></input>
+                <input className='input user_in' placeholder="Username" aria-label='Login-username' name='user_name' type='text' required ></input>
                 <label htmlFor='Login-password'> Password: </label> 
-                <input className='input' aria-label='Login-password' name='password' type='password' required ></input>
+                <input className='input' aria-label='Login-password' placeholder="PASSWORD" name='password' type='password' required ></input>
                 <button className='loginRegBtn' type='submit'>login</button>
               </form>
             </div>

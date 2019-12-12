@@ -7,7 +7,7 @@
     margin: auto;
     border: 1px solid black;
     padding: 5px;
-    margin-top: 10px;
+    margin-top: 50px;
     margin-bottom: 10px;
     border-radius: 4px;
   }
@@ -18,8 +18,12 @@
   }
 
   .input {
-      padding: 2px;
+      padding: 5px;
       margin: 5px;
+  }
+
+  .user_in {
+    text-transform: uppercase;
   }
 
   .subtext {
