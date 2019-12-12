@@ -45,7 +45,7 @@ export default class Login extends Component {
             className="input"
             aria-label="Signup-username"
             name="user_name"
-            placeholder='USERNAME'
+            placeholder='Username'
             type="text"
             required
           ></input>
@@ -56,7 +56,7 @@ export default class Login extends Component {
             className="input"
             aria-label="Signup-fullname"
             name="fullname"
-            placeholder='FULL NAME'
+            placeholder='Full-name'
             type="text"
             required
           ></input>
@@ -67,7 +67,7 @@ export default class Login extends Component {
             className="input"
             aria-label="Signup-password"
             name="password"
-            placeholder='PASSWORD'
+            placeholder='Password'
             type="password"
             required
           ></input>

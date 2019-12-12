@@ -70,7 +70,7 @@ export default class NewsItem extends Component {
     return (
       <li className="listItem">
         <div role="alert">{error && <p className="error">{error}</p>}</div>
-        <div className="score">
+        <div className="score oven">
           <button className="OvenItemBtn up-bread">
             <img
               src="https://image.flaticon.com/icons/svg/2224/2224092.svg"

@@ -31,7 +31,29 @@ export default class NewsItem extends React.Component {
     const {author, content, source, description, title, url, url_to_image, publishedAt} = this.props;
     return (
       <li className="listItem">
-        <div className="score">
+        <div className="score bake">
+          <button
+            className="ovenBtn"
+            onClick={() =>
+              this.handleOvenArticle(
+                author,
+                content,
+                source,
+                description,
+                title,
+                url,
+                url_to_image,
+                publishedAt
+              )
+            }
+          >
+            <img
+              src="https://image.flaticon.com/icons/svg/1999/1999848.svg"
+              alt="send to oven"
+              className="fresh"
+            />
+            <div className="ovenTxt">Bake</div>
+          </button>
           {/* <button className='NewsItemBtn' onClick={()=>this.handleOvenArticle(author,content,source,description,title,url,url_to_image,publishedAt)}>Send To Oven</button>   */}
         </div>
         <div className="item">
@@ -46,40 +68,18 @@ export default class NewsItem extends React.Component {
             <p>Source: {source}</p>
             <p> {content}</p>
             <div className="newsItemBtns">
-              <button
-                className="ovenBtn"
-                onClick={() =>
-                  this.handleOvenArticle(
-                    author,
-                    content,
-                    source,
-                    description,
-                    title,
-                    url,
-                    url_to_image,
-                    publishedAt
-                  )
-                }
-              >
-                <img
-                  src="https://image.flaticon.com/icons/svg/1999/1999848.svg"
-                  alt="send to oven"
-                  className="fresh"
-                />
-                <div className="ovenTxt">Send to The Oven</div>
-              </button>
               <a
                 href={url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="openLinkBtn"
               >
-                View Article
+                View Article{" "}
                 <img
                   className="open-link"
                   src="https://image.flaticon.com/icons/svg/1/1424.svg"
                   alt="open link"
-                />{" "}
+                />
               </a>
             </div>
           </div>
