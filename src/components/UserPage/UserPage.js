@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect } from 'react-router-dom';
 import UserAndArticlesContext from "../../contexts/UserAndArticlesContext";
 import ChangeUsername from "./ChangeUsername";
 import ChangePassword from "./ChangePassword";
@@ -9,7 +10,8 @@ export default class UserPage extends Component {
   state = {
     showChangePassword: false,
     showForm: false,
-    deleteUser: null
+    deleteUser: null,
+    deleteSuccess: null
   };
 
   static contextType = UserAndArticlesContext;
@@ -36,6 +38,7 @@ export default class UserPage extends Component {
     const user_id = this.context.user.id;
     await AuthApiService.deleteUser({ user_id });
     this.context.processLogout();
+    this.setState({ deleteSuccess: true })
   };
 
   render() {
@@ -72,6 +75,7 @@ export default class UserPage extends Component {
               </>) 
               : (<button onClick={this.handleDeleteWarning}>Delete Account</button>)}
         </div>
+        {this.state.deleteSuccess && <Redirect to="/" />}
       </section>
     );
   }
