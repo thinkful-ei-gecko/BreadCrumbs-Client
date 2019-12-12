@@ -48,6 +48,7 @@ export default class NewsItem extends Component {
   }
 
   handleRenderComments = async article_id => {
+    console.log('button clicked')
     const data = await ArticlesApiService.getComments(article_id);
     this.context.setArticleComments(data);
     this.state.articleId === article_id
@@ -74,7 +75,8 @@ handleSavedArticle=(article_id)=>{
               <p>{vote_count}</p>
              <button className='OvenItemBtn down-bread'> <img src='https://image.flaticon.com/icons/svg/2224/2224092.svg' alt='not-fresh' className='not-fresh' onClick={()=>this.handleDownVote(article_id)} /> </button> 
              <button className='OvenItemBtn heart'><img src='https://image.flaticon.com/icons/svg/148/148836.svg' alt='heart' className='comments' onClick={() => this.handleSavedArticle(article_id)} /></button>
-             <button className='OvenItemBtn bubble'><img src='https://image.flaticon.com/icons/svg/134/134914.svg' alt='comments' className='comments' onClick={() => this.handleRenderComments(article_id)}/></button>
+             {/* <button className='OvenItemBtn bubble'><img src='https://image.flaticon.com/icons/svg/134/134914.svg' alt='comments' className='comments' onClick={() => this.handleRenderComments(article_id)}/></button> */}
+             <a className='OvenItemBtn bubble' href='#popup1'><img src='https://image.flaticon.com/icons/svg/134/134914.svg' alt='comments' className='comments' onClick={() => this.handleRenderComments(article_id)}/></a>
              
             </div> 
             
@@ -89,13 +91,21 @@ handleSavedArticle=(article_id)=>{
           <p> {description}</p>
             <a href={url} target='_blank'rel='noopener noreferrer' className='openLinkBtn'>View Article <img className = 'open-link' src='https://image.flaticon.com/icons/svg/1/1424.svg' alt='open link' /> </a>
           </div>
+
+        
+
           </div>
 
-        <div className="comments-container">
-          {articleId === article_id ? (
-            <Comments articleID={article_id} />
-          ) : null}
-        </div>
+          <div id='popup1' className="overlay">
+            <div className='popup'>
+            <a className="close" href="#">&times;</a>
+              <div className='content-comment'>
+              {articleId === article_id ? (
+                <Comments articleID={article_id} />
+              ) : null}
+              </div>
+            </div>
+          </div>
       </li>
     );
   }
