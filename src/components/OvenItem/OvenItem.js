@@ -164,21 +164,6 @@ export default class NewsItem extends Component {
             <div className="content-comment">
               <Comments articleID={article_id} className='comments-section'/>
             </div>
-            <form className="CommentForm" onSubmit={this.handleSubmit}>
-          <div className="text">
-            <textarea
-              className="comment-textarea"
-              required
-              aria-label="Type a comment..."
-              name="comment"
-              id="comment"
-              placeholder="Type a comment.."
-            ></textarea>
-          </div>
-          <button className="category" type="submit">
-            Post comment
-          </button>
-        </form>
           </div>
         </div>
       </li>
