@@ -50,6 +50,7 @@ export default class ChangePassword extends Component {
             aria-label="old_password"
             name="old_password"
             type="password"
+            placeholder="old password"
             required
           ></input>{" "}
           <br />
@@ -59,6 +60,7 @@ export default class ChangePassword extends Component {
             aria-label="new_password"
             name="new_password"
             type="password"
+            placeholder="new password"
             required
           ></input>{" "}
           <br />
@@ -68,6 +70,7 @@ export default class ChangePassword extends Component {
             aria-label="confirm_new_password"
             name="confirm_password"
             type="password"
+            placeholder="confirm password"
             required
           ></input>{" "}
           <br />
