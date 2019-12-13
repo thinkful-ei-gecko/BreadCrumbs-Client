@@ -1,19 +1,12 @@
 li {
   border-top: 1px solid rgba(131, 97, 97, 0.253);
-  margin-left: 5px;
   border-radius: 2px;
   height: auto;
 }
 
-.score {
-  width: 50px;
-  position: relative;
-  float: left;
-  padding: 10px;
-}
-
-.oven {
-  border-right: 2px solid #cfcfcf;
+li:hover {
+  background-color: lightgrey; 
+  color: black;
 }
 
 .img {
@@ -22,64 +15,94 @@ li {
   max-width: 210px;
 }
 
-.fresh {
-  width: 20px;
-  height: relative;
-}
-
-.not-fresh {
-  width: 20px;
-  height: relative;
-  transform: rotateX(180deg);
-  margin-bottom: 10px;
-}
-
-li:hover {
-  background-color: lightgrey; 
-  color: black;
+.listItem {
+  width: 100%;
+  display: flex;
+  padding: 25px;
+  padding-left: 0;
+  margin-left: 0;
+  flex-direction: column;
+  /* position: relative;
+  float: left; */
+  /* display: block; */
+  /* height: 500px; */
+  text-align: center;
 }
 
 .item {
-  margin-left: 5px;
+  margin: auto;
+  /* margin-left: 5px;
   margin-bottom: 2px;
   margin-top: 15px;
-  margin-right: 20px;
-  display: inline-block;
+  margin-right: 20px; */
+  /* display: block; */
   width: 60%;
 }
 
 .article-section {
-  /* display: block; */
-  margin-left: 5px;
-  padding: 15px;
+  display: inline-block;
   text-align: center;
-  height: 250px;
+  height: auto;
+}
+
+.empty-space {
+  height: 10px;
 }
 
 .article-section p {
   display: none;
 }
 
-.listItem {
-  position: relative;
-  float: left;
-  display: block;
-  height: 500px;
-}
-
 .score {
-  margin: 20px auto 40px auto;
+  margin: auto;
+  /* margin: 20px auto 40px auto; */
   text-align: center;
-  display: block;
+  display: flex;
+  width: 90%;
+  /* position: relative;
+  float: left; */
+  /* padding: 10px; */
+  border-top: 2px solid #cfcfcf;
+  border-bottom: 2px solid #cfcfcf;
 }
 
-.like {
+.OvenItemBtn {
+  /* width: 100%; */
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin: auto;
+}
+
+.fresh {
+  width: 30px;
+  height: relative;
+  /* padding: 3px; */
+}
+
+.not-fresh {
+  width: 30px;
+  height: relative;
+  transform: rotateX(180deg);
+  /* margin-bottom: 10px; */
+}
+
+/* .like {
   border-top: 1px solid lightgrey;
   padding: 5px;
   padding-top: 10px;
   width: 20px;
   cursor: pointer;
 }
+
+.up-bread {
+  margin-top: 20px;
+}
+
+.heart {
+  margin-top: 150px;
+  margin-bottom: 50px;
+} */
 
 .comments {
   width: 20px;
@@ -97,32 +120,17 @@ li:hover {
 }
 
 .openLinkBtn {
-  display: inline-block;
-  float: none;
+  /* position: relative;
+  float: right; */
   text-decoration: none;
   color: black;
   border: 1px solid black;
   border-radius: 2px;
   padding: 10px;
-  margin-top: 20px;
 }
 
 .openLinkBtn:hover {
   background-color: grey;
-}
-.OvenItemBtn {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-}
-
-.up-bread {
-  margin-top: 20px;
-}
-
-.heart {
-  margin-top: 150px;
-  margin-bottom: 50px;
 }
 
 @media only screen and (min-width: 375px) {
@@ -132,63 +140,92 @@ li:hover {
   .img {
     max-width: 270px;
   }
-  .listItem {
-    width: 100%;
-  }
 } 
 
 @media only screen and (min-width: 550px) {
-  .listItem {
-    height: 450px;
-    overflow: hidden;
+  .item {
+    width: 75%;
   }
-  .heart {
-    margin-top: 70px;
+  .img {
+    max-width: 300px;
+  }
+  .score {
+    width: 70%;
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 750px) {
   .item {
     width: 80%;
-    text-align: center;
+  }
+  .score {
+    width: 60%;
   }
   .img {
-    margin-top: 100px;
-    position: relative;
-    float: left;
     max-width: 400px;
-    margin-right: 30px;
   }
   .listItem {
     width: 100%;
     overflow: hidden;
   }
-  .article-section {
-    height: 500px;
-  }
   .article-section p {
     display: block;
+    margin-bottom: 20px;
   }
-
 }
 
 @media only screen and (min-width: 1100px) {
+  .img {
+    position: relative;
+    float: left;
+    margin-bottom: 20px;
+  }
+  .item {
+    width: 96%;
+  }
+  .score {
+    width: 40%;
+    border-top: none;
+  }
+  
   .article-section {
-    margin-top: 30px;
+    position: relative;
+    float: right;
+    margin: auto;
     text-align: left;
+    width: 60%;
+    /* padding: 25px; */
   }
-  .listItem {
-    height: 400px;
-    /* overflow: hidden; */
-  }
-  .ovenBtn {
-    margin-left: 0;
-  }
-  .heart {
-    margin-top: 80px;
+  .article-section h3 {
+    margin-top: 40px;
   }
 }
 
+@media only screen and (min-width: 1300px) {
+  .article-section {
+    width: 62%;
+  }
+  .item {
+    width: 93%;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .article-section {
+    width: 70%;
+  }
+  .item {
+    width: 97%;
+  }
+}
+
+@media only screen and (min-width: 1700px) {
+  .item {
+    width: 90%;
+  }
+}
+
+/*comment popup styling */
 .overlay {
   position: fixed;
   top: 0;
