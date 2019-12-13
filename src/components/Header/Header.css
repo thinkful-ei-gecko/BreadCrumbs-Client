@@ -115,6 +115,7 @@ header {
           background-color:  rgba(16, 7, 56, 0.728);
           text-align: right;
           margin-left: 70px;
+          z-index: 2000;
       }
       .headerLinks:hover {
           background-color: transparent;

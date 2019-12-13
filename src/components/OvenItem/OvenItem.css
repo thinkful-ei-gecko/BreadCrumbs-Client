@@ -140,7 +140,7 @@ li:hover {
 @media only screen and (min-width: 550px) {
   .listItem {
     height: 450px;
-    /* overflow: hidden; */
+    overflow: hidden;
   }
   .heart {
     margin-top: 70px;
@@ -161,7 +161,7 @@ li:hover {
   }
   .listItem {
     width: 100%;
-    /* overflow: hidden; */
+    overflow: hidden;
   }
   .article-section {
     height: 500px;
@@ -272,8 +272,14 @@ li:hover {
 }
 
 .content-comment {
-  height: 225px;
+  height: 70%;
   /* border: 1px solid purple; */
+}
+
+.CommentForm {
+  position: relative;
+  bottom: 1%;
+  
 }
 
 .img {

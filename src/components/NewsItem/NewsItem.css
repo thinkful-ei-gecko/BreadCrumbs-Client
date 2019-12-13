@@ -41,7 +41,7 @@ li {
     display: block;
     margin-left: 5px;
     /* height: 200px; */
-    overflow: auto;
+    /* overflow: auto; */
   }
 
   .bake-section {
