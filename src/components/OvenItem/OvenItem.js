@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from "react";
 import "./OvenItem.css";
 import newsImg from "../NewsItem/images/news.jpg";
@@ -140,11 +141,7 @@ export default class NewsItem extends Component {
 
         <div id="popup1" className="overlay">
           <div className="popup">
-            <a
-              className="close"
-              href="#"
-              onClick={this.handleCloseComments}
-            >
+            <a className="close" href="#" onClick={this.handleCloseComments}>
               &times;
             </a>
             <div className="content-comment">
