@@ -116,7 +116,6 @@ export default class NewsItem extends Component {
               onClick={() => this.handleSavedArticle(article_id)}
             />
           </button>
-          {/* <button className='OvenItemBtn bubble'><img src='https://image.flaticon.com/icons/svg/134/134914.svg' alt='comments' className='comments' onClick={() => this.handleRenderComments(article_id)}/></button> */}
           <a className="OvenItemBtn bubble" href="#popup1">
             <img
               src="https://image.flaticon.com/icons/svg/134/134914.svg"
@@ -175,7 +174,7 @@ export default class NewsItem extends Component {
               placeholder="Type a comment.."
             ></textarea>
           </div>
-          <button className="category" type="submit">
+          <button className="comment-submit" type="submit">
             Post comment
           </button>
         </form>
