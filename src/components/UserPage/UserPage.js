@@ -55,13 +55,13 @@ export default class UserPage extends Component {
         </h3>
         <div className="settings1">
           <p>Current Username: {this.context.user.username}</p>
-          <button className="settingBtn" onClick={this.handleClickUsername}>
+          <button className="comment-submit" onClick={this.handleClickUsername}>
             Change Username
           </button>
         </div>
         <div className="settings1">
           <p>Current Password: ****</p>
-          <button className="settingBtn" onClick={this.handleClickPassword}>
+          <button className="comment-submit" onClick={this.handleClickPassword}>
             Change Password
           </button>
           {this.state.showForm &&
@@ -74,7 +74,7 @@ export default class UserPage extends Component {
             
                 <p>Are you sure?</p>
                 <button className='confirmBtn' onClick={this.handleDeleteUser}>Yes</button>
-                <button className='confirmBtn' onClick={this.handleDeleteWarning}>No</button>
+                <button className='confirmBtn no' onClick={this.handleDeleteWarning}>No</button>
               </div>) 
               : (<button className='deleteBtn' onClick={this.handleDeleteWarning}>Delete Account</button>)}
           </div>

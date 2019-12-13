@@ -16,9 +16,42 @@
       margin-top:25px;
     }
     .deleteBtn{
+      border: 1px solid red;
+      color: red;
+      background-color: white;
+      height: 25px;
       margin-top: 10px;
+      cursor: pointer;
+      border-radius: 2px;
+    }
+
+    .deleteBtn:hover {
+      color: white;
+      background-color: red;
     }
     
     .confirmBtn{
+      border-radius: 2px;
+      border: 1px solid red;
+      color: red;
+      background-color: white;
+      height: 25px;
+      margin-top: 10px;
+      cursor: pointer;
       margin-left:10px;
+    }
+
+    .confirmBtn:hover {
+      color: white;
+      background-color: red;
+    }
+
+    .no {
+      border: 1px solid navy;
+      color: navy;
+    }
+
+    .no:hover {
+      background-color: navy;
+      color: white;
     }
