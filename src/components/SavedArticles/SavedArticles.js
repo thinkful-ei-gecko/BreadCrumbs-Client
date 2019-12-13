@@ -27,12 +27,12 @@ export default class SavedArticles extends Component {
     const { savedArticlesList = [] } = this.context;
     return savedArticlesList.map((article, idx) => (
       <li key={idx} className="listItem">
-        <div className="score">
-          <button className="OvenItemBtn">
+        <div className="delete-saved">
+          <button className="delete-btn">
             <img
               src="https://image.flaticon.com/icons/svg/64/64022.svg"
               alt="comments"
-              className="comments"
+              className="comments delete"
               onClick={() => this.handleDeleteArticle(article.id)}
             />
           </button>
