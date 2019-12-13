@@ -120,13 +120,13 @@ export default class HomePage extends Component {
         {this.renderMobileDropdown()}
         <div className='articleQueryContainer tablet-and-desktop-view'>
           <ul>
-            <li className='category' onClick={() => this.handleOvenNews()}>The Oven</li>
-            <li className='category' onClick={() => this.handleTopNews()}>Top News</li>
-            <li className='category' onClick={() => this.handleNewNews('business')}>Business</li>
-            <li className='category' onClick={() => this.handleNewNews('health')}>Health</li>
-            <li className='category' onClick={() => this.handleNewNews('science')}>Science</li>
-            <li className='category' onClick={() => this.handleNewNews('sports')}>Sports</li>
-            <li className='category' onClick={() => this.handleNewNews('technology')}>Technology</li>
+            <li> <button className='category' onClick={() => this.handleOvenNews()}>The Oven</button></li>
+            <li> <button className='category' onClick={() => this.handleTopNews()}>Top News</button></li>
+            <li> <button className='category' onClick={() => this.handleNewNews('business')}>Business</button></li>
+            <li> <button className='category' onClick={() => this.handleNewNews('health')}>Health</button></li>
+            <li> <button className='category' onClick={() => this.handleNewNews('science')}>Science</button></li>
+            <li> <button className='category' onClick={() => this.handleNewNews('sports')}>Sports</button></li>
+            <li> <button className='category' onClick={() => this.handleNewNews('technology')}>Technology</button></li>
           </ul>
         </div>
         <div className='articleContainer'>

@@ -1,4 +1,4 @@
-li {
+.listItem {
   border-top: 1px solid rgba(131, 97, 97, 0.253);
   margin-left: 5px;
   border-radius: 2px;
@@ -34,7 +34,7 @@ li {
   margin-bottom: 10px;
 }
 
-li:hover {
+.listItem:hover {
   background-color: lightgrey; 
   color: black;
 }
@@ -276,14 +276,22 @@ li:hover {
   /* border: 1px solid purple; */
 }
 
-.CommentForm {
-  position: relative;
-  bottom: 1%;
-  
-}
-
 .img {
   margin-top: 50px;
   height: 250px;
   width: 600px;
+}
+
+.comment-submit {
+  background-color: rgba(16, 7, 56, 0.993);
+  color: white;
+  border-radius: 2px;
+  cursor: pointer;
+  height: 35px;
+}
+
+.comment-submit:hover {
+  background-color: white;
+  color: rgba(16, 7, 56, 0.993);
+  border: 1px solid rgba(16, 7, 56, 0.993);
 }
