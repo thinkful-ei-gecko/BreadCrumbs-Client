@@ -85,7 +85,8 @@ Breadcrumbs is a reenvisioned news aggregator that eliminates "gatekeepers" and 
 
 ### Screenshots
 ## Landing Page
-![bclanding](https://user-images.githubusercontent.com/25930687/70803379-d518b200-1dab-11ea-8180-2c3bec4fa363.PNG)
+![bclanding]![land](https://user-images.githubusercontent.com/25930687/70808522-c0dab200-1db7-11ea-8f8d-7cc082c04500.PNG)
+
 ## Home Page
 ![oven](https://user-images.githubusercontent.com/25930687/70808008-b1a73480-1db6-11ea-8967-1a132e2a007a.PNG)
 
