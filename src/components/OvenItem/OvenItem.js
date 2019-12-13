@@ -85,7 +85,7 @@ export default class NewsItem extends Component {
       url_to_image,
       vote_count
     } = this.props;
-    console.log(this.context.popularArticleList)
+   
     return (
       <li className="listItem">
         <div role="alert">{error && <p className="error">{error}</p>}</div>
