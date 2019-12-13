@@ -163,6 +163,7 @@ export default class NewsItem extends Component {
             <div className="content-comment">
               <Comments articleID={article_id} className='comments-section'/>
             </div>
+<<<<<<< HEAD
             <form className="CommentForm" onSubmit={this.handleSubmit}>
           <div className="text">
             <textarea
@@ -178,6 +179,8 @@ export default class NewsItem extends Component {
             Post comment
           </button>
         </form>
+=======
+>>>>>>> 4232ceca19587ee56840ab1050b44ff564ba1142
           </div>
         </div>
       </li>
