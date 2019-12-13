@@ -90,11 +90,15 @@ Breadcrumbs is a reenvisioned news aggregator that eliminates "gatekeepers" and 
 ![oven](https://user-images.githubusercontent.com/25930687/70808008-b1a73480-1db6-11ea-8967-1a132e2a007a.PNG)
 
 ### Core Technologies Used:
+## Front-end
 -  React
 -  HTML5
 -  CSS3
-
-
+## Back-end
+- Node.js
+- Express
+- Knex
+- PostGreSQL
 #
 |  Repository  |  Link  |
 | -- |  -- |
