@@ -1,7 +1,14 @@
 .articleQueryContainer ul {
     list-style-type: none;
     padding-left: 0;
-   
+
+}
+
+.articleQueryContainer {
+    position: sticky;
+    top: 0px;
+    background-color: white;
+    z-index: 1;
 }
 
 li {
