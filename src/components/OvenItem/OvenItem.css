@@ -2,15 +2,24 @@ li {
   border-top: 1px solid rgba(131, 97, 97, 0.253);
   margin-left: 5px;
   border-radius: 2px;
+  height: auto;
 }
 
 .score {
   width: 50px;
+  position: relative;
+  float: left;
+  padding: 10px;
+}
+
+.oven {
+  border-right: 2px solid #cfcfcf;
 }
 
 .img {
-  width: 300px;
-  height: relative;
+  width:  relative;
+  height: 200px;
+  max-width: 210px;
 }
 
 .fresh {
@@ -33,24 +42,33 @@ li:hover {
 .item {
   margin-left: 5px;
   margin-bottom: 2px;
-  display: flex;
-  flex-direction: row;
+  margin-top: 15px;
+  margin-right: 20px;
+  display: inline-block;
+  width: 60%;
 }
 
 .article-section {
-  display: block;
+  /* display: block; */
   margin-left: 5px;
-  height: 200px;
-  overflow: auto;
+  padding: 15px;
+  text-align: center;
+  height: 250px;
 }
+
+.article-section p {
+  display: none;
+}
+
 .listItem {
-  display: flex;
+  position: relative;
+  float: left;
+  display: block;
+  height: 500px;
 }
 
 .score {
-  margin-left: 5px;
-  margin-right: 15px;
-  margin-top: 10px;
+  margin: 20px auto 40px auto;
   text-align: center;
   display: block;
 }
@@ -68,17 +86,25 @@ li:hover {
   cursor: pointer;
 }  
 
+.comments-container {
+  overflow: auto;
+  display: block;
+}
+
 .open-link {
   width: 15px;
   cursor: pointer;
 }
 
 .openLinkBtn {
+  display: inline-block;
+  float: none;
   text-decoration: none;
   color: black;
   border: 1px solid black;
   border-radius: 2px;
-  padding: 5px;
+  padding: 10px;
+  margin-top: 20px;
 }
 
 .openLinkBtn:hover {
@@ -88,4 +114,170 @@ li:hover {
     background-color: transparent;
     border: none;
     cursor: pointer;
+}
+
+.up-bread {
+  margin-top: 20px;
+}
+
+.heart {
+  margin-top: 150px;
+  margin-bottom: 50px;
+}
+
+@media only screen and (min-width: 375px) {
+  .item {
+    width: 70%;
+  }
+  .img {
+    max-width: 270px;
+  }
+  .listItem {
+    width: 100%;
+  }
+} 
+
+@media only screen and (min-width: 550px) {
+  .listItem {
+    height: 450px;
+    /* overflow: hidden; */
+  }
+  .heart {
+    margin-top: 70px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .item {
+    width: 80%;
+    text-align: center;
+  }
+  .img {
+    margin-top: 100px;
+    position: relative;
+    float: left;
+    max-width: 400px;
+    margin-right: 30px;
+  }
+  .listItem {
+    width: 100%;
+    /* overflow: hidden; */
+  }
+  .article-section {
+    height: 500px;
+  }
+  .article-section p {
+    display: block;
+  }
+
+}
+
+@media only screen and (min-width: 1100px) {
+  .article-section {
+    margin-top: 30px;
+    text-align: left;
+  }
+  .listItem {
+    height: 400px;
+    /* overflow: hidden; */
+  }
+  .ovenBtn {
+    margin-left: 0;
+  }
+  .heart {
+    margin-top: 80px;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 1;
+}
+
+.comment-textarea {
+  border-radius: 2px;
+  height: 75px;
+  width: 200px;
+  margin-top: 10px;
+}
+
+.individual-comment-container {
+  border-bottom: 1px lightgrey solid;
+}
+.comment-date {
+  font-size: x-small;
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+.user-posted-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.comment-body {
+  padding: 5px;
+  margin-left: 5px;
+}
+
+
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 70%;
+  position: relative;
+  transition: all 5s ease-in-out;
+  overflow: auto;
+  z-index: -1;
+  height: 55%;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #06D85F;
+}
+.popup .content-comment {
+  /* max-height: 30%; */
+  z-index: -1;
+  overflow: auto;
+}
+
+.content-comment {
+  height: 225px;
+  /* border: 1px solid purple; */
+}
+
+.img {
+  margin-top: 50px;
+  height: 250px;
+  width: 600px;
 }
