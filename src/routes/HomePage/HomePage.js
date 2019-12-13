@@ -67,7 +67,6 @@ export default class HomePage extends Component {
   }
 
   renderArticlesToPage() {
-     //const { articlesList = [] } = this.context;
     const articlesList = this.context.articlesList || []
     return articlesList.map((article,idx) =>
     <NewsItem
