@@ -214,8 +214,11 @@
 .comment-textarea {
   border-radius: 2px;
   height: 75px;
-  width: 200px;
+  width: 60%;
   margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  resize: none;
 }
 
 .individual-comment-container {
@@ -245,7 +248,7 @@
 
 .popup {
   margin: 70px auto;
-  padding: 20px;
+  padding: 25px;
   background: #fff;
   border-radius: 5px;
   width: 70%;
@@ -263,8 +266,9 @@
 }
 .popup .close {
   position: absolute;
-  top: 20px;
-  right: 30px;
+  top: 0;
+  right: 0;
+  padding-right: 3px;
   transition: all 200ms;
   font-size: 30px;
   font-weight: bold;
