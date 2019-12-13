@@ -63,7 +63,7 @@ export default class Comments extends Component {
               placeholder="Type a comment.."
             ></textarea>
           </div>
-          <button className="category" type="submit">
+          <button className="comment-submit" type="submit">
             Post comment
           </button>
         </form>
