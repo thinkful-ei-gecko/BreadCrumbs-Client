@@ -34,7 +34,6 @@ const ArticlesApiService = {
       })
   },
   postArticle(author,content,source,description,title,url,url_to_image,publishedAt) {
-    console.log('*******',author)
     return fetch(`${config.API_ENDPOINT}/article`, {
       method: 'POST',
       headers: {
@@ -106,7 +105,6 @@ const ArticlesApiService = {
   },
 
   updateVote(article_id,user_id,vote_type){
-    console.log(article_id,user_id,vote_type)
     return fetch(`${config.API_ENDPOINT}/vote`, {
       method: 'PATCH',
       headers: {
