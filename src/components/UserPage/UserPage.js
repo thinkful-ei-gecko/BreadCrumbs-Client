@@ -45,23 +45,23 @@ export default class UserPage extends Component {
     return (
       <section className="Settings">
         <h2>{this.context.user.name}</h2>
-        <h3 id="accSetting">
+        <h3 className="accSetting">
           <img
             className="gearThing"
             src="https://image.flaticon.com/icons/svg/0/525.svg"
             alt="settings"
           />
-          <div className="accSettings"> Account Settings </div>
+           Account Settings 
         </h3>
-        <div className="settings">
+        <div className="settings1">
           <p>Current Username: {this.context.user.username}</p>
-          <button className="settingBtn" onClick={this.handleClickUsername}>
+          <button className="comment-submit" onClick={this.handleClickUsername}>
             Change Username
           </button>
         </div>
-        <div className="settings">
+        <div className="settings1">
           <p>Current Password: ****</p>
-          <button className="settingBtn" onClick={this.handleClickPassword}>
+          <button className="comment-submit" onClick={this.handleClickPassword}>
             Change Password
           </button>
           {this.state.showForm &&
@@ -74,7 +74,7 @@ export default class UserPage extends Component {
             
                 <p>Are you sure?</p>
                 <button className='confirmBtn' onClick={this.handleDeleteUser}>Yes</button>
-                <button className='confirmBtn' onClick={this.handleDeleteWarning}>No</button>
+                <button className='confirmBtn no' onClick={this.handleDeleteWarning}>No</button>
               </div>) 
               : (<button className='deleteBtn' onClick={this.handleDeleteWarning}>Delete Account</button>)}
           </div>

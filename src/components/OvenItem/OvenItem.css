@@ -1,10 +1,10 @@
-li {
+.listItem {
   border-top: 1px solid rgba(131, 97, 97, 0.253);
   border-radius: 2px;
   height: auto;
 }
 
-li:hover {
+.listItem:hover {
   background-color: lightgrey; 
   color: black;
 }
@@ -22,20 +22,11 @@ li:hover {
   padding-left: 0;
   margin-left: 0;
   flex-direction: column;
-  /* position: relative;
-  float: left; */
-  /* display: block; */
-  /* height: 500px; */
   text-align: center;
 }
 
 .item {
   margin: auto;
-  /* margin-left: 5px;
-  margin-bottom: 2px;
-  margin-top: 15px;
-  margin-right: 20px; */
-  /* display: block; */
   width: 60%;
 }
 
@@ -55,19 +46,14 @@ li:hover {
 
 .score {
   margin: auto;
-  /* margin: 20px auto 40px auto; */
   text-align: center;
   display: flex;
   width: 90%;
-  /* position: relative;
-  float: left; */
-  /* padding: 10px; */
   border-top: 2px solid #cfcfcf;
   border-bottom: 2px solid #cfcfcf;
 }
 
 .OvenItemBtn {
-  /* width: 100%; */
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -77,32 +63,13 @@ li:hover {
 .fresh {
   width: 30px;
   height: relative;
-  /* padding: 3px; */
 }
 
 .not-fresh {
   width: 30px;
   height: relative;
   transform: rotateX(180deg);
-  /* margin-bottom: 10px; */
 }
-
-/* .like {
-  border-top: 1px solid lightgrey;
-  padding: 5px;
-  padding-top: 10px;
-  width: 20px;
-  cursor: pointer;
-}
-
-.up-bread {
-  margin-top: 20px;
-}
-
-.heart {
-  margin-top: 150px;
-  margin-bottom: 50px;
-} */
 
 .comments {
   width: 20px;
@@ -120,8 +87,6 @@ li:hover {
 }
 
 .openLinkBtn {
-  /* position: relative;
-  float: right; */
   text-decoration: none;
   color: black;
   border: 1px solid black;
@@ -194,7 +159,6 @@ li:hover {
     margin: auto;
     text-align: left;
     width: 60%;
-    /* padding: 25px; */
   }
   .article-section h3 {
     margin-top: 40px;
@@ -303,24 +267,30 @@ li:hover {
   color: #06D85F;
 }
 .popup .content-comment {
-  /* max-height: 30%; */
   z-index: -1;
   overflow: auto;
 }
 
 .content-comment {
   height: 70%;
-  /* border: 1px solid purple; */
-}
-
-.CommentForm {
-  position: relative;
-  bottom: 1%;
-  
 }
 
 .img {
   margin-top: 50px;
   height: 250px;
   width: 600px;
+}
+
+.comment-submit {
+  background-color: rgba(16, 7, 56, 0.993);
+  color: white;
+  border-radius: 2px;
+  cursor: pointer;
+  height: 35px;
+}
+
+.comment-submit:hover {
+  background-color: white;
+  color: rgba(16, 7, 56, 0.993);
+  border: 1px solid rgba(16, 7, 56, 0.993);
 }

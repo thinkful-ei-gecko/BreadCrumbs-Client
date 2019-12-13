@@ -65,6 +65,7 @@ export default class ChangeUsername extends Component {
             aria-label="Login-password"
             name="password"
             type="password"
+            placeholder="password"
             required
           ></input>{" "}
           <br />
