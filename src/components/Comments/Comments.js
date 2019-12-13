@@ -13,7 +13,8 @@ export default class Comments extends Component {
   handleSubmit = async ev => {
     ev.preventDefault();
     const user_id = this.context.user.id;
-    const article_id = this.props.articleID;
+    
+    const { article_id } = this.context.articleID;
     const { comment } = ev.target;
 
     ArticleApiService.postComment(article_id, comment.value, user_id)

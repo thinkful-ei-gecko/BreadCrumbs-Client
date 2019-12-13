@@ -12,6 +12,7 @@ const UserAndUserAndArticlesContext = React.createContext({
   processLogout: () => {},
   refreshLoginState: () => {},
 
+  articleID: null,
   articlesList: [],
   savedArticlesList: [],
   popularArticleList: [],
@@ -29,6 +30,7 @@ export class UserAndArticlesProvider extends Component {
     super(props)
     const state = { 
       user: {},
+      articleID: null,
       articlesList: [],
       savedArticlesList: [],
       popularArticleList: [],
@@ -99,6 +101,10 @@ export class UserAndArticlesProvider extends Component {
     this.setState({ articleComments: [...this.state.articleComments, newComment ] })
   }
 
+  setArticleID = newArticleID => {
+    this.setState({ articleID: newArticleID })
+  }
+
   render(){
     const value = {
       user: this.state.user,
@@ -111,6 +117,7 @@ export class UserAndArticlesProvider extends Component {
       refreshLoginState: this.refreshLoginState,
       processLogout: this.processLogout,
 
+      articleID: this.state.articleID,
       articlesList: this.state.articlesList,
       popularArticleList: this.state.popularArticleList,
       savedArticlesList: this.state.savedArticlesList,
@@ -120,6 +127,7 @@ export class UserAndArticlesProvider extends Component {
       setPopularArticlesList: this.setPopularArticlesList,
       setArticleComments: this.setArticleComments,
       addComment: this.addComment,
+      setArticleID: this.setArticleID
     }
     return(
       <div>

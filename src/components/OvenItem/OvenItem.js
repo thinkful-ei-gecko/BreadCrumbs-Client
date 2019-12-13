@@ -44,35 +44,21 @@ export default class NewsItem extends Component {
   };
 
   handleRenderComments = async article_id => {
-    (await this.state.articleId) === article_id
-      ? this.setState({ articleId: null })
-      : this.setState({ articleId: article_id });
+    await this.context.setArticleID({ article_id });
     const data = await ArticlesApiService.getComments(article_id);
     await this.context.setArticleComments(data);
   };
+
+  handleCloseComments = async() => {
+    let article_id = null;
+    await this.context.setArticleID({ article_id });
+  }
 
   handleSavedArticle = article_id => {
     const user_id = this.context.user.id;
     ArticlesApiService.postSavedArticle(article_id, user_id);
   };
-  handleSubmit = async ev => {
-    ev.preventDefault();
-    const user_id = this.context.user.id;
-    const article_id = this.props.articleID;
-    const { comment } = ev.target;
-
-    ArticlesApiService.postComment(article_id, comment.value, user_id)
-      .then(() => {
-        comment.value = "";
-      })
-      .catch(this.context.setError);
-    this.context.addComment({
-      username: this.context.user.username,
-      comment: comment.value,
-      date_commented: Date.now()
-    });
-    this.setState({ update: !this.state.update });
-  };
+ 
   render() {
     const { error } = this.state;
     const {
@@ -157,12 +143,12 @@ export default class NewsItem extends Component {
             <a
               className="close"
               href="#"
-              onClick={() => this.handleRenderComments(article_id)}
+              onClick={this.handleCloseComments}
             >
               &times;
             </a>
             <div className="content-comment">
-              <Comments articleID={article_id} className='comments-section'/>
+              <Comments className='comments-section'/>
             </div>
           </div>
         </div>
