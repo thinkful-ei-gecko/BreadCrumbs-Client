@@ -96,7 +96,7 @@ Breadcrumbs is a reenvisioned news aggregator that eliminates "gatekeepers" and 
 
 ### Core Technologies Used:
 This is a full-stack web-app.</br>
-**Front-end**: React.js, SCSS</br>
+**Front-end**: React.js, HTML5,CSS</br>
 **Back-end**: Node.js, Express.js, knex, PostGreSQL, RESTful API
 #
 |  Repository  |  Link  |
