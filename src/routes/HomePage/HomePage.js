@@ -101,7 +101,7 @@ export default class HomePage extends Component {
 
  renderMobileDropdown = () => {
    return (
-     <select className='mobile-view-select-menu' onClick={this.handleMobileDropdownClick}>
+     <select className='mobile-view-select-menu' onChange={this.handleMobileDropdownClick}>
        <option value='The Oven'>The Oven</option>
        <option value='Top News'>Top News</option>
        <option value='business'>Business</option>
