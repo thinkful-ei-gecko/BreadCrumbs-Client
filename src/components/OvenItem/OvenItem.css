@@ -1,8 +1,8 @@
 .img {
-  max-width:200px;
-  max-height:180px;
-  width: auto;
-  height: auto;
+  max-width: 210px;
+  max-height: 150px;
+  width: relative;
+  height: relative;
 }
 
 .delete-saved {
@@ -122,6 +122,7 @@
   }
   .img {
     max-width: 300px;
+    max-height: 230px;
   }
   .score {
     width: 70%;
