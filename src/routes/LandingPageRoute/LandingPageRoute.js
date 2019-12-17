@@ -42,7 +42,7 @@ export default class LandingPageRoute extends Component {
                   <h3>The Oven</h3>
                 </div>
                 <div className="face-2">
-                  <p>Popular news based on user voting system.  Interact with others by submitting comments on any article.</p>
+                  <p>Interact with the articles by sending it to the Oven.  Users can vote which articles are most relevant and interesting.</p>
                 </div>
               </div>
 
