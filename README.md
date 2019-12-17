@@ -42,7 +42,8 @@ Breadcrumbs is a reenvisioned news aggregator that eliminates "gatekeepers" and 
 
 #### 3.)  I am a believer in the power of Decentralized Autonomous Organizations (DAOs).  As such, I would like to  see a method for user to be able to determine the visibility/popularity of content with organic unincentivized user voting.
 
-- Users can select articles from the API stream to submit to their peers for voting.
+- Users can select articles from the API stream to submit to their peers for voting in the Oven.
+- Normal articles will not be able to be voted on, in case someone doesn't want to join in on the social aspect.
 - Voting is not rewarded, thus keeping it honest.
 - Users can add value or subtract value from articles.
 
