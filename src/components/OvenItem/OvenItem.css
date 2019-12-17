@@ -1,18 +1,8 @@
-.listItem {
-  border-top: 1px solid rgba(131, 97, 97, 0.253);
-  border-radius: 2px;
-  height: auto;
-}
-
-.listItem:hover {
-  background-color: lightgrey; 
-  color: black;
-}
-
 .img {
-  width:  relative;
-  height: 200px;
-  max-width: 210px;
+  max-width:200px;
+  max-height:180px;
+  width: auto;
+  height: auto;
 }
 
 .delete-saved {
@@ -24,18 +14,29 @@
 }
 
 .listItem {
+  border-top: 1px solid rgba(131, 97, 97, 0.253);
+  border-radius: 2px;
+  height: auto;
   width: 100%;
   display: flex;
   padding: 25px;
+  margin-left: auto;
+  margin-right: auto;
   padding-left: 0;
   margin-left: 0;
   flex-direction: column;
   text-align: center;
 }
 
+.listItem:hover {
+  background-color: lightgrey; 
+  color: black;
+}
+
 .item {
-  margin: auto;
   width: 60%;
+  height: auto;
+  margin: auto;
 }
 
 .article-section {
@@ -136,6 +137,7 @@
   }
   .img {
     max-width: 400px;
+    max-height: 250px;
   }
   .listItem {
     width: 100%;
@@ -152,6 +154,7 @@
     position: relative;
     float: left;
     margin-bottom: 20px;
+    max-height: 300px;
   }
   .item {
     width: 96%;
