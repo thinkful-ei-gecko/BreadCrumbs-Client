@@ -1,6 +1,6 @@
 # Live App: [Breadcrumbs News Aggregator](https://breadcrumbs.now.sh/)  
 
-
+# Demo Account => Username: demo, Password: pass
 
 ## Project Description:  
 
@@ -20,8 +20,6 @@ Breadcrumbs is a reenvisioned news aggregator that eliminates "gatekeepers" and 
 > 
 > ![hotdog](https://a.slack-edge.com/production-standard-emoji-assets/10.2/google-small/1f32d@2x.png) [Badri Narayana Tulsiram](https://github.com/Badri-Narayan)
 
-
-# Demo Account- Username: admin, Password: pass
 
 # User stories
 
