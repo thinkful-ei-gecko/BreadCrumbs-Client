@@ -1,6 +1,6 @@
 # Live App: [Breadcrumbs News Aggregator](https://breadcrumbs.now.sh/)  
 
-# Demo Account => Username: admin, Password: pass
+# Demo Account => Username: demo, Password: pass
 
 ## Project Description:  
 
