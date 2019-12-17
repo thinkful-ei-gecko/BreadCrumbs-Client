@@ -77,7 +77,7 @@ export default class NewsItem extends React.Component {
               alt="send to oven"
               className="fresh"
             />
-            <div className="ovenTxt">Bake</div>
+            <div className="ovenTxt">Send to Oven</div>
           </button>
             </div>
           </div>
